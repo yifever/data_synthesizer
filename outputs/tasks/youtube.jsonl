@@ -1,0 +1,116 @@
+{
+    "function_id": "youtube-1",
+    "task": "Upload a video file as a video to a YouTube channel."
+}
+{
+    "function_id": "youtube-2",
+    "task": "Delete a specific video from a channel."
+}
+{
+    "function_id": "youtube-3",
+    "task": "Edit video details such as title, description, and tags."
+}
+{
+    "function_id": "youtube-4",
+    "task": "Set a specific time for a video to be made public."
+}
+{
+    "function_id": "youtube-5",
+    "task": "Generate new playlists for categorizing videos."
+}
+{
+    "function_id": "youtube-6",
+    "task": "Insert specific videos into an existing playlist."
+}
+{
+    "function_id": "youtube-7",
+    "task": "Delete videos from a playlist."
+}
+{
+    "function_id": "youtube-8",
+    "task": "Modify the channel description, profile picture, and other details."
+}
+{
+    "function_id": "youtube-9",
+    "task": "Access analytics such as views, watch time, and subscriber count for specific videos."
+}
+{
+    "function_id": "youtube-10",
+    "task": "Acquire broader analytics for the entire channel."
+}
+{
+    "function_id": "youtube-11",
+    "task": "Understand user engagement by capturing data on likes, dislikes, and comments."
+}
+{
+    "function_id": "youtube-12",
+    "task": "Automatically post preset comments or updates in the comment section of a video."
+}
+{
+    "function_id": "youtube-13",
+    "task": "Remove specific comments that violate community guidelines."
+}
+{
+    "function_id": "youtube-14",
+    "task": "Generate automated replies to user comments."
+}
+{
+    "function_id": "youtube-15",
+    "task": "Control the ad settings for specific videos."
+}
+{
+    "function_id": "youtube-16",
+    "task": "Fetch details about earnings, including estimated revenue and ad performance."
+}
+{
+    "function_id": "youtube-17",
+    "task": "Change the payment and billing information for the channel."
+}
+{
+    "function_id": "youtube-18",
+    "task": "Automatically upload caption files to videos."
+}
+{
+    "function_id": "youtube-19",
+    "task": "Replace or update existing captions."
+}
+{
+    "function_id": "youtube-20",
+    "task": "Remove captions from a specific video."
+}
+{
+    "function_id": "youtube-21",
+    "task": "Conduct a search for videos based on specific keywords or criteria."
+}
+{
+    "function_id": "youtube-22",
+    "task": "Retrieve a specific video using its unique ID."
+}
+{
+    "function_id": "youtube-23",
+    "task": "Obtain a list of currently trending videos in a specific region or category."
+}
+{
+    "function_id": "youtube-24",
+    "task": "Set up a future live stream event."
+}
+{
+    "function_id": "youtube-25",
+    "task": "Initiate or end a live stream."
+}
+{
+    "function_id": "youtube-26",
+    "task": "Automatically post messages, moderate comments, or collect metrics from a live chat during a live stream."
+}
+{
+    "function_id": "youtube-27",
+    "task": "Automate the process of subscribing to other YouTube channels."
+}
+{
+    "function_id": "youtube-28",
+    "task": "Remove existing subscriptions."
+}
+{
+    "function_id": "youtube-29",
+    "task": "Alert subscribers when new content is available or when a live stream is starting."
+}

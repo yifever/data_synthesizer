@@ -1,0 +1,80 @@
+{
+    "function_id": "ubereats-1",
+    "task": "Accept a new delivery request."
+}
+{
+    "function_id": "ubereats-2",
+    "task": "Navigate to the restaurant for food pickup."
+}
+{
+    "function_id": "ubereats-3",
+    "task": "Confirm the pickup of the food items from the restaurant."
+}
+{
+    "function_id": "ubereats-4",
+    "task": "Notify the customer about the estimated delivery time."
+}
+{
+    "function_id": "ubereats-5",
+    "task": "Navigate to the customer's location for food delivery."
+}
+{
+    "function_id": "ubereats-6",
+    "task": "Confirm the successful delivery of the food items to the customer."
+}
+{
+    "function_id": "ubereats-7",
+    "task": "Handle and report any issues with the order (e.g., missing items, delays)."
+}
+{
+    "function_id": "ubereats-8",
+    "task": "Record and submit daily earnings for review."
+}
+{
+    "function_id": "ubereats-9",
+    "task": "Monitor fuel level and find the nearest gas station if needed."
+}
+{
+    "function_id": "ubereats-10",
+    "task": "Update availability status (e.g., going offline, taking a break)."
+}
+{
+    "function_id": "ubereats-11",
+    "task": "Rate the restaurant based on the ease of the pickup process."
+}
+{
+    "function_id": "ubereats-12",
+    "task": "Rate the customer based on the ease of the delivery process."
+}
+{
+    "function_id": "ubereats-13",
+    "task": "Review customer feedback and ratings."
+}
+{
+    "function_id": "ubereats-14",
+    "task": "Contact support for resolving any disputes or issues."
+}
+{
+    "function_id": "ubereats-15",
+    "task": "Submit receipts for any work-related expenses for reimbursement."
+}
+{
+    "function_id": "ubereats-16",
+    "task": "View and accept any promotional tasks or bonus opportunities."
+}
+{
+    "function_id": "ubereats-17",
+    "task": "Check and maintain vehicle condition (e.g., tire pressure, oil level)."
+}
+{
+    "function_id": "ubereats-18",
+    "task": "Keep track of miles driven for tax purposes."
+}
+{
+    "function_id": "ubereats-19",
+    "task": "Receive and confirm batched orders (multiple pickups or deliveries)."
+}
+{
+    "function_id": "ubereats-20",
+    "task": "Track and report any tips received."
+}

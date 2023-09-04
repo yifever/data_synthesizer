@@ -1,0 +1,84 @@
+{
+    "function_id": "ai_research-1",
+    "task": "Conduct a literature search on AI papers from academic databases."
+}
+{
+    "function_id": "ai_research-2",
+    "task": "Retrieve text from specified academic papers for analysis."
+}
+{
+    "function_id": "ai_research-3",
+    "task": "Submit research papers or articles to preprint servers or journals."
+}
+{
+    "function_id": "ai_research-4",
+    "task": "Run code for machine learning experiments on cloud-based compute resources."
+}
+{
+    "function_id": "ai_research-5",
+    "task": "Fetch and preprocess datasets from public or private repositories."
+}
+{
+    "function_id": "ai_research-6",
+    "task": "Perform hyperparameter tuning for machine learning models."
+}
+{
+    "function_id": "ai_research-7",
+    "task": "Visualize model performance metrics and experimental results."
+}
+{
+    "function_id": "ai_research-8",
+    "task": "Run sentiment analysis on social media posts related to AI technologies."
+}
+{
+    "function_id": "ai_research-9",
+    "task": "Automatically update a personal website or blog with new publications."
+}
+{
+    "function_id": "ai_research-10",
+    "task": "Schedule and conduct virtual meetings for research collaborations."
+}
+{
+    "function_id": "ai_research-11",
+    "task": "Retrieve real-time analytics or citations for published works."
+}
+{
+    "function_id": "ai_research-12",
+    "task": "Run automated code tests and validations for published algorithms."
+}
+{
+    "function_id": "ai_research-13",
+    "task": "Analyze web traffic and interaction on research portfolio website."
+}
+{
+    "function_id": "ai_research-14",
+    "task": "Convert experimental results into formats suitable for academic publishing."
+}
+{
+    "function_id": "ai_research-15",
+    "task": "Scrape online job boards for research positions or grants in the field of AI."
+}
+{
+    "function_id": "ai_research-16",
+    "task": "Automatically follow and collect posts from AI influencers or research leaders on social media platforms."
+}
+{
+    "function_id": "ai_research-17",
+    "task": "Generate automated summaries of trending AI research topics."
+}
+{
+    "function_id": "ai_research-18",
+    "task": "Translate research papers or articles into multiple languages."
+}
+{
+    "function_id": "ai_research-19",
+    "task": "Automate the backup of research data and code."
+}
+{
+    "function_id": "ai_research-20",
+    "task": "Create visual representations of data sets or algorithms for presentations."
+}
+{
+    "function_id": "ai_research-21",
+    "task": "Generate and distribute a monthly newsletter on AI research findings."
+}

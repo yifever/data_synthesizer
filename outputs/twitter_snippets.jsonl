@@ -1,0 +1,72 @@
+{
+    "function_id": "twitter-1",
+    "task": "post a tweet",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "post a tweet"
+    },
+    "snippet": "def post_tweet(\n    tweet_content: str,\n) -> bool:\n    \"\"\"\n    Posts a tweet on a user's Twitter account.\n    \n    Parameters:\n        tweet_content (str): The content of the tweet to post.\n        \n    Returns:\n        bool: True if the tweet is successfully posted, False otherwise.\n    \"\"\"\n    pass"
+}
+{
+    "function_id": "twitter-2",
+    "task": "get the latest tweets from a user's timeline",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "get the latest tweets from a user's timeline"
+    },
+    "snippet": "def get_latest_tweets(\n    username: str,\n    num_tweets: int,\n) -> List[str]:\n    \"\"\"\n    Retrieves the latest tweets from a user's timeline.\n    \n    Parameters:\n        username (str): The username of the user whose tweets to retrieve.\n        num_tweets (int): The number of tweets to retrieve.\n        \n    Returns:\n        List[str]: A list of strings representing the latest tweets.\n    \"\"\""
+}
+{
+    "function_id": "twitter-3",
+    "task": "follow a user",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "follow a user"
+    },
+    "snippet": "def follow_user(\n    user_id: int,\n    follower_id: int,\n) -> bool:\n    \"\"\"\n    Follows a user and returns a boolean value indicating whether the follow was successful.\n    \n    Parameters:\n        user_id (int): The ID of the user to follow.\n        follower_id (int): The ID of the user who is following.\n        \n    Returns:\n        bool: A boolean value indicating whether the follow was successful.\n    \"\"\""
+}
+{
+    "function_id": "twitter-4",
+    "task": "unfollow a user",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "unfollow a user"
+    },
+    "snippet": "def unfollow_user(\n    username: str,\n) -> bool:\n    \"\"\"\n    Unfollows a user on a social media platform.\n    \n    Parameters:\n        username (str): The username of the user to unfollow.\n    \n    Returns:\n        bool: True if the user was successfully unfollowed, False otherwise.\n    \"\"\"\n    # Implementation code goes here"
+}
+{
+    "function_id": "twitter-5",
+    "task": "like a tweet",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "like a tweet"
+    },
+    "snippet": "def tweet_like(tweet: str) -> str:\n    \"\"\"\n    Likes a tweet and returns a success message.\n    \n    Parameters:\n        tweet (str): The content of the tweet to like.\n        \n    Returns:\n        str: A message indicating that the tweet has been liked.\n    \"\"\""
+}
+{
+    "function_id": "twitter-6",
+    "task": "retweet a tweet",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "retweet a tweet"
+    },
+    "snippet": "def retweet_tweet(\n   tweet_id: str,\n) -> None:\n    \"\"\"\n    Retweets a tweet with the given tweet_id.\n\n    Parameters:\n        tweet_id (str): The ID of the tweet to retweet.\n\n    Returns:\n        None\n    \"\"\"\n    # Your code here"
+}
+{
+    "function_id": "twitter-7",
+    "task": "get the followers of a user",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "get the followers of a user"
+    },
+    "snippet": "def get_followers(user_id: str) -> List[str]:\n    \"\"\"\n    Returns a list of followers for a given user.\n\n    Parameters:\n        user_id (str): The ID of the user.\n\n    Returns:\n        List[str]: A list of followers for the given user.\n    \"\"\"\n    followers = []\n    # Code to get the followers of the user\n    return followers"
+}
+{
+    "function_id": "twitter-8",
+    "task": "get the tweets mentioning a user",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "get the tweets mentioning a user"
+    },
+    "snippet": "def get_tweets(user: str) -> List[str]:\n    \"\"\"\n    Retrieves the tweets mentioning a user.\n    \n    Parameters:\n        user (str): The username whose mentions are to be retrieved.\n\n    Returns:\n        List[str]: A list of tweets mentioning the user.\n    \"\"\"\n    pass"
+}

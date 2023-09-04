@@ -1,0 +1,100 @@
+{
+    "function_id": "business-travel-1",
+    "task": "Book a flight ticket to a specific destination."
+}
+{
+    "function_id": "business-travel-2",
+    "task": "Cancel or modify an existing flight reservation."
+}
+{
+    "function_id": "business-travel-3",
+    "task": "Book accommodations at a hotel."
+}
+{
+    "function_id": "business-travel-4",
+    "task": "Cancel or modify an existing hotel reservation."
+}
+{
+    "function_id": "business-travel-5",
+    "task": "Rent a car at the destination."
+}
+{
+    "function_id": "business-travel-6",
+    "task": "Cancel or modify an existing car rental."
+}
+{
+    "function_id": "business-travel-7",
+    "task": "Schedule airport transfers."
+}
+{
+    "function_id": "business-travel-8",
+    "task": "Track flight status, including delays and cancellations."
+}
+{
+    "function_id": "business-travel-9",
+    "task": "Check in for a flight online."
+}
+{
+    "function_id": "business-travel-10",
+    "task": "Retrieve and manage digital boarding passes."
+}
+{
+    "function_id": "business-travel-11",
+    "task": "Track and manage travel expenses."
+}
+{
+    "function_id": "business-travel-12",
+    "task": "Submit travel expenses for reimbursement."
+}
+{
+    "function_id": "business-travel-13",
+    "task": "Generate and share a travel itinerary."
+}
+{
+    "function_id": "business-travel-14",
+    "task": "Find nearby dining options based on location."
+}
+{
+    "function_id": "business-travel-15",
+    "task": "Schedule and manage meetings during the trip."
+}
+{
+    "function_id": "business-travel-16",
+    "task": "Book and manage meeting rooms or conference spaces."
+}
+{
+    "function_id": "business-travel-17",
+    "task": "Order supplies or equipment for the meeting."
+}
+{
+    "function_id": "business-travel-18",
+    "task": "Find and use co-working spaces."
+}
+{
+    "function_id": "business-travel-19",
+    "task": "Arrange for local transportation like taxis or rideshares."
+}
+{
+    "function_id": "business-travel-20",
+    "task": "Exchange currency based on current exchange rates."
+}
+{
+    "function_id": "business-travel-21",
+    "task": "Find and navigate to points of interest or necessary locations, like embassies or hospitals."
+}
+{
+    "function_id": "business-travel-22",
+    "task": "Translate text or spoken language."
+}
+{
+    "function_id": "business-travel-23",
+    "task": "Receive safety alerts or travel advisories."
+}
+{
+    "function_id": "business-travel-24",
+    "task": "Access and manage digital copies of important travel documents."
+}
+{
+    "function_id": "business-travel-25",
+    "task": "Check visa requirements and application status."
+}

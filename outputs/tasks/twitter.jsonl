@@ -1,0 +1,116 @@
+{
+    "function_id": "twitter-1",
+    "task": "Post a tweet to a user's timeline."
+}
+{
+    "function_id": "twitter-2",
+    "task": "Delete a specific tweet from a user's timeline."
+}
+{
+    "function_id": "twitter-3",
+    "task": "Retrieve a user's timeline, including tweets, retweets, and replies."
+}
+{
+    "function_id": "twitter-4",
+    "task": "Retrieve information about a specific user based on their username."
+}
+{
+    "function_id": "twitter-5",
+    "task": "Follow a specific user."
+}
+{
+    "function_id": "twitter-6",
+    "task": "Unfollow a specific user."
+}
+{
+    "function_id": "twitter-7",
+    "task": "Like a specific tweet."
+}
+{
+    "function_id": "twitter-8",
+    "task": "Unlike a specific tweet."
+}
+{
+    "function_id": "twitter-9",
+    "task": "Retweet a specific tweet."
+}
+{
+    "function_id": "twitter-10",
+    "task": "Undo a retweet."
+}
+{
+    "function_id": "twitter-11",
+    "task": "Send a direct message to a specific user."
+}
+{
+    "function_id": "twitter-12",
+    "task": "Delete a sent direct message."
+}
+{
+    "function_id": "twitter-13",
+    "task": "Retrieve a list of direct messages sent and received."
+}
+{
+    "function_id": "twitter-14",
+    "task": "Retrieve trending topics for a specific location."
+}
+{
+    "function_id": "twitter-15",
+    "task": "Retrieve a list of followers for a specific user."
+}
+{
+    "function_id": "twitter-16",
+    "task": "Retrieve a list of accounts a specific user is following."
+}
+{
+    "function_id": "twitter-17",
+    "task": "Search for tweets containing specific keywords, hashtags, or mentioning specific users."
+}
+{
+    "function_id": "twitter-18",
+    "task": "Update the profile details such as description, location, and profile image."
+}
+{
+    "function_id": "twitter-19",
+    "task": "Retrieve user engagement metrics like likes, retweets, and impressions for specific tweets."
+}
+{
+    "function_id": "twitter-20",
+    "task": "Pin a tweet to the top of a user's timeline."
+}
+{
+    "function_id": "twitter-21",
+    "task": "Unpin a tweet from the top of a user's timeline."
+}
+{
+    "function_id": "twitter-22",
+    "task": "Retrieve lists that a user is a member of."
+}
+{
+    "function_id": "twitter-23",
+    "task": "Create a new list."
+}
+{
+    "function_id": "twitter-24",
+    "task": "Add users to an existing list."
+}
+{
+    "function_id": "twitter-25",
+    "task": "Remove users from an existing list."
+}
+{
+    "function_id": "twitter-26",
+    "task": "Delete an existing list."
+}
+{
+    "function_id": "twitter-27",
+    "task": "Check if a user is following another user."
+}
+{
+    "function_id": "twitter-28",
+    "task": "Block a specific user."
+}
+{
+    "function_id": "twitter-29",
+    "task": "Unblock a specific user."
+}

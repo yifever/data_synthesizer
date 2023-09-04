@@ -1,0 +1,168 @@
+{
+    "function_id": "twitter-1",
+    "task": "post a tweet"
+}
+{
+    "function_id": "twitter-2",
+    "task": "get the latest tweets from a user's timeline"
+}
+{
+    "function_id": "twitter-3",
+    "task": "follow a user"
+}
+{
+    "function_id": "twitter-4",
+    "task": "unfollow a user"
+}
+{
+    "function_id": "twitter-5",
+    "task": "like a tweet"
+}
+{
+    "function_id": "twitter-6",
+    "task": "retweet a tweet"
+}
+{
+    "function_id": "twitter-7",
+    "task": "get the followers of a user"
+}
+{
+    "function_id": "twitter-8",
+    "task": "get the tweets mentioning a user"
+}
+{
+    "function_id": "twitter-1",
+    "task": "Post a tweet"
+}
+{
+    "function_id": "twitter-2",
+    "task": "Get user timeline"
+}
+{
+    "function_id": "twitter-3",
+    "task": "Follow a user"
+}
+{
+    "function_id": "twitter-4",
+    "task": "Unfollow a user"
+}
+{
+    "function_id": "twitter-5",
+    "task": "Like a tweet"
+}
+{
+    "function_id": "twitter-6",
+    "task": "Retweet a tweet"
+}
+{
+    "function_id": "twitter-7",
+    "task": "Send a direct message to a user"
+}
+{
+    "function_id": "twitter-8",
+    "task": "Search for tweets"
+}
+{
+    "function_id": "twitter-9",
+    "task": "Get trending topics"
+}
+{
+    "function_id": "twitter-10",
+    "task": "Get user followers"
+}
+{
+    "function_id": "twitter-1",
+    "task": "Tweet a message with a specific hashtag."
+}
+{
+    "function_id": "twitter-2",
+    "task": "Retweet a tweet with a specific keyword."
+}
+{
+    "function_id": "twitter-3",
+    "task": "Reply to a tweet with a specific keyword."
+}
+{
+    "function_id": "twitter-4",
+    "task": "Follow users who follow a specific account."
+}
+{
+    "function_id": "twitter-5",
+    "task": "Unfollow users who don't follow back."
+}
+{
+    "function_id": "twitter-6",
+    "task": "Get a user's tweets and save them to a file."
+}
+{
+    "function_id": "twitter-1",
+    "task": "Retrieve a user's timeline"
+}
+{
+    "function_id": "twitter-2",
+    "task": "Post a tweet"
+}
+{
+    "function_id": "twitter-3",
+    "task": "Retrieve a user's followers"
+}
+{
+    "function_id": "twitter-4",
+    "task": "Retrieve a user's favorites"
+}
+{
+    "function_id": "twitter-5",
+    "task": "Search for tweets based on a keyword"
+}
+{
+    "function_id": "twitter-6",
+    "task": "Retweet a tweet"
+}
+{
+    "function_id": "twitter-7",
+    "task": "Like a tweet"
+}
+{
+    "function_id": "twitter-1",
+    "task": "Send a tweet with a specific message."
+}
+{
+    "function_id": "twitter-2",
+    "task": "Retrieve the latest tweets from a specific user."
+}
+{
+    "function_id": "twitter-3",
+    "task": "Follow a specific user on Twitter."
+}
+{
+    "function_id": "twitter-4",
+    "task": "Unfollow a specific user on Twitter."
+}
+{
+    "function_id": "twitter-5",
+    "task": "Like a tweet with a specific ID."
+}
+{
+    "function_id": "twitter-6",
+    "task": "Retweet a tweet with a specific ID."
+}
+{
+    "function_id": "twitter-1",
+    "task": "tweet a message to a user"
+}
+{
+    "function_id": "twitter-2",
+    "task": "search for tweets containing a specific keyword"
+}
+{
+    "function_id": "twitter-3",
+    "task": "like a tweet"
+}
+{
+    "function_id": "twitter-4",
+    "task": "follow a user"
+}
+{
+    "function_id": "twitter-5",
+    "task": "retweet a tweet"
+}

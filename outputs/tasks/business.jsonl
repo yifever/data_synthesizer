@@ -1,0 +1,92 @@
+{
+   "func_id": "business-0",
+   "task": "send a client an invoice"
+}
+{
+    "func_id": "business-1",
+    "task": "schedule a meeting"
+}
+{
+    "func_id": "business-2",
+    "task": "generate a sales report"
+}
+{
+    "func_id": "business-3",
+    "task": "perform an employee evaluation"
+}
+{
+    "func_id": "business-4",
+    "task": "create an account for a new customer"
+}
+{
+    "func_id": "business-5",
+    "task": "calculate payroll for someone"
+}
+{
+    "func_id": "business-6",
+    "task": "calculate payroll for a team"
+}
+{
+    "func_id": "business-7",
+    "task": "update inventory stock data"
+}
+{
+    "func_id": "business-8",
+    "task": "track the status of a shipment"
+}
+{
+    "func_id": "business-9",
+    "task": "assign a customer support ticket to an agent"
+}
+{
+    "func_id": "business-10",
+    "task": "generate a unique discount code for a customer for maketing promotions"
+}
+{
+    "func_id": "business-11",
+    "task": "enable a customer's subscription to various services"
+}
+{
+    "func_id": "business-12",
+    "task": "disable a customer's subscription to various services"
+}
+{
+    "func_id": "business-13",
+    "task": "modify a customer's subscription to various services"
+}
+{
+    "func_id": "business-14",
+    "task": "renew contracts for services and subscriptions that are expiring"
+}
+{
+    "func_id": "business-15",
+    "task": "perform a backup process of important business data"
+}
+{
+    "func_id": "business-16",
+    "task": "check the validity of a software license for a given product"
+}
+{
+    "func_id": "business-17",
+    "task": "onboard a new employee and do things like generate a new id, new email account, etc."
+}
+{
+    "func_id": "business-18",
+    "task": "allocate resources like meeting rooms, equipment, and personnel for a project or task force"
+}
+{
+    "func_id": "business-19",
+    "task": "submit timesheets for employees, either for approval or archival"
+}
+{
+    "func_id": "business-20",
+    "task": "calculate and distribute performance-based incentives or bonuses to employees"
+}
+{
+    "func_id": "business-21",
+    "task": "generate employee shift schedules based on availability and workload"
+}
+{
+    "func_id": "business-22",
+    "task": "create and approve budgets for different departments or projects"
+}

@@ -1,0 +1,116 @@
+{
+    "function_id": "twitch-1",
+    "task": "Start or stop the Twitch stream."
+}
+{
+    "function_id": "twitch-2",
+    "task": "Schedule a future Twitch stream."
+}
+{
+    "function_id": "twitch-3",
+    "task": "Change the title and category of the current stream."
+}
+{
+    "function_id": "twitch-4",
+    "task": "Retrieve current viewer count and other analytics."
+}
+{
+    "function_id": "twitch-5",
+    "task": "Manage and post automated messages in the chat."
+}
+{
+    "function_id": "twitch-6",
+    "task": "Activate or deactivate certain emotes in the chat."
+}
+{
+    "function_id": "twitch-7",
+    "task": "Initiate subscriber-only mode in the chat."
+}
+{
+    "function_id": "twitch-8",
+    "task": "Run advertisements at specified intervals."
+}
+{
+    "function_id": "twitch-9",
+    "task": "Create and manage custom chat commands."
+}
+{
+    "function_id": "twitch-10",
+    "task": "Automatically shout-out to new subscribers, followers, or donors."
+}
+{
+    "function_id": "twitch-11",
+    "task": "Create and manage stream markers for highlights."
+}
+{
+    "function_id": "twitch-12",
+    "task": "Retrieve a list of current subscribers."
+}
+{
+    "function_id": "twitch-13",
+    "task": "Automatically ban or time-out users based on chat behavior."
+}
+{
+    "function_id": "twitch-14",
+    "task": "Create and manage polls or voting activities during the stream."
+}
+{
+    "function_id": "twitch-15",
+    "task": "Display alerts or notifications for in-stream events, like receiving a donation."
+}
+{
+    "function_id": "twitch-16",
+    "task": "Retrieve historical data such as past streams, viewer metrics, and chat logs."
+}
+{
+    "function_id": "twitch-17",
+    "task": "Manage and redeem channel points or rewards."
+}
+{
+    "function_id": "twitch-18",
+    "task": "Clip segments of the current stream."
+}
+{
+    "function_id": "twitch-19",
+    "task": "Configure audio and video settings, including bitrate and resolution."
+}
+{
+    "function_id": "twitch-20",
+    "task": "Host or raid another Twitch channel."
+}
+{
+    "function_id": "twitch-21",
+    "task": "Initiate and manage a co-stream with another streamer."
+}
+{
+    "function_id": "twitch-22",
+    "task": "Manage and update panels and other customizable areas below the video player."
+}
+{
+    "function_id": "twitch-23",
+    "task": "Activate specific scenes or overlays."
+}
+{
+    "function_id": "twitch-24",
+    "task": "Automatically archive past broadcasts."
+}
+{
+    "function_id": "twitch-25",
+    "task": "Enable or disable slow mode in the chat."
+}
+{
+    "function_id": "twitch-26",
+    "task": "Monitor and manage subscriptions to other channels."
+}
+{
+    "function_id": "twitch-27",
+    "task": "Set up donation goals and progress bars."
+}
+{
+    "function_id": "twitch-28",
+    "task": "Manage and send direct messages."
+}
+{
+    "function_id": "twitch-29",
+    "task": "Configure and manage bots for chat moderation or entertainment."
+}

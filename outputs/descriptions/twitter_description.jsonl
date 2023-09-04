@@ -1,0 +1,1166 @@
+{
+    "function_id": "twitter-1",
+    "task": "Post a tweet to a user's timeline.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Post a tweet to a user's timeline."
+    },
+    "snippet": "def post_tweet(user: str, message: str) -> None:\n    \"\"\"\n    Posts a tweet to a user's timeline.\n    \n    Parameters:\n        user (str): The username of the user.\n        message (str): The content of the tweet.\n        \n    Returns:\n        None\n    \"\"\"\n    # Code to post the tweet to the user's timeline goes here",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def post_tweet(user: str, message: str) -> None:\n    \"\"\"\n    Posts a tweet to a user's timeline.\n    \n    Parameters:\n        user (str): The username of the user.\n        message (str): The content of the tweet.\n        \n    Returns:\n        None\n    \"\"\"\n    # Code to post the tweet to the user's timeline goes here",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "post_tweet",
+            "description": "Posts a tweet to a user's timeline.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "user": {
+                        "type": "string",
+                        "description": "The username of the user."
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "The content of the tweet."
+                    }
+                },
+                "required": [
+                    "user",
+                    "message"
+                ]
+            },
+            "returns": {
+                "type": "None"
+            }
+        }
+    }
+}
+{
+    "function_id": "twitter-2",
+    "task": "Delete a specific tweet from a user's timeline.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Delete a specific tweet from a user's timeline."
+    },
+    "snippet": "def delete_tweet(\n    user_id: str,\n    tweet_id: str,\n) -> bool:\n    \"\"\"\n    Deletes a specific tweet from a user's timeline.\n    \n    Parameters:\n        user_id (str): The user ID of the user whose tweet is to be deleted.\n        tweet_id (str): The ID of the tweet to be deleted.\n                                          \n    Returns:\n        bool: True if the tweet was successfully deleted, False otherwise.\n    \"\"\"",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def delete_tweet(\n    user_id: str,\n    tweet_id: str,\n) -> bool:\n    \"\"\"\n    Deletes a specific tweet from a user's timeline.\n    \n    Parameters:\n        user_id (str): The user ID of the user whose tweet is to be deleted.\n        tweet_id (str): The ID of the tweet to be deleted.\n                                          \n    Returns:\n        bool: True if the tweet was successfully deleted, False otherwise.\n    \"\"\"",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "delete_tweet",
+            "description": "Deletes a specific tweet from a user's timeline.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "user_id": {
+                        "type": "string",
+                        "description": "The user ID of the user whose tweet is to be deleted."
+                    },
+                    "tweet_id": {
+                        "type": "string",
+                        "description": "The ID of the tweet to be deleted."
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "tweet_id"
+                ]
+            },
+            "returns": {
+                "type": "boolean",
+                "description": "True if the tweet was successfully deleted, False otherwise."
+            }
+        }
+    }
+}
+{
+    "function_id": "twitter-3",
+    "task": "Retrieve a user's timeline, including tweets, retweets, and replies.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Retrieve a user's timeline, including tweets, retweets, and replies."
+    },
+    "snippet": "def retrieve_user_timeline(\n    user_id: str,\n) -> List[Dict[str, Any]]:\n    \"\"\"\n    Retrieve a user's timeline, including tweets, retweets, and replies.\n    \n    Parameters:\n        user_id (str): The ID of the user whose timeline to retrieve.\n        \n    Returns:\n        List[Dict[str, Any]]: A list of dictionaries containing timeline entries.\n                              Each dictionary represents a tweet, retweet, or reply and includes\n                              relevant information such as the tweet content, timestamp, and author.\n    \"\"\"\n    pass",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def retrieve_user_timeline(\n    user_id: str,\n) -> List[Dict[str, Any]]:\n    \"\"\"\n    Retrieve a user's timeline, including tweets, retweets, and replies.\n    \n    Parameters:\n        user_id (str): The ID of the user whose timeline to retrieve.\n        \n    Returns:\n        List[Dict[str, Any]]: A list of dictionaries containing timeline entries.\n                              Each dictionary represents a tweet, retweet, or reply and includes\n                              relevant information such as the tweet content, timestamp, and author.\n    \"\"\"\n    pass",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "retrieve_user_timeline",
+            "description": "Retrieve a user's timeline, including tweets, retweets, and replies.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "user_id": {
+                        "type": "string",
+                        "description": "The ID of the user whose timeline to retrieve."
+                    }
+                },
+                "required": [
+                    "user_id"
+                ]
+            },
+            "returns": {
+                "type": "List[Dict[str, Any]]",
+                "description": "A list of dictionaries containing timeline entries. Each dictionary represents a tweet, retweet, or reply and includes relevant information such as the tweet content, timestamp, and author."
+            }
+        }
+    }
+}
+{
+    "function_id": "twitter-4",
+    "task": "Retrieve information about a specific user based on their username.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Retrieve information about a specific user based on their username."
+    },
+    "snippet": "def retrieve_user_info(\n    username: str,\n) -> Dict[str, Union[str, int]]:\n    \"\"\"\n    Retrieves information about a specific user based on their username.\n    \n    Parameters:\n        username (str): The username of the user to retrieve information for.\n                                          \n    Returns:\n        Dict[str, Union[str, int]]: A dictionary with user information.",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def retrieve_user_info(\n    username: str,\n) -> Dict[str, Union[str, int]]:\n    \"\"\"\n    Retrieves information about a specific user based on their username.\n    \n    Parameters:\n        username (str): The username of the user to retrieve information for.\n                                          \n    Returns:\n        Dict[str, Union[str, int]]: A dictionary with user information.",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "retrieve_user_info",
+            "description": "Retrieves information about a specific user based on their username.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "username": {
+                        "type": "string",
+                        "description": "The username of the user to retrieve information for."
+                    }
+                },
+                "required": [
+                    "username"
+                ]
+            },
+            "returns": {
+                "type": "object",
+                "properties": {
+                    "username": {
+                        "type": "string"
+                    },
+                    "age": {
+                        "type": "integer"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "address": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}
+{
+    "function_id": "twitter-5",
+    "task": "Follow a specific user.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Follow a specific user."
+    },
+    "snippet": "def follow_user(\n    user_id: int,\n) -> bool:\n    \"\"\"\n    Follows a specific user.\n    \n    Parameters:\n        user_id (int): The ID of the user to follow.\n        \n    Returns:\n        bool: True if the user was successfully followed, False otherwise.\n    \"\"\"\n    # Code to follow the user goes here\n    return True",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def follow_user(\n    user_id: int,\n) -> bool:\n    \"\"\"\n    Follows a specific user.\n    \n    Parameters:\n        user_id (int): The ID of the user to follow.\n        \n    Returns:\n        bool: True if the user was successfully followed, False otherwise.\n    \"\"\"\n    # Code to follow the user goes here\n    return True",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "follow_user",
+            "description": "Follows a specific user.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "user_id": {
+                        "type": "integer",
+                        "description": "The ID of the user to follow."
+                    }
+                },
+                "required": [
+                    "user_id"
+                ]
+            },
+            "returns": {
+                "type": "boolean",
+                "description": "True if the user was successfully followed, False otherwise."
+            }
+        }
+    }
+}
+{
+    "function_id": "twitter-6",
+    "task": "Unfollow a specific user.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Unfollow a specific user."
+    },
+    "snippet": "def unfollow_user(username: str) -> bool:\n    \"\"\"\n    Unfollows a specific user.\n    \n    Parameters:\n        username (str): The username of the user to unfollow.\n        \n    Returns:\n        bool: True if the user was successfully unfollowed, False otherwise.\n    \"\"\"\n    # Implementation details here",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def unfollow_user(username: str) -> bool:\n    \"\"\"\n    Unfollows a specific user.\n    \n    Parameters:\n        username (str): The username of the user to unfollow.\n        \n    Returns:\n        bool: True if the user was successfully unfollowed, False otherwise.\n    \"\"\"\n    # Implementation details here",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "unfollow_user",
+            "description": "Unfollows a specific user.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "username": {
+                        "type": "string",
+                        "description": "The username of the user to unfollow."
+                    }
+                },
+                "required": [
+                    "username"
+                ]
+            },
+            "returns": {
+                "type": "boolean",
+                "description": "True if the user was successfully unfollowed, False otherwise."
+            }
+        }
+    }
+}
+{
+    "function_id": "twitter-7",
+    "task": "Like a specific tweet.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Like a specific tweet."
+    },
+    "snippet": "def like_tweet(tweet_id: str) -> None:\n    \"\"\"\n    Likes a specific tweet.\n    \n    Parameters:\n        tweet_id (str): The ID of the tweet to like.\n        \n    Returns:\n        None\n    \"\"\"",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def like_tweet(tweet_id: str) -> None:\n    \"\"\"\n    Likes a specific tweet.\n    \n    Parameters:\n        tweet_id (str): The ID of the tweet to like.\n        \n    Returns:\n        None\n    \"\"\"",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "like_tweet",
+            "description": "Likes a specific tweet.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "tweet_id": {
+                        "type": "string",
+                        "description": "The ID of the tweet to like."
+                    }
+                },
+                "required": [
+                    "tweet_id"
+                ]
+            },
+            "returns": {
+                "type": "none"
+            }
+        }
+    }
+}
+{
+    "function_id": "twitter-8",
+    "task": "Unlike a specific tweet.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Unlike a specific tweet."
+    },
+    "snippet": "def unlike_tweet(tweet_id: str) -> None:\n    \"\"\"\n    Undo the like action on a specific tweet.\n    \n    Parameters:\n        tweet_id (str): The ID of the tweet to unlike.\n        \n    Returns:\n        None\n    \"\"\"",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def unlike_tweet(tweet_id: str) -> None:\n    \"\"\"\n    Undo the like action on a specific tweet.\n    \n    Parameters:\n        tweet_id (str): The ID of the tweet to unlike.\n        \n    Returns:\n        None\n    \"\"\"",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "unlike_tweet",
+            "description": "Undo the like action on a specific tweet.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "tweet_id": {
+                        "type": "string",
+                        "description": "The ID of the tweet to unlike."
+                    }
+                },
+                "required": [
+                    "tweet_id"
+                ]
+            },
+            "returns": {
+                "type": "None"
+            }
+        }
+    }
+}
+{
+    "function_id": "twitter-9",
+    "task": "Retweet a specific tweet.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Retweet a specific tweet."
+    },
+    "snippet": "def retweet_specific_tweet(\n    tweet_id: str,\n) -> bool:\n    \"\"\"\n    Retweets a specific tweet.\n\n    Parameters:\n        tweet_id (str): The ID of the tweet to retweet.\n\n    Returns:\n        bool: True if the tweet was successfully retweeted, False otherwise.\n    \"\"\"",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def retweet_specific_tweet(\n    tweet_id: str,\n) -> bool:\n    \"\"\"\n    Retweets a specific tweet.\n\n    Parameters:\n        tweet_id (str): The ID of the tweet to retweet.\n\n    Returns:\n        bool: True if the tweet was successfully retweeted, False otherwise.\n    \"\"\"",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "retweet_specific_tweet",
+            "description": "Retweets a specific tweet.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "tweet_id": {
+                        "type": "string",
+                        "description": "The ID of the tweet to retweet."
+                    }
+                },
+                "required": [
+                    "tweet_id"
+                ]
+            },
+            "returns": {
+                "type": "boolean",
+                "description": "True if the tweet was successfully retweeted, False otherwise."
+            }
+        }
+    }
+}
+{
+    "function_id": "twitter-10",
+    "task": "Undo a retweet.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Undo a retweet."
+    },
+    "snippet": "def undo_retweet(tweet_id: str) -> bool:\n    \"\"\"\n    Undo a retweet by tweet ID.\n    \n    Parameters:\n        tweet_id (str): The ID of the tweet to undo the retweet on.\n        \n    Returns:\n        bool: True if the retweet was successfully undone, False otherwise.\n    \"\"\"",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def undo_retweet(tweet_id: str) -> bool:\n    \"\"\"\n    Undo a retweet by tweet ID.\n    \n    Parameters:\n        tweet_id (str): The ID of the tweet to undo the retweet on.\n        \n    Returns:\n        bool: True if the retweet was successfully undone, False otherwise.\n    \"\"\"",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "undo_retweet",
+            "description": "Undo a retweet by tweet ID.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "tweet_id": {
+                        "type": "string",
+                        "description": "The ID of the tweet to undo the retweet on."
+                    }
+                },
+                "required": [
+                    "tweet_id"
+                ]
+            },
+            "returns": {
+                "type": "bool",
+                "description": "True if the retweet was successfully undone, False otherwise."
+            }
+        }
+    }
+}
+{
+    "function_id": "twitter-11",
+    "task": "Send a direct message to a specific user.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Send a direct message to a specific user."
+    },
+    "snippet": "def send_direct_message(user: str, message: str) -> None:\n    \"\"\"\n    Sends a direct message to a specific user.\n    \n    Parameters:\n        user (str): The username of the recipient.\n        message (str): The message to send.\n        \n    Returns:\n        None\n    \"\"\"\n    # Code to send the direct message to the specified user goes here",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def send_direct_message(user: str, message: str) -> None:\n    \"\"\"\n    Sends a direct message to a specific user.\n    \n    Parameters:\n        user (str): The username of the recipient.\n        message (str): The message to send.\n        \n    Returns:\n        None\n    \"\"\"\n    # Code to send the direct message to the specified user goes here",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "send_direct_message",
+            "description": "Sends a direct message to a specific user.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "user": {
+                        "type": "string",
+                        "description": "The username of the recipient."
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "The message to send."
+                    }
+                },
+                "required": [
+                    "user",
+                    "message"
+                ]
+            },
+            "returns": {
+                "type": "None"
+            }
+        }
+    }
+}
+{
+    "function_id": "twitter-12",
+    "task": "Delete a sent direct message.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Delete a sent direct message."
+    },
+    "snippet": "def delete_direct_message(\n    message_id: str,\n) -> None:\n    \"\"\"\n    Deletes a sent direct message.\n    \n    Parameters:\n        message_id (str): The ID of the message to be deleted.\n        \n    Returns:\n        None\n    \"\"\"",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def delete_direct_message(\n    message_id: str,\n) -> None:\n    \"\"\"\n    Deletes a sent direct message.\n    \n    Parameters:\n        message_id (str): The ID of the message to be deleted.\n        \n    Returns:\n        None\n    \"\"\"",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "delete_direct_message",
+            "description": "Deletes a sent direct message.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "message_id": {
+                        "type": "string",
+                        "description": "The ID of the message to be deleted."
+                    }
+                },
+                "required": [
+                    "message_id"
+                ]
+            },
+            "returns": {
+                "type": "None"
+            }
+        }
+    }
+}
+{
+    "function_id": "twitter-13",
+    "task": "Retrieve a list of direct messages sent and received.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Retrieve a list of direct messages sent and received."
+    },
+    "snippet": "def retrieve_direct_messages() -> List[str]:\n    \"\"\"\n    Retrieves a list of direct messages sent and received.\n\n    Returns:\n        List[str]: A list of direct messages.\n    \"\"\"",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def retrieve_direct_messages() -> List[str]:\n    \"\"\"\n    Retrieves a list of direct messages sent and received.\n\n    Returns:\n        List[str]: A list of direct messages.\n    \"\"\"",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "retrieve_direct_messages",
+            "description": "Retrieves a list of direct messages sent and received.",
+            "parameters": {
+                "type": "object",
+                "properties": {}
+            },
+            "returns": {
+                "type": "List[str]",
+                "description": "A list of direct messages."
+            }
+        }
+    }
+}
+{
+    "function_id": "twitter-14",
+    "task": "Retrieve trending topics for a specific location.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Retrieve trending topics for a specific location."
+    },
+    "snippet": "def retrieve_trending_topics(location: str) -> List[str]:\n    \"\"\"\n    Retrieves trending topics for a specific location.\n    \n    Parameters:\n        location (str): The location for which to retrieve trending topics.\n        \n    Returns:\n        List[str]: A list of trending topics.\n    \"\"\"\n    pass",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def retrieve_trending_topics(location: str) -> List[str]:\n    \"\"\"\n    Retrieves trending topics for a specific location.\n    \n    Parameters:\n        location (str): The location for which to retrieve trending topics.\n        \n    Returns:\n        List[str]: A list of trending topics.\n    \"\"\"\n    pass",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "retrieve_trending_topics",
+            "description": "Retrieves trending topics for a specific location.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location for which to retrieve trending topics."
+                    }
+                },
+                "required": [
+                    "location"
+                ]
+            },
+            "returns": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                },
+                "description": "A list of trending topics."
+            }
+        }
+    }
+}
+{
+    "function_id": "twitter-15",
+    "task": "Retrieve a list of followers for a specific user.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Retrieve a list of followers for a specific user."
+    },
+    "snippet": "def get_followers(user_id: str) -> List[str]:\n    \"\"\"\n    Retrieves a list of followers for a specific user.\n\n    Parameters:\n        user_id (str): The id of the user.\n\n    Returns:\n        List[str]: A list of usernames of the followers.\n    \"\"\"\n    followers = []\n    # Code to retrieve followers for user_id\n    return followers",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def get_followers(user_id: str) -> List[str]:\n    \"\"\"\n    Retrieves a list of followers for a specific user.\n\n    Parameters:\n        user_id (str): The id of the user.\n\n    Returns:\n        List[str]: A list of usernames of the followers.\n    \"\"\"\n    followers = []\n    # Code to retrieve followers for user_id\n    return followers",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "get_followers",
+            "description": "Retrieves a list of followers for a specific user.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "user_id": {
+                        "type": "string",
+                        "description": "The id of the user."
+                    }
+                },
+                "required": [
+                    "user_id"
+                ]
+            },
+            "returns": {
+                "type": "List[str]",
+                "description": "A list of usernames of the followers."
+            }
+        }
+    }
+}
+{
+    "function_id": "twitter-16",
+    "task": "Retrieve a list of accounts a specific user is following.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Retrieve a list of accounts a specific user is following."
+    },
+    "snippet": "def get_accounts_following(user_id: int) -> List[int]:\n    \"\"\"\n    Retrieves a list of accounts a specific user is following.\n    \n    Parameters:\n        user_id (int): The ID of the user.\n        \n    Returns:\n        List[int]: A list of account IDs that the user is following.\n    \"\"\"\n    # Code to retrieve the list of accounts following the specified user\n",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def get_accounts_following(user_id: int) -> List[int]:\n    \"\"\"\n    Retrieves a list of accounts a specific user is following.\n    \n    Parameters:\n        user_id (int): The ID of the user.\n        \n    Returns:\n        List[int]: A list of account IDs that the user is following.\n    \"\"\"\n    # Code to retrieve the list of accounts following the specified user\n",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "get_accounts_following",
+            "description": "Retrieves a list of accounts a specific user is following.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "user_id": {
+                        "type": "integer",
+                        "description": "The ID of the user."
+                    }
+                },
+                "required": [
+                    "user_id"
+                ]
+            },
+            "returns": {
+                "type": "List[int]",
+                "description": "A list of account IDs that the user is following."
+            }
+        }
+    }
+}
+{
+    "function_id": "twitter-17",
+    "task": "Search for tweets containing specific keywords, hashtags, or mentioning specific users.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Search for tweets containing specific keywords, hashtags, or mentioning specific users."
+    },
+    "snippet": "def search_tweets(\n    keywords: List[str],\n    hashtags: Optional[List[str]] = None,\n    mentions: Optional[List[str]] = None,\n) -> List[str]:\n    \"\"\"\n    Search for tweets containing specific keywords, hashtags, or mentioning specific users.\n    \n    Parameters:\n        keywords (List[str]): A list of keywords to search for in tweets.\n        hashtags (Optional[List[str]]): A list of hashtags to search for in tweets.\n        mentions (Optional[List[str]]): A list of users to search for in tweets.\n        \n    Returns:\n        List[str]: A list of tweets that match the search criteria.\n    \"\"\"\n",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def search_tweets(\n    keywords: List[str],\n    hashtags: Optional[List[str]] = None,\n    mentions: Optional[List[str]] = None,\n) -> List[str]:\n    \"\"\"\n    Search for tweets containing specific keywords, hashtags, or mentioning specific users.\n    \n    Parameters:\n        keywords (List[str]): A list of keywords to search for in tweets.\n        hashtags (Optional[List[str]]): A list of hashtags to search for in tweets.\n        mentions (Optional[List[str]]): A list of users to search for in tweets.\n        \n    Returns:\n        List[str]: A list of tweets that match the search criteria.\n    \"\"\"\n",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "search_tweets",
+            "description": "Search for tweets containing specific keywords, hashtags, or mentioning specific users.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "keywords": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "A list of keywords to search for in tweets."
+                    },
+                    "hashtags": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "A list of hashtags to search for in tweets."
+                    },
+                    "mentions": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "A list of users to search for in tweets."
+                    }
+                },
+                "required": [
+                    "keywords"
+                ]
+            },
+            "returns": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                },
+                "description": "A list of tweets that match the search criteria."
+            }
+        }
+    }
+}
+{
+    "function_id": "twitter-18",
+    "task": "Update the profile details such as description, location, and profile image.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Update the profile details such as description, location, and profile image."
+    },
+    "snippet": "def update_profile_details(\n    description: str,\n    location: str,\n    profile_image: str,\n) -> Dict[str, str]:\n    \"\"\"\n    Updates the profile details such as description, location, and profile image.\n    \n    Parameters:\n        description (str): The new description for the profile.\n        location (str): The new location for the profile.\n        profile_image (str): The new profile image URL.\n        \n    Returns:\n        Dict[str, str]: A dictionary with the updated profile details.\n    \"\"\"",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def update_profile_details(\n    description: str,\n    location: str,\n    profile_image: str,\n) -> Dict[str, str]:\n    \"\"\"\n    Updates the profile details such as description, location, and profile image.\n    \n    Parameters:\n        description (str): The new description for the profile.\n        location (str): The new location for the profile.\n        profile_image (str): The new profile image URL.\n        \n    Returns:\n        Dict[str, str]: A dictionary with the updated profile details.\n    \"\"\"",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "update_profile_details",
+            "description": "Updates the profile details such as description, location, and profile image.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "type": "string",
+                        "description": "The new description for the profile."
+                    },
+                    "location": {
+                        "type": "string",
+                        "description": "The new location for the profile."
+                    },
+                    "profile_image": {
+                        "type": "string",
+                        "description": "The new profile image URL."
+                    }
+                },
+                "required": [
+                    "description",
+                    "location",
+                    "profile_image"
+                ]
+            },
+            "returns": {
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "type": "string",
+                        "description": "The updated description."
+                    },
+                    "location": {
+                        "type": "string",
+                        "description": "The updated location."
+                    },
+                    "profile_image": {
+                        "type": "string",
+                        "description": "The updated profile image URL."
+                    }
+                }
+            }
+        }
+    }
+}
+{
+    "function_id": "twitter-19",
+    "task": "Retrieve user engagement metrics like likes, retweets, and impressions for specific tweets.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Retrieve user engagement metrics like likes, retweets, and impressions for specific tweets."
+    },
+    "snippet": "def retrieve_engagement_metrics(\n    tweet_ids: List[str]\n) -> Dict[str, Dict[str, int]]:\n    \"\"\"\n    Retrieves user engagement metrics like likes, retweets, and impressions for specific tweets.\n    \n    Parameters:\n        tweet_ids (List[str]): A list of tweet IDs for which to retrieve engagement metrics.\n        \n    Returns:\n        Dict[str, Dict[str, int]]: A dictionary with tweet IDs as keys and a nested dictionary as values.\n                                   The nested dictionary contains 'likes', 'retweets', and 'impressions' as keys\n                                   and the corresponding metric values as values.\n    \"\"\"",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def retrieve_engagement_metrics(\n    tweet_ids: List[str]\n) -> Dict[str, Dict[str, int]]:\n    \"\"\"\n    Retrieves user engagement metrics like likes, retweets, and impressions for specific tweets.\n    \n    Parameters:\n        tweet_ids (List[str]): A list of tweet IDs for which to retrieve engagement metrics.\n        \n    Returns:\n        Dict[str, Dict[str, int]]: A dictionary with tweet IDs as keys and a nested dictionary as values.\n                                   The nested dictionary contains 'likes', 'retweets', and 'impressions' as keys\n                                   and the corresponding metric values as values.\n    \"\"\"",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "retrieve_engagement_metrics",
+            "description": "Retrieves user engagement metrics like likes, retweets, and impressions for specific tweets.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "tweet_ids": {
+                        "type": "array",
+                        "description": "A list of tweet IDs for which to retrieve engagement metrics.",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "required": [
+                    "tweet_ids"
+                ]
+            },
+            "returns": {
+                "type": "object",
+                "properties": {
+                    "tweet_ids": {
+                        "type": "object",
+                        "description": "A dictionary with tweet IDs as keys and a nested dictionary as values.",
+                        "additionalProperties": {
+                            "type": "object",
+                            "properties": {
+                                "likes": {
+                                    "type": "integer"
+                                },
+                                "retweets": {
+                                    "type": "integer"
+                                },
+                                "impressions": {
+                                    "type": "integer"
+                                }
+                            },
+                            "required": [
+                                "likes",
+                                "retweets",
+                                "impressions"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+{
+    "function_id": "twitter-20",
+    "task": "Pin a tweet to the top of a user's timeline.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Pin a tweet to the top of a user's timeline."
+    },
+    "snippet": "def pin_tweet_to_top(tweet_id: int) -> bool:\n    \"\"\"\n    Pins a tweet to the top of a user's timeline.\n    \n    Parameters:\n        tweet_id (int): The ID of the tweet to pin.\n        \n    Returns:\n        bool: True if the tweet is successfully pinned, False otherwise.\n    \"\"\"\n",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def pin_tweet_to_top(tweet_id: int) -> bool:\n    \"\"\"\n    Pins a tweet to the top of a user's timeline.\n    \n    Parameters:\n        tweet_id (int): The ID of the tweet to pin.\n        \n    Returns:\n        bool: True if the tweet is successfully pinned, False otherwise.\n    \"\"\"\n",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "pin_tweet_to_top",
+            "description": "Pins a tweet to the top of a user's timeline.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "tweet_id": {
+                        "type": "integer",
+                        "description": "The ID of the tweet to pin."
+                    }
+                },
+                "required": [
+                    "tweet_id"
+                ]
+            },
+            "returns": {
+                "type": "boolean",
+                "description": "True if the tweet is successfully pinned, False otherwise."
+            }
+        }
+    }
+}
+{
+    "function_id": "twitter-21",
+    "task": "Unpin a tweet from the top of a user's timeline.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Unpin a tweet from the top of a user's timeline."
+    },
+    "snippet": "```python\ndef unpin_tweet_from_timeline(user_id: str, tweet_id: str) -> bool:\n    \"\"\"\n    Unpins a tweet from the top of a user's timeline.\n    \n    Parameters:\n        user_id (str): The ID of the user.\n        tweet_id (str): The ID of the tweet to unpin.\n        \n    Returns:\n        bool: True if the tweet is successfully unpinned, False otherwise.\n    \"\"\"\n```",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "```python\ndef unpin_tweet_from_timeline(user_id: str, tweet_id: str) -> bool:\n    \"\"\"\n    Unpins a tweet from the top of a user's timeline.\n    \n    Parameters:\n        user_id (str): The ID of the user.\n        tweet_id (str): The ID of the tweet to unpin.\n        \n    Returns:\n        bool: True if the tweet is successfully unpinned, False otherwise.\n    \"\"\"\n```",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "unpin_tweet_from_timeline",
+            "description": "Unpins a tweet from the top of a user's timeline.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "user_id": {
+                        "type": "string",
+                        "description": "The ID of the user."
+                    },
+                    "tweet_id": {
+                        "type": "string",
+                        "description": "The ID of the tweet to unpin."
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "tweet_id"
+                ]
+            },
+            "returns": {
+                "type": "boolean",
+                "description": "True if the tweet is successfully unpinned, False otherwise."
+            }
+        }
+    }
+}
+{
+    "function_id": "twitter-22",
+    "task": "Retrieve lists that a user is a member of.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Retrieve lists that a user is a member of."
+    },
+    "snippet": "def retrieve_lists(user_id: str) -> List[str]:\n    \"\"\"\n    Retrieves the lists that a user is a member of.\n    \n    Parameters:\n        user_id (str): The user ID of the member.\n        \n    Returns:\n        List[str]: A list of list names that the user is a member of.\n    \"\"\"\n    # Code implementation to retrieve the lists that a user is a member of\n    pass",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def retrieve_lists(user_id: str) -> List[str]:\n    \"\"\"\n    Retrieves the lists that a user is a member of.\n    \n    Parameters:\n        user_id (str): The user ID of the member.\n        \n    Returns:\n        List[str]: A list of list names that the user is a member of.\n    \"\"\"\n    # Code implementation to retrieve the lists that a user is a member of\n    pass",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "retrieve_lists",
+            "description": "Retrieves the lists that a user is a member of.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "user_id": {
+                        "type": "string",
+                        "description": "The user ID of the member."
+                    }
+                },
+                "required": [
+                    "user_id"
+                ]
+            },
+            "returns": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                },
+                "description": "A list of list names that the user is a member of."
+            }
+        }
+    }
+}
+{
+    "function_id": "twitter-23",
+    "task": "Create a new list.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Create a new list."
+    },
+    "snippet": "def create_new_list(\n    items: List[Any],\n) -> List[Any]:\n    \"\"\"\n    Creates a new list based on the input list.\n    \n    Parameters:\n        items (List[Any]): The list of items to create a new list from.\n                                          \n    Returns:\n        List[Any]: A new list created based on the input list.\n    \"\"\"",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def create_new_list(\n    items: List[Any],\n) -> List[Any]:\n    \"\"\"\n    Creates a new list based on the input list.\n    \n    Parameters:\n        items (List[Any]): The list of items to create a new list from.\n                                          \n    Returns:\n        List[Any]: A new list created based on the input list.\n    \"\"\"",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "create_new_list",
+            "description": "Creates a new list based on the input list.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "items": {
+                        "type": "array",
+                        "description": "The list of items to create a new list from.",
+                        "items": {
+                            "type": "any"
+                        }
+                    }
+                },
+                "required": [
+                    "items"
+                ]
+            },
+            "returns": {
+                "type": "array",
+                "items": {
+                    "type": "any"
+                }
+            }
+        }
+    }
+}
+{
+    "function_id": "twitter-24",
+    "task": "Add users to an existing list.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Add users to an existing list."
+    },
+    "snippet": "def add_users(user_list: List[str], new_users: List[str]) -> List[str]:\n    \"\"\"\n    Add new users to an existing user list.\n\n    Parameters:\n        user_list (List[str]): The existing user list.\n        new_users (List[str]): The new users to add.\n\n    Returns:\n        List[str]: The updated user list with new users added.\n    \"\"\"\n    updated_user_list = user_list + new_users\n    return updated_user_list",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def add_users(user_list: List[str], new_users: List[str]) -> List[str]:\n    \"\"\"\n    Add new users to an existing user list.\n\n    Parameters:\n        user_list (List[str]): The existing user list.\n        new_users (List[str]): The new users to add.\n\n    Returns:\n        List[str]: The updated user list with new users added.\n    \"\"\"\n    updated_user_list = user_list + new_users\n    return updated_user_list",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "add_users",
+            "description": "Add new users to an existing user list.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "user_list": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "The existing user list."
+                    },
+                    "new_users": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "The new users to add."
+                    }
+                },
+                "required": [
+                    "user_list",
+                    "new_users"
+                ]
+            },
+            "returns": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                },
+                "description": "The updated user list with new users added."
+            }
+        }
+    }
+}
+{
+    "function_id": "twitter-25",
+    "task": "Remove users from an existing list.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Remove users from an existing list."
+    },
+    "snippet": "def remove_users(user_list: List[str], users_to_remove: List[str]) -> List[str]:\n    \"\"\"\n    Removes users from an existing list.\n\n    Parameters:\n        user_list (List[str]): The original list of users.\n        users_to_remove (List[str]): The list of users to remove.\n\n    Returns:\n        List[str]: The updated list of users after removing the specified users.\n    \"\"\"\n    pass",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def remove_users(user_list: List[str], users_to_remove: List[str]) -> List[str]:\n    \"\"\"\n    Removes users from an existing list.\n\n    Parameters:\n        user_list (List[str]): The original list of users.\n        users_to_remove (List[str]): The list of users to remove.\n\n    Returns:\n        List[str]: The updated list of users after removing the specified users.\n    \"\"\"\n    pass",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "remove_users",
+            "description": "Removes users from an existing list.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "user_list": {
+                        "type": "array",
+                        "description": "The original list of users."
+                    },
+                    "users_to_remove": {
+                        "type": "array",
+                        "description": "The list of users to remove."
+                    }
+                },
+                "required": [
+                    "user_list",
+                    "users_to_remove"
+                ]
+            },
+            "returns": {
+                "type": "array",
+                "description": "The updated list of users after removing the specified users."
+            }
+        }
+    }
+}
+{
+    "function_id": "twitter-26",
+    "task": "Delete an existing list.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Delete an existing list."
+    },
+    "snippet": "\ndef delete_list(lst: List) -> None:\n    \"\"\"\n    Deletes an existing list.\n    \n    Parameters:\n        lst (List): The list to be deleted.\n        \n    Returns:\n        None\n    \"\"\"\n    \n    del lst",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "\ndef delete_list(lst: List) -> None:\n    \"\"\"\n    Deletes an existing list.\n    \n    Parameters:\n        lst (List): The list to be deleted.\n        \n    Returns:\n        None\n    \"\"\"\n    \n    del lst",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "delete_list",
+            "description": "Deletes an existing list.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "lst": {
+                        "type": "array",
+                        "description": "The list to be deleted."
+                    }
+                },
+                "required": [
+                    "lst"
+                ]
+            },
+            "returns": {
+                "type": "None"
+            }
+        }
+    }
+}
+{
+    "function_id": "twitter-27",
+    "task": "Check if a user is following another user.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Check if a user is following another user."
+    },
+    "snippet": "def check_if_following(user: str, other_user: str) -> bool:\n    \"\"\"\n    Checks if a user is following another user.\n\n    Parameters:\n        user (str): The user to check.\n        other_user (str): The user to check if being followed.\n\n    Returns:\n        bool: True if user is following other_user, False otherwise.\n    \"\"\"\n    # implementation of checking if user is following other_user\n    return True",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def check_if_following(user: str, other_user: str) -> bool:\n    \"\"\"\n    Checks if a user is following another user.\n\n    Parameters:\n        user (str): The user to check.\n        other_user (str): The user to check if being followed.\n\n    Returns:\n        bool: True if user is following other_user, False otherwise.\n    \"\"\"\n    # implementation of checking if user is following other_user\n    return True",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "check_if_following",
+            "description": "Checks if a user is following another user.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "user": {
+                        "type": "string",
+                        "description": "The user to check."
+                    },
+                    "other_user": {
+                        "type": "string",
+                        "description": "The user to check if being followed."
+                    }
+                },
+                "required": [
+                    "user",
+                    "other_user"
+                ]
+            },
+            "returns": {
+                "type": "bool",
+                "description": "True if user is following other_user, False otherwise."
+            }
+        }
+    }
+}
+{
+    "function_id": "twitter-28",
+    "task": "Block a specific user.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Block a specific user."
+    },
+    "snippet": "def block_user(user_id: int) -> None:\n    \"\"\"\n    Blocks a specific user.\n    \n    Parameters:\n        user_id (int): The ID of the user to block.\n        \n    Returns:\n        None\n    \"\"\"",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def block_user(user_id: int) -> None:\n    \"\"\"\n    Blocks a specific user.\n    \n    Parameters:\n        user_id (int): The ID of the user to block.\n        \n    Returns:\n        None\n    \"\"\"",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "block_user",
+            "description": "Blocks a specific user.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "user_id": {
+                        "type": "integer",
+                        "description": "The ID of the user to block."
+                    }
+                },
+                "required": [
+                    "user_id"
+                ]
+            },
+            "returns": {
+                "type": "None"
+            }
+        }
+    }
+}
+{
+    "function_id": "twitter-29",
+    "task": "Unblock a specific user.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Unblock a specific user."
+    },
+    "snippet": "def unblock_user(user_id: str) -> None:\n    \"\"\"\n    Unblocks a specific user.\n    \n    Parameters:\n        user_id (str): The ID of the user to unblock.\n        \n    Returns:\n        None\n    \"\"\"",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def unblock_user(user_id: str) -> None:\n    \"\"\"\n    Unblocks a specific user.\n    \n    Parameters:\n        user_id (str): The ID of the user to unblock.\n        \n    Returns:\n        None\n    \"\"\"",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "unblock_user",
+            "description": "Unblocks a specific user.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "user_id": {
+                        "type": "string",
+                        "description": "The ID of the user to unblock."
+                    }
+                },
+                "required": [
+                    "user_id"
+                ]
+            },
+            "returns": {
+                "type": "None"
+            }
+        }
+    }
+}

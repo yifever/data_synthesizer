@@ -1,0 +1,100 @@
+{
+    "function_id": "personal_assistant-1",
+    "task": "Schedule an appointment or meeting in the calendar."
+}
+{
+    "function_id": "personal_assistant-2",
+    "task": "Send a reminder for upcoming events or deadlines."
+}
+{
+    "function_id": "personal_assistant-3",
+    "task": "Send an email to a specific contact."
+}
+{
+    "function_id": "personal_assistant-4",
+    "task": "Perform a web search to find information."
+}
+{
+    "function_id": "personal_assistant-5",
+    "task": "Place an online order for groceries or other items."
+}
+{
+    "function_id": "personal_assistant-6",
+    "task": "Provide weather forecasts for a specific location."
+}
+{
+    "function_id": "personal_assistant-7",
+    "task": "Manage and play a music playlist."
+}
+{
+    "function_id": "personal_assistant-8",
+    "task": "Turn smart home devices on or off (e.g., lights, thermostat)."
+}
+{
+    "function_id": "personal_assistant-9",
+    "task": "Make a phone call to a specific contact."
+}
+{
+    "function_id": "personal_assistant-10",
+    "task": "Send a text message to a specific contact."
+}
+{
+    "function_id": "personal_assistant-11",
+    "task": "Provide directions to a destination."
+}
+{
+    "function_id": "personal_assistant-12",
+    "task": "Book a ride-sharing service."
+}
+{
+    "function_id": "personal_assistant-13",
+    "task": "Translate text from one language to another."
+}
+{
+    "function_id": "personal_assistant-14",
+    "task": "Convert currency, measurements, or other units."
+}
+{
+    "function_id": "personal_assistant-15",
+    "task": "Provide news headlines or updates."
+}
+{
+    "function_id": "personal_assistant-16",
+    "task": "Manage to-do lists or tasks."
+}
+{
+    "function_id": "personal_assistant-17",
+    "task": "Stream a video from a specified service."
+}
+{
+    "function_id": "personal_assistant-18",
+    "task": "Take notes or transcribe spoken content."
+}
+{
+    "function_id": "personal_assistant-19",
+    "task": "Read aloud text from an article, book, or webpage."
+}
+{
+    "function_id": "personal_assistant-20",
+    "task": "Provide recommendations for restaurants or entertainment."
+}
+{
+    "function_id": "personal_assistant-21",
+    "task": "Manage and set alarms or timers."
+}
+{
+    "function_id": "personal_assistant-22",
+    "task": "Track physical exercise and provide workout suggestions."
+}
+{
+    "function_id": "personal_assistant-23",
+    "task": "Monitor health metrics like heart rate or sleep quality."
+}
+{
+    "function_id": "personal_assistant-24",
+    "task": "Answer trivia questions or play interactive games."
+}
+{
+    "function_id": "personal_assistant-25",
+    "task": "Provide cooking recipes or instructions."
+}

@@ -1,0 +1,80 @@
+{
+    "function_id": "airbnb-1",
+    "task": "List a new property on Airbnb."
+}
+{
+    "function_id": "airbnb-2",
+    "task": "Update property details like description, amenities, and photos."
+}
+{
+    "function_id": "airbnb-3",
+    "task": "Set or update pricing for the property, including special rates for seasons or events."
+}
+{
+    "function_id": "airbnb-4",
+    "task": "Block off unavailable dates on the calendar for a property."
+}
+{
+    "function_id": "airbnb-5",
+    "task": "Confirm or decline new booking requests."
+}
+{
+    "function_id": "airbnb-6",
+    "task": "Send automated messages to guests, such as welcome messages, check-out instructions, or review reminders."
+}
+{
+    "function_id": "airbnb-7",
+    "task": "Check and respond to guest reviews."
+}
+{
+    "function_id": "airbnb-8",
+    "task": "Generate income and expense reports."
+}
+{
+    "function_id": "airbnb-9",
+    "task": "Automate the process for requesting and collecting payments from guests."
+}
+{
+    "function_id": "airbnb-10",
+    "task": "Manage the security deposit process, including holds and releases."
+}
+{
+    "function_id": "airbnb-11",
+    "task": "Monitor and update property availability across multiple platforms if listed on more than Airbnb."
+}
+{
+    "function_id": "airbnb-12",
+    "task": "Automatically schedule cleaning services after guest check-out."
+}
+{
+    "function_id": "airbnb-13",
+    "task": "Automatically schedule maintenance tasks, like HVAC service or pest control."
+}
+{
+    "function_id": "airbnb-14",
+    "task": "Track and reorder supplies like toiletries, towels, and linens."
+}
+{
+    "function_id": "airbnb-15",
+    "task": "Generate and send invoices for additional services or fees, like late check-out."
+}
+{
+    "function_id": "airbnb-16",
+    "task": "Send alerts for immediate action needed, like urgent maintenance issues or negative reviews."
+}
+{
+    "function_id": "airbnb-17",
+    "task": "Automate check-in and check-out processes, possibly through smart locks or key exchange services."
+}
+{
+    "function_id": "airbnb-18",
+    "task": "Monitor local events and adjust pricing or promotions accordingly."
+}
+{
+    "function_id": "airbnb-19",
+    "task": "Automate the collection and payment of local taxes related to short-term rentals."
+}
+{
+    "function_id": "airbnb-20",
+    "task": "Monitor guest behavior through home security systems, respecting privacy laws and regulations."
+}

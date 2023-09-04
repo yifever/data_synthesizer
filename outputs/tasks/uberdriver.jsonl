@@ -1,0 +1,80 @@
+{
+    "function_id": "uber-driver-1",
+    "task": "Accept a new ride request."
+}
+{
+    "function_id": "uber-driver-2",
+    "task": "Decline a new ride request."
+}
+{
+    "function_id": "uber-driver-3",
+    "task": "Start navigation to the pickup location."
+}
+{
+    "function_id": "uber-driver-4",
+    "task": "Notify passenger upon arrival at the pickup location."
+}
+{
+    "function_id": "uber-driver-5",
+    "task": "Start the ride after picking up the passenger."
+}
+{
+    "function_id": "uber-driver-6",
+    "task": "End the ride upon arrival at the destination."
+}
+{
+    "function_id": "uber-driver-7",
+    "task": "Rate the passenger."
+}
+{
+    "function_id": "uber-driver-8",
+    "task": "Retrieve estimated earnings for the day or week."
+}
+{
+    "function_id": "uber-driver-9",
+    "task": "View the ride history for the day."
+}
+{
+    "function_id": "uber-driver-10",
+    "task": "Send a message or call the passenger through the app."
+}
+{
+    "function_id": "uber-driver-11",
+    "task": "Update driver profile details, such as photo or vehicle information."
+}
+{
+    "function_id": "uber-driver-12",
+    "task": "Switch to or from 'Delivery Mode' for Uber Eats."
+}
+{
+    "function_id": "uber-driver-13",
+    "task": "Withdraw earnings to a linked bank account."
+}
+{
+    "function_id": "uber-driver-14",
+    "task": "Review and dispute fare adjustments."
+}
+{
+    "function_id": "uber-driver-15",
+    "task": "Enable or disable notifications for new ride requests."
+}
+{
+    "function_id": "uber-driver-16",
+    "task": "Report an issue or incident related to a ride."
+}
+{
+    "function_id": "uber-driver-17",
+    "task": "Review driver ratings and feedback received."
+}
+{
+    "function_id": "uber-driver-18",
+    "task": "Check the status of a background check or document verification."
+}
+{
+    "function_id": "uber-driver-19",
+    "task": "Schedule or modify a vehicle inspection appointment."
+}
+{
+    "function_id": "uber-driver-20",
+    "task": "Enable or disable receiving ride requests in specific categories (e.g., UberXL, UberPool)."
+}

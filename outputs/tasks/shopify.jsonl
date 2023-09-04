@@ -1,0 +1,104 @@
+{
+    "function_id": "shopify-1",
+    "task": "Create a new product listing with details such as title, description, and price."
+}
+{
+    "function_id": "shopify-2",
+    "task": "Update an existing product listing including details like price, inventory, and tags."
+}
+{
+    "function_id": "shopify-3",
+    "task": "Delete a product listing from the store."
+}
+{
+    "function_id": "shopify-4",
+    "task": "Create collections to categorize products."
+}
+{
+    "function_id": "shopify-5",
+    "task": "Add or remove products from existing collections."
+}
+{
+    "function_id": "shopify-6",
+    "task": "Update the storefront theme settings."
+}
+{
+    "function_id": "shopify-7",
+    "task": "Process and fulfill orders, marking them as completed."
+}
+{
+    "function_id": "shopify-8",
+    "task": "Generate and print shipping labels for fulfilled orders."
+}
+{
+    "function_id": "shopify-9",
+    "task": "Create discount codes for sales and promotions."
+}
+{
+    "function_id": "shopify-10",
+    "task": "Track and update the inventory levels of products."
+}
+{
+    "function_id": "shopify-11",
+    "task": "Import or export products and customer data in bulk."
+}
+{
+    "function_id": "shopify-12",
+    "task": "Manage customer accounts, including creation, update, and deletion."
+}
+{
+    "function_id": "shopify-13",
+    "task": "View and analyze sales reports for performance insights."
+}
+{
+    "function_id": "shopify-14",
+    "task": "Automatically calculate taxes for different regions."
+}
+{
+    "function_id": "shopify-15",
+    "task": "Manage and update store blog posts."
+}
+{
+    "function_id": "shopify-16",
+    "task": "Add or update product reviews and ratings."
+}
+{
+    "function_id": "shopify-17",
+    "task": "Manage the customer wishlist functionality."
+}
+{
+    "function_id": "shopify-18",
+    "task": "Set and manage staff roles and permissions."
+}
+{
+    "function_id": "shopify-19",
+    "task": "Handle returns and refunds for orders."
+}
+{
+    "function_id": "shopify-20",
+    "task": "Integrate third-party payment gateways or update existing ones."
+}
+{
+    "function_id": "shopify-21",
+    "task": "Schedule and manage flash sales or special events."
+}
+{
+    "function_id": "shopify-22",
+    "task": "Set up and manage subscription-based products."
+}
+{
+    "function_id": "shopify-23",
+    "task": "Send automated emails for abandoned cart recovery."
+}
+{
+    "function_id": "shopify-24",
+    "task": "Integrate with social media platforms for product listing and advertising."
+}
+{
+    "function_id": "shopify-25",
+    "task": "Manage SEO settings including meta descriptions and URL structures."
+}
+{
+    "function_id": "shopify-26",
+    "task": "Run and manage affiliate programs."
+}
