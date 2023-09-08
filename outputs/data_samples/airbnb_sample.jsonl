@@ -1,0 +1,1367 @@
+{
+    "function_id": "airbnb-1",
+    "task": "List a new property on Airbnb.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "List a new property on Airbnb."
+    },
+    "snippet": "def list_property_on_airbnb(\n    property_details: Dict[str, str],\n    host_details: Dict[str, str],\n    availability_dates: List[str]\n) -> Dict[str, str]:\n    \"\"\"\n    Lists a new property on Airbnb and returns a status message.\n    \n    Parameters:\n        property_details (Dict[str, str]): A dictionary containing property details.\n                                           Keys should include 'name', 'location', 'type', 'price'.\n        \n        host_details (Dict[str, str]): A dictionary containing host details.\n                                        Keys should include 'name', 'contact', 'address'.\n\n        availability_dates (List[str]): A list of available dates in YYYY-MM-DD format.\n    \n    Returns:\n        Dict[str, str]: A dictionary with a 'status_message' key and a status message as a value.\n    \"\"\"\n",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def list_property_on_airbnb(\n    property_details: Dict[str, str],\n    host_details: Dict[str, str],\n    availability_dates: List[str]\n) -> Dict[str, str]:\n    \"\"\"\n    Lists a new property on Airbnb and returns a status message.\n    \n    Parameters:\n        property_details (Dict[str, str]): A dictionary containing property details.\n                                           Keys should include 'name', 'location', 'type', 'price'.\n        \n        host_details (Dict[str, str]): A dictionary containing host details.\n                                        Keys should include 'name', 'contact', 'address'.\n\n        availability_dates (List[str]): A list of available dates in YYYY-MM-DD format.\n    \n    Returns:\n        Dict[str, str]: A dictionary with a 'status_message' key and a status message as a value.\n    \"\"\"\n",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "list_property_on_airbnb",
+            "description": "Lists a new property on Airbnb and returns a status message.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "property_details": {
+                        "type": "object",
+                        "description": "A dictionary containing property details. Keys should include 'name', 'location', 'type', 'price'.",
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "location": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            },
+                            "price": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "name",
+                            "location",
+                            "type",
+                            "price"
+                        ]
+                    },
+                    "host_details": {
+                        "type": "object",
+                        "description": "A dictionary containing host details. Keys should include 'name', 'contact', 'address'.",
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "contact": {
+                                "type": "string"
+                            },
+                            "address": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "name",
+                            "contact",
+                            "address"
+                        ]
+                    },
+                    "availability_dates": {
+                        "type": "array",
+                        "description": "A list of available dates in YYYY-MM-DD format.",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "required": [
+                    "property_details",
+                    "host_details",
+                    "availability_dates"
+                ]
+            },
+            "returns": {
+                "type": "object",
+                "properties": {
+                    "status_message": {
+                        "type": "string",
+                        "description": "A status message on the property listing."
+                    }
+                }
+            }
+        }
+    },
+    "sample_metadata": {
+        "TEMPLATE": "\nBelow is the description of a function:\n    \"function_description\":\n    {FUNCTION_DESCRIPTION}\n\n\nA user is asking an assisstant a request that would eventually call the function, can you write that conversation for me.\nReturn the output as this example:\n    {{\n        \"conversation\": {PROMPT_EXAMPLE},\n        \"function_call\": {CALL_EXAMPLE}\n    }}\n",
+        "FUNCTION_DESCRIPTION": "{'function_description': {'name': 'list_property_on_airbnb', 'description': 'Lists a new property on Airbnb and returns a status message.', 'parameters': {'type': 'object', 'properties': {'property_details': {'type': 'object', 'description': \"A dictionary containing property details. Keys should include 'name', 'location', 'type', 'price'.\", 'properties': {'name': {'type': 'string'}, 'location': {'type': 'string'}, 'type': {'type': 'string'}, 'price': {'type': 'string'}}, 'required': ['name', 'location', 'type', 'price']}, 'host_details': {'type': 'object', 'description': \"A dictionary containing host details. Keys should include 'name', 'contact', 'address'.\", 'properties': {'name': {'type': 'string'}, 'contact': {'type': 'string'}, 'address': {'type': 'string'}}, 'required': ['name', 'contact', 'address']}, 'availability_dates': {'type': 'array', 'description': 'A list of available dates in YYYY-MM-DD format.', 'items': {'type': 'string'}}}, 'required': ['property_details', 'host_details', 'availability_dates']}, 'returns': {'type': 'object', 'properties': {'status_message': {'type': 'string', 'description': 'A status message on the property listing.'}}}}}",
+        "PROMPT_EXAMPLE": "\n[\n    {\n        \"role\": \"user\",\n        \"text\": \"Hey, can you show me my Twitter timeline?\"\n    },\n    {\n        \"role\": \"assistant\",\n        \"text\": \"Sure, I can do that. May I know your Twitter user ID?\"\n    },\n    {\n        \"role\": \"user\",\n        \"text\": \"Yes, my Twitter user ID is '13579'.\"\n    },\n    {\n        \"role\": \"assistant\",\n        \"text\": \"Great, I'm retrieving your Twitter timeline now.\"\n    }\n]\n",
+        "FUNCTION_EXAMPLE": "\n\"function_description\": {\n    \"name\": \"example_function\",\n    \"description\": \"Retrieves a user's timeline, including tweets, retweets, and replies.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"user_id\": {\n                \"type\": \"string\",\n                \"description\": \"The ID of the user.\"\n            }\n        },\n        \"required\": [\"user_id\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"tweet_id\": {\"type\": \"string\"},\n            \"text\": {\"type\": \"string\"},\n            \"author\": {\"type\": \"string\"},\n            \"date\": {\"type\": \"string\"}\n        }\n    }\n}\n",
+        "CALL_EXAMPLE": "\n{\n    \"function_name\": \"example_function\",\n    \"parameters\": {\n        \"user_id\": \"13579\"\n    }\n}\n"
+    },
+    "sample": {
+        "conversation": [
+            {
+                "role": "user",
+                "text": "Hey, I want to list my new property on Airbnb. Can you help me with that?"
+            },
+            {
+                "role": "assistant",
+                "text": "Sure, I can help with that. May I know the details of the property you want to list?"
+            },
+            {
+                "role": "user",
+                "text": "Yes, the name is 'Cozy apartment', location is 'Downtown, NY', it's an 'apartment' type and price is '$200 per night'."
+            },
+            {
+                "role": "assistant",
+                "text": "Great. Now, may I know your details?"
+            },
+            {
+                "role": "user",
+                "text": "Yes, my name is 'John Doe', my contact is 'johndoe@mail.com', and my address is '123, Main St, NY'."
+            },
+            {
+                "role": "assistant",
+                "text": "Thanks for the information. Lastly, could you provide the availability dates for the property?"
+            },
+            {
+                "role": "user",
+                "text": "Sure, the available dates are '2022-08-01', '2022-08-02', '2022-08-03'."
+            },
+            {
+                "role": "assistant",
+                "text": "Thank you. I'm listing your property on Airbnb now."
+            }
+        ],
+        "function_call": {
+            "function_name": "list_property_on_airbnb",
+            "parameters": {
+                "property_details": {
+                    "name": "Cozy apartment",
+                    "location": "Downtown, NY",
+                    "type": "apartment",
+                    "price": "$200 per night"
+                },
+                "host_details": {
+                    "name": "John Doe",
+                    "contact": "johndoe@mail.com",
+                    "address": "123, Main St, NY"
+                },
+                "availability_dates": [
+                    "2022-08-01",
+                    "2022-08-02",
+                    "2022-08-03"
+                ]
+            }
+        }
+    }
+}
+{
+    "function_id": "airbnb-3",
+    "task": "Set or update pricing for the property, including special rates for seasons or events.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Set or update pricing for the property, including special rates for seasons or events."
+    },
+    "snippet": "def update_property_pricing(\n    property_id: str, \n    regular_rate: float, \n    special_rates: Dict[str, float]\n) -> bool:\n    \"\"\"\n    Sets or updates the pricing for the property, including special rates for seasons or events.\n\n    Parameters:\n        property_id (str): The unique identifier for the property.\n        regular_rate (float): The regular daily rate for the property.\n        special_rates (Dict[str, float]): A dictionary containing the special rates. Each key should\n                                          represent the season or event and the value should represent\n                                          the daily rate for that season or event.\n\n    Returns:\n        bool: True if the update was successful, False otherwise.\n    \"\"\"",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def update_property_pricing(\n    property_id: str, \n    regular_rate: float, \n    special_rates: Dict[str, float]\n) -> bool:\n    \"\"\"\n    Sets or updates the pricing for the property, including special rates for seasons or events.\n\n    Parameters:\n        property_id (str): The unique identifier for the property.\n        regular_rate (float): The regular daily rate for the property.\n        special_rates (Dict[str, float]): A dictionary containing the special rates. Each key should\n                                          represent the season or event and the value should represent\n                                          the daily rate for that season or event.\n\n    Returns:\n        bool: True if the update was successful, False otherwise.\n    \"\"\"",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "update_property_pricing",
+            "description": "Sets or updates the pricing for the property, including special rates for seasons or events.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "property_id": {
+                        "type": "string",
+                        "description": "The unique identifier for the property."
+                    },
+                    "regular_rate": {
+                        "type": "float",
+                        "description": "The regular daily rate for the property."
+                    },
+                    "special_rates": {
+                        "type": "object",
+                        "description": "A dictionary containing special rates. Each key should represent the season or event and the value should represent the daily rate for that season or event.",
+                        "additionalProperties": {
+                            "type": "float"
+                        }
+                    }
+                },
+                "required": [
+                    "property_id",
+                    "regular_rate",
+                    "special_rates"
+                ]
+            },
+            "returns": {
+                "type": "object",
+                "properties": {
+                    "Success": {
+                        "type": "boolean",
+                        "description": "True if the update was successful, False otherwise."
+                    }
+                }
+            }
+        }
+    },
+    "sample_metadata": {
+        "TEMPLATE": "\nBelow is the description of a function:\n    \"function_description\":\n    {FUNCTION_DESCRIPTION}\n\n\nA user is asking an assisstant a request that would eventually call the function, can you write that conversation for me.\nReturn the output as this example:\n    {{\n        \"conversation\": {PROMPT_EXAMPLE},\n        \"function_call\": {CALL_EXAMPLE}\n    }}\n",
+        "FUNCTION_DESCRIPTION": "{'function_description': {'name': 'update_property_pricing', 'description': 'Sets or updates the pricing for the property, including special rates for seasons or events.', 'parameters': {'type': 'object', 'properties': {'property_id': {'type': 'string', 'description': 'The unique identifier for the property.'}, 'regular_rate': {'type': 'float', 'description': 'The regular daily rate for the property.'}, 'special_rates': {'type': 'object', 'description': 'A dictionary containing special rates. Each key should represent the season or event and the value should represent the daily rate for that season or event.', 'additionalProperties': {'type': 'float'}}}, 'required': ['property_id', 'regular_rate', 'special_rates']}, 'returns': {'type': 'object', 'properties': {'Success': {'type': 'boolean', 'description': 'True if the update was successful, False otherwise.'}}}}}",
+        "PROMPT_EXAMPLE": "\n[\n    {\n        \"role\": \"user\",\n        \"text\": \"Hey, can you show me my Twitter timeline?\"\n    },\n    {\n        \"role\": \"assistant\",\n        \"text\": \"Sure, I can do that. May I know your Twitter user ID?\"\n    },\n    {\n        \"role\": \"user\",\n        \"text\": \"Yes, my Twitter user ID is '13579'.\"\n    },\n    {\n        \"role\": \"assistant\",\n        \"text\": \"Great, I'm retrieving your Twitter timeline now.\"\n    }\n]\n",
+        "FUNCTION_EXAMPLE": "\n\"function_description\": {\n    \"name\": \"example_function\",\n    \"description\": \"Retrieves a user's timeline, including tweets, retweets, and replies.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"user_id\": {\n                \"type\": \"string\",\n                \"description\": \"The ID of the user.\"\n            }\n        },\n        \"required\": [\"user_id\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"tweet_id\": {\"type\": \"string\"},\n            \"text\": {\"type\": \"string\"},\n            \"author\": {\"type\": \"string\"},\n            \"date\": {\"type\": \"string\"}\n        }\n    }\n}\n",
+        "CALL_EXAMPLE": "\n{\n    \"function_name\": \"example_function\",\n    \"parameters\": {\n        \"user_id\": \"13579\"\n    }\n}\n"
+    },
+    "sample": {
+        "conversation": [
+            {
+                "role": "user",
+                "text": "Hello, I would like to update the pricing for my property."
+            },
+            {
+                "role": "assistant",
+                "text": "Sure, I can assist with that. I would need the property id, regular daily rate and any special rates for events or seasons, if any."
+            },
+            {
+                "role": "user",
+                "text": "Alright, my property id is 'P789', the regular daily rate is 150, and for the summer season, I'm offering a rate of 120."
+            },
+            {
+                "role": "assistant",
+                "text": "Great! I have all the details to update the pricing for the property."
+            }
+        ],
+        "function_call": {
+            "function_name": "update_property_pricing",
+            "parameters": {
+                "property_id": "P789",
+                "regular_rate": 150,
+                "special_rates": {
+                    "summer": 120
+                }
+            }
+        }
+    }
+}
+{
+    "function_id": "airbnb-4",
+    "task": "Block off unavailable dates on the calendar for a property.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Block off unavailable dates on the calendar for a property."
+    },
+    "snippet": "def block_unavailable_dates(\n    property_id: str,\n    unavailable_dates: List[str],\n) -> bool:\n    \"\"\"\n    Blocks off unavailable dates on the calendar for a particular property.\n    \n    Parameters:\n        property_id (str): The identifier of the property.\n        unavailable_dates (List[str]): A list of dates in YYYY-MM-DD format that are unavailable.\n        \n    Returns:\n        bool: Returns True if the operation is successful, False otherwise.\n    \"\"\"\n",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def block_unavailable_dates(\n    property_id: str,\n    unavailable_dates: List[str],\n) -> bool:\n    \"\"\"\n    Blocks off unavailable dates on the calendar for a particular property.\n    \n    Parameters:\n        property_id (str): The identifier of the property.\n        unavailable_dates (List[str]): A list of dates in YYYY-MM-DD format that are unavailable.\n        \n    Returns:\n        bool: Returns True if the operation is successful, False otherwise.\n    \"\"\"\n",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "block_unavailable_dates",
+            "description": "Blocks off unavailable dates on the calendar for a particular property.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "property_id": {
+                        "type": "string",
+                        "description": "The identifier of the property."
+                    },
+                    "unavailable_dates": {
+                        "type": "array",
+                        "description": "A list of dates in YYYY-MM-DD format that are unavailable.",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "required": [
+                    "property_id",
+                    "unavailable_dates"
+                ]
+            },
+            "returns": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "Returns True if the operation is successful, False otherwise."
+                    }
+                }
+            }
+        }
+    },
+    "sample_metadata": {
+        "TEMPLATE": "\nBelow is the description of a function:\n    \"function_description\":\n    {FUNCTION_DESCRIPTION}\n\n\nA user is asking an assisstant a request that would eventually call the function, can you write that conversation for me.\nReturn the output as this example:\n    {{\n        \"conversation\": {PROMPT_EXAMPLE},\n        \"function_call\": {CALL_EXAMPLE}\n    }}\n",
+        "FUNCTION_DESCRIPTION": "{'function_description': {'name': 'block_unavailable_dates', 'description': 'Blocks off unavailable dates on the calendar for a particular property.', 'parameters': {'type': 'object', 'properties': {'property_id': {'type': 'string', 'description': 'The identifier of the property.'}, 'unavailable_dates': {'type': 'array', 'description': 'A list of dates in YYYY-MM-DD format that are unavailable.', 'items': {'type': 'string'}}}, 'required': ['property_id', 'unavailable_dates']}, 'returns': {'type': 'object', 'properties': {'success': {'type': 'boolean', 'description': 'Returns True if the operation is successful, False otherwise.'}}}}}",
+        "PROMPT_EXAMPLE": "\n[\n    {\n        \"role\": \"user\",\n        \"text\": \"Hey, can you show me my Twitter timeline?\"\n    },\n    {\n        \"role\": \"assistant\",\n        \"text\": \"Sure, I can do that. May I know your Twitter user ID?\"\n    },\n    {\n        \"role\": \"user\",\n        \"text\": \"Yes, my Twitter user ID is '13579'.\"\n    },\n    {\n        \"role\": \"assistant\",\n        \"text\": \"Great, I'm retrieving your Twitter timeline now.\"\n    }\n]\n",
+        "FUNCTION_EXAMPLE": "\n\"function_description\": {\n    \"name\": \"example_function\",\n    \"description\": \"Retrieves a user's timeline, including tweets, retweets, and replies.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"user_id\": {\n                \"type\": \"string\",\n                \"description\": \"The ID of the user.\"\n            }\n        },\n        \"required\": [\"user_id\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"tweet_id\": {\"type\": \"string\"},\n            \"text\": {\"type\": \"string\"},\n            \"author\": {\"type\": \"string\"},\n            \"date\": {\"type\": \"string\"}\n        }\n    }\n}\n",
+        "CALL_EXAMPLE": "\n{\n    \"function_name\": \"example_function\",\n    \"parameters\": {\n        \"user_id\": \"13579\"\n    }\n}\n"
+    },
+    "sample": {
+        "conversation": [
+            {
+                "role": "user",
+                "text": "Hey, can you block off some dates on my property's calendar?"
+            },
+            {
+                "role": "assistant",
+                "text": "Sure, I can do that for you. Can I have the property id and the dates you want to block off?"
+            },
+            {
+                "role": "user",
+                "text": "Yes, the property id is 'ABC123' and I want to block off 2022-12-25, 2022-12-26 and 2022-12-31."
+            },
+            {
+                "role": "assistant",
+                "text": "Great, I'm blocking off those dates on your property's calendar now."
+            }
+        ],
+        "function_call": {
+            "function_name": "block_unavailable_dates",
+            "parameters": {
+                "property_id": "ABC123",
+                "unavailable_dates": [
+                    "2022-12-25",
+                    "2022-12-26",
+                    "2022-12-31"
+                ]
+            }
+        }
+    }
+}
+{
+    "function_id": "airbnb-5",
+    "task": "Confirm or decline new booking requests.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Confirm or decline new booking requests."
+    },
+    "snippet": "def handle_booking_request(\n    booking_request: Dict[str, Union[str, int, List[Dict[str, str]]]],\n) -> Dict[str, str]:\n    \"\"\"\n    Confirms or declines new booking requests.\n\n    Parameters:\n        booking_request (Dict): A dictionary containing the new booking request. Should contain the \n                                'num_rooms', 'check_in_date', 'check_out_date' and 'guests' keys.\n\n    Returns:\n        Dict[str, str]: A dictionary with 'booking_status' as key and the status ('Confirmed' or 'Declined') as value.\n    \"\"\"",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def handle_booking_request(\n    booking_request: Dict[str, Union[str, int, List[Dict[str, str]]]],\n) -> Dict[str, str]:\n    \"\"\"\n    Confirms or declines new booking requests.\n\n    Parameters:\n        booking_request (Dict): A dictionary containing the new booking request. Should contain the \n                                'num_rooms', 'check_in_date', 'check_out_date' and 'guests' keys.\n\n    Returns:\n        Dict[str, str]: A dictionary with 'booking_status' as key and the status ('Confirmed' or 'Declined') as value.\n    \"\"\"",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "handle_booking_request",
+            "description": "Confirms or declines new booking requests.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "booking_request": {
+                        "type": "object",
+                        "description": "A dictionary containing the new booking request. Should contain the 'num_rooms', 'check_in_date', 'check_out_date' and 'guests' keys.",
+                        "properties": {
+                            "num_rooms": {
+                                "type": "integer"
+                            },
+                            "check_in_date": {
+                                "type": "string"
+                            },
+                            "check_out_date": {
+                                "type": "string"
+                            },
+                            "guests": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        },
+                        "required": [
+                            "num_rooms",
+                            "check_in_date",
+                            "check_out_date",
+                            "guests"
+                        ]
+                    }
+                },
+                "required": [
+                    "booking_request"
+                ]
+            },
+            "returns": {
+                "type": "object",
+                "properties": {
+                    "booking_status": {
+                        "type": "string",
+                        "description": "A dictionary with 'booking_status' as key and the status ('Confirmed' or 'Declined') as value."
+                    }
+                }
+            }
+        }
+    },
+    "sample_metadata": {
+        "TEMPLATE": "\nBelow is the description of a function:\n    \"function_description\":\n    {FUNCTION_DESCRIPTION}\n\n\nA user is asking an assisstant a request that would eventually call the function, can you write that conversation for me.\nReturn the output as this example:\n    {{\n        \"conversation\": {PROMPT_EXAMPLE},\n        \"function_call\": {CALL_EXAMPLE}\n    }}\n",
+        "FUNCTION_DESCRIPTION": "{'function_description': {'name': 'handle_booking_request', 'description': 'Confirms or declines new booking requests.', 'parameters': {'type': 'object', 'properties': {'booking_request': {'type': 'object', 'description': \"A dictionary containing the new booking request. Should contain the 'num_rooms', 'check_in_date', 'check_out_date' and 'guests' keys.\", 'properties': {'num_rooms': {'type': 'integer'}, 'check_in_date': {'type': 'string'}, 'check_out_date': {'type': 'string'}, 'guests': {'type': 'array', 'items': {'type': 'object', 'properties': {'type': 'string'}}}}, 'required': ['num_rooms', 'check_in_date', 'check_out_date', 'guests']}}, 'required': ['booking_request']}, 'returns': {'type': 'object', 'properties': {'booking_status': {'type': 'string', 'description': \"A dictionary with 'booking_status' as key and the status ('Confirmed' or 'Declined') as value.\"}}}}}",
+        "PROMPT_EXAMPLE": "\n[\n    {\n        \"role\": \"user\",\n        \"text\": \"Hey, can you show me my Twitter timeline?\"\n    },\n    {\n        \"role\": \"assistant\",\n        \"text\": \"Sure, I can do that. May I know your Twitter user ID?\"\n    },\n    {\n        \"role\": \"user\",\n        \"text\": \"Yes, my Twitter user ID is '13579'.\"\n    },\n    {\n        \"role\": \"assistant\",\n        \"text\": \"Great, I'm retrieving your Twitter timeline now.\"\n    }\n]\n",
+        "FUNCTION_EXAMPLE": "\n\"function_description\": {\n    \"name\": \"example_function\",\n    \"description\": \"Retrieves a user's timeline, including tweets, retweets, and replies.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"user_id\": {\n                \"type\": \"string\",\n                \"description\": \"The ID of the user.\"\n            }\n        },\n        \"required\": [\"user_id\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"tweet_id\": {\"type\": \"string\"},\n            \"text\": {\"type\": \"string\"},\n            \"author\": {\"type\": \"string\"},\n            \"date\": {\"type\": \"string\"}\n        }\n    }\n}\n",
+        "CALL_EXAMPLE": "\n{\n    \"function_name\": \"example_function\",\n    \"parameters\": {\n        \"user_id\": \"13579\"\n    }\n}\n"
+    },
+    "sample": {
+        "conversation": [
+            {
+                "role": "user",
+                "text": "Hey, could you assist me with a new booking request?"
+            },
+            {
+                "role": "assistant",
+                "text": "Sure, I can do that. Could you please provide me with the number of rooms, your check-in and check-out dates, and the guest details?"
+            },
+            {
+                "role": "user",
+                "text": "Yes, I need 2 rooms. Our check-in date is 2022-12-10, and check-out date is 2022-12-12. We are 4 guests: 'John', 'Paul', 'George', and 'Ringo'."
+            },
+            {
+                "role": "assistant",
+                "text": "Thanks for the information. I'm handling your booking request now."
+            }
+        ],
+        "function_call": {
+            "function_name": "handle_booking_request",
+            "parameters": {
+                "booking_request": {
+                    "num_rooms": 2,
+                    "check_in_date": "2022-12-10",
+                    "check_out_date": "2022-12-12",
+                    "guests": [
+                        "John",
+                        "Paul",
+                        "George",
+                        "Ringo"
+                    ]
+                }
+            }
+        }
+    }
+}
+{
+    "function_id": "airbnb-6",
+    "task": "Send automated messages to guests, such as welcome messages, check-out instructions, or review reminders.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Send automated messages to guests, such as welcome messages, check-out instructions, or review reminders."
+    },
+    "snippet": "def send_automatic_messages(\n    guest_list: List[Dict[str, str]],\n    message_type: str,\n) -> None:\n    \"\"\"\n    Sends automated messages to guests, such as welcome messages, check-out instructions, or review reminders.\n\n    Parameters:\n        guest_list (List[Dict[str, str]]): A list of dictionaries containing guest details. \n                                           Each dictionary should have 'name' and 'email' keys.\n        message_type (str): The type of message to send. This can be 'welcome', 'check_out', or 'review_reminder'.\n\n    Returns:\n        None\n    \"\"\"",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def send_automatic_messages(\n    guest_list: List[Dict[str, str]],\n    message_type: str,\n) -> None:\n    \"\"\"\n    Sends automated messages to guests, such as welcome messages, check-out instructions, or review reminders.\n\n    Parameters:\n        guest_list (List[Dict[str, str]]): A list of dictionaries containing guest details. \n                                           Each dictionary should have 'name' and 'email' keys.\n        message_type (str): The type of message to send. This can be 'welcome', 'check_out', or 'review_reminder'.\n\n    Returns:\n        None\n    \"\"\"",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "send_automatic_messages",
+            "description": "Sends automated messages to guests, such as welcome messages, check-out instructions, or review reminders.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "guest_list": {
+                        "type": "array",
+                        "description": "A list of dictionaries containing guest details. Each dictionary should have 'name' and 'email' keys.",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "email": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "name",
+                                "email"
+                            ]
+                        }
+                    },
+                    "message_type": {
+                        "type": "string",
+                        "description": "The type of message to send. This can be 'welcome', 'check_out', or 'review_reminder'."
+                    }
+                },
+                "required": [
+                    "guest_list",
+                    "message_type"
+                ]
+            },
+            "returns": {
+                "type": "null",
+                "description": "None"
+            }
+        }
+    },
+    "sample_metadata": {
+        "TEMPLATE": "\nBelow is the description of a function:\n    \"function_description\":\n    {FUNCTION_DESCRIPTION}\n\n\nA user is asking an assisstant a request that would eventually call the function, can you write that conversation for me.\nReturn the output as this example:\n    {{\n        \"conversation\": {PROMPT_EXAMPLE},\n        \"function_call\": {CALL_EXAMPLE}\n    }}\n",
+        "FUNCTION_DESCRIPTION": "{'function_description': {'name': 'send_automatic_messages', 'description': 'Sends automated messages to guests, such as welcome messages, check-out instructions, or review reminders.', 'parameters': {'type': 'object', 'properties': {'guest_list': {'type': 'array', 'description': \"A list of dictionaries containing guest details. Each dictionary should have 'name' and 'email' keys.\", 'items': {'type': 'object', 'properties': {'name': {'type': 'string'}, 'email': {'type': 'string'}}, 'required': ['name', 'email']}}, 'message_type': {'type': 'string', 'description': \"The type of message to send. This can be 'welcome', 'check_out', or 'review_reminder'.\"}}, 'required': ['guest_list', 'message_type']}, 'returns': {'type': 'null', 'description': 'None'}}}",
+        "PROMPT_EXAMPLE": "\n[\n    {\n        \"role\": \"user\",\n        \"text\": \"Hey, can you show me my Twitter timeline?\"\n    },\n    {\n        \"role\": \"assistant\",\n        \"text\": \"Sure, I can do that. May I know your Twitter user ID?\"\n    },\n    {\n        \"role\": \"user\",\n        \"text\": \"Yes, my Twitter user ID is '13579'.\"\n    },\n    {\n        \"role\": \"assistant\",\n        \"text\": \"Great, I'm retrieving your Twitter timeline now.\"\n    }\n]\n",
+        "FUNCTION_EXAMPLE": "\n\"function_description\": {\n    \"name\": \"example_function\",\n    \"description\": \"Retrieves a user's timeline, including tweets, retweets, and replies.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"user_id\": {\n                \"type\": \"string\",\n                \"description\": \"The ID of the user.\"\n            }\n        },\n        \"required\": [\"user_id\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"tweet_id\": {\"type\": \"string\"},\n            \"text\": {\"type\": \"string\"},\n            \"author\": {\"type\": \"string\"},\n            \"date\": {\"type\": \"string\"}\n        }\n    }\n}\n",
+        "CALL_EXAMPLE": "\n{\n    \"function_name\": \"example_function\",\n    \"parameters\": {\n        \"user_id\": \"13579\"\n    }\n}\n"
+    },
+    "sample": {
+        "conversation": [
+            {
+                "role": "user",
+                "text": "Hello, can you help me send automated messages to my guests?"
+            },
+            {
+                "role": "assistant",
+                "text": "Of course! Can you provide me with the list of your guests and what type of message would you like to send? You can choose from 'welcome', 'check_out', or 'review_reminder' messages."
+            },
+            {
+                "role": "user",
+                "text": "Sure. Here are the guest details: [{name: 'John Doe', email: 'johndoe@example.com'}, {name: 'Jane Doe', email: 'janedoe@example.com'}]. And please send the 'welcome' message."
+            },
+            {
+                "role": "assistant",
+                "text": "Got it. I will now send the 'welcome' messages to your guests."
+            }
+        ],
+        "function_call": {
+            "function_name": "send_automatic_messages",
+            "parameters": {
+                "guest_list": [
+                    {
+                        "name": "John Doe",
+                        "email": "johndoe@example.com"
+                    },
+                    {
+                        "name": "Jane Doe",
+                        "email": "janedoe@example.com"
+                    }
+                ],
+                "message_type": "welcome"
+            }
+        }
+    }
+}
+{
+    "function_id": "airbnb-7",
+    "task": "Check and respond to guest reviews.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Check and respond to guest reviews."
+    },
+    "snippet": "def respond_to_guest_reviews(\n    reviews: List[Dict[str, Union[str, int, float]]]\n) -> Dict[str, Union[str, int]]:\n    \"\"\"\n    Checks and responds to guest reviews.\n\n    Parameters:\n        reviews (List[Dict[str, Union[str, int, float]]]): A list of dictionaries containing guest reviews.\n                                                         Each dictionary should have 'guest_name', 'rating',\n                                                         and 'review_content' keys.\n\n    Returns:\n        Dict[str, Union[str, int]]: A dictionary with 'total_reviews', 'average_rating', and 'response_message' keys.\n    \"\"\"\n",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def respond_to_guest_reviews(\n    reviews: List[Dict[str, Union[str, int, float]]]\n) -> Dict[str, Union[str, int]]:\n    \"\"\"\n    Checks and responds to guest reviews.\n\n    Parameters:\n        reviews (List[Dict[str, Union[str, int, float]]]): A list of dictionaries containing guest reviews.\n                                                         Each dictionary should have 'guest_name', 'rating',\n                                                         and 'review_content' keys.\n\n    Returns:\n        Dict[str, Union[str, int]]: A dictionary with 'total_reviews', 'average_rating', and 'response_message' keys.\n    \"\"\"\n",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "respond_to_guest_reviews",
+            "description": "Checks and responds to guest reviews.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "reviews": {
+                        "type": "array",
+                        "description": "A list of dictionaries containing guest reviews. Each dictionary should have 'guest_name', 'rating', and 'review_content' keys.",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "guest_name": {
+                                    "type": "string"
+                                },
+                                "rating": {
+                                    "type": "integer"
+                                },
+                                "review_content": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "guest_name",
+                                "rating",
+                                "review_content"
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "reviews"
+                ]
+            },
+            "returns": {
+                "type": "object",
+                "properties": {
+                    "total_reviews": {
+                        "type": "integer",
+                        "description": "The total number of reviews."
+                    },
+                    "average_rating": {
+                        "type": "float",
+                        "description": "The average rating of the reviews."
+                    },
+                    "response_message": {
+                        "type": "string",
+                        "description": "The response message for the reviews."
+                    }
+                }
+            }
+        }
+    },
+    "sample_metadata": {
+        "TEMPLATE": "\nBelow is the description of a function:\n    \"function_description\":\n    {FUNCTION_DESCRIPTION}\n\n\nA user is asking an assisstant a request that would eventually call the function, can you write that conversation for me.\nReturn the output as this example:\n    {{\n        \"conversation\": {PROMPT_EXAMPLE},\n        \"function_call\": {CALL_EXAMPLE}\n    }}\n",
+        "FUNCTION_DESCRIPTION": "{'function_description': {'name': 'respond_to_guest_reviews', 'description': 'Checks and responds to guest reviews.', 'parameters': {'type': 'object', 'properties': {'reviews': {'type': 'array', 'description': \"A list of dictionaries containing guest reviews. Each dictionary should have 'guest_name', 'rating', and 'review_content' keys.\", 'items': {'type': 'object', 'properties': {'guest_name': {'type': 'string'}, 'rating': {'type': 'integer'}, 'review_content': {'type': 'string'}}, 'required': ['guest_name', 'rating', 'review_content']}}}, 'required': ['reviews']}, 'returns': {'type': 'object', 'properties': {'total_reviews': {'type': 'integer', 'description': 'The total number of reviews.'}, 'average_rating': {'type': 'float', 'description': 'The average rating of the reviews.'}, 'response_message': {'type': 'string', 'description': 'The response message for the reviews.'}}}}}",
+        "PROMPT_EXAMPLE": "\n[\n    {\n        \"role\": \"user\",\n        \"text\": \"Hey, can you show me my Twitter timeline?\"\n    },\n    {\n        \"role\": \"assistant\",\n        \"text\": \"Sure, I can do that. May I know your Twitter user ID?\"\n    },\n    {\n        \"role\": \"user\",\n        \"text\": \"Yes, my Twitter user ID is '13579'.\"\n    },\n    {\n        \"role\": \"assistant\",\n        \"text\": \"Great, I'm retrieving your Twitter timeline now.\"\n    }\n]\n",
+        "FUNCTION_EXAMPLE": "\n\"function_description\": {\n    \"name\": \"example_function\",\n    \"description\": \"Retrieves a user's timeline, including tweets, retweets, and replies.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"user_id\": {\n                \"type\": \"string\",\n                \"description\": \"The ID of the user.\"\n            }\n        },\n        \"required\": [\"user_id\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"tweet_id\": {\"type\": \"string\"},\n            \"text\": {\"type\": \"string\"},\n            \"author\": {\"type\": \"string\"},\n            \"date\": {\"type\": \"string\"}\n        }\n    }\n}\n",
+        "CALL_EXAMPLE": "\n{\n    \"function_name\": \"example_function\",\n    \"parameters\": {\n        \"user_id\": \"13579\"\n    }\n}\n"
+    },
+    "sample": {
+        "conversation": [
+            {
+                "role": "user",
+                "text": "Hey, can you check and respond to my guest reviews?"
+            },
+            {
+                "role": "assistant",
+                "text": "Sure, I can do that. May I know the details of the reviews?"
+            },
+            {
+                "role": "user",
+                "text": "Yes, here are the reviews: [{ 'guest_name': 'John Doe', 'rating': 5, 'review_content': 'Amazing service!' }, { 'guest_name': 'Jane Doe', 'rating': 4, 'review_content': 'Nice place to stay.' }]"
+            },
+            {
+                "role": "assistant",
+                "text": "Great, I'm checking and responding to these reviews now."
+            }
+        ],
+        "function_call": {
+            "function_name": "respond_to_guest_reviews",
+            "parameters": {
+                "reviews": [
+                    {
+                        "guest_name": "John Doe",
+                        "rating": 5,
+                        "review_content": "Amazing service!"
+                    },
+                    {
+                        "guest_name": "Jane Doe",
+                        "rating": 4,
+                        "review_content": "Nice place to stay."
+                    }
+                ]
+            }
+        }
+    }
+}
+{
+    "function_id": "airbnb-8",
+    "task": "Generate income and expense reports.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Generate income and expense reports."
+    },
+    "snippet": "def generate_reports(\n    income_data: List[Dict[str, Union[str, float]]],\n    expense_data: List[Dict[str, Union[str, float]]]\n) -> Dict[str, List[Dict[str, Union[str, float]]]]:\n    \"\"\"\n    Generates income and expense reports.\n\n    Parameters:\n        income_data (List[Dict[str, Union[str, float]]]): A list of dictionaries containing income details.\n                                                           Each dictionary should have 'source', 'amount' and 'date' keys.\n        expense_data (List[Dict[str, Union[str, float]]]): A list of dictionaries containing expense details.\n                                                            Each dictionary should have 'source', 'amount' and 'date' keys.\n\n    Returns:\n        Dict[str, List[Dict[str, Union[str, float]]]]: A dictionary with 'income_report' and 'expense_report' as keys.\n                                                        The values are lists of sorted income and expense data, respectively.\n    \"\"\"",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def generate_reports(\n    income_data: List[Dict[str, Union[str, float]]],\n    expense_data: List[Dict[str, Union[str, float]]]\n) -> Dict[str, List[Dict[str, Union[str, float]]]]:\n    \"\"\"\n    Generates income and expense reports.\n\n    Parameters:\n        income_data (List[Dict[str, Union[str, float]]]): A list of dictionaries containing income details.\n                                                           Each dictionary should have 'source', 'amount' and 'date' keys.\n        expense_data (List[Dict[str, Union[str, float]]]): A list of dictionaries containing expense details.\n                                                            Each dictionary should have 'source', 'amount' and 'date' keys.\n\n    Returns:\n        Dict[str, List[Dict[str, Union[str, float]]]]: A dictionary with 'income_report' and 'expense_report' as keys.\n                                                        The values are lists of sorted income and expense data, respectively.\n    \"\"\"",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "generate_reports",
+            "description": "Generates income and expense reports.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "income_data": {
+                        "type": "array",
+                        "description": "A list of dictionaries containing income details. Each dictionary should have 'source', 'amount' and 'date' keys.",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "source": {
+                                    "type": "string"
+                                },
+                                "amount": {
+                                    "type": "float"
+                                },
+                                "date": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "source",
+                                "amount",
+                                "date"
+                            ]
+                        }
+                    },
+                    "expense_data": {
+                        "type": "array",
+                        "description": "A list of dictionaries containing expense details. Each dictionary should have 'source', 'amount' and 'date' keys.",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "source": {
+                                    "type": "string"
+                                },
+                                "amount": {
+                                    "type": "float"
+                                },
+                                "date": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "source",
+                                "amount",
+                                "date"
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "income_data",
+                    "expense_data"
+                ]
+            },
+            "returns": {
+                "type": "object",
+                "description": "A dictionary with 'income_report' and 'expense_report' as keys. The values are lists of sorted income and expense data, respectively.",
+                "properties": {
+                    "income_report": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "source": {
+                                    "type": "string"
+                                },
+                                "amount": {
+                                    "type": "float"
+                                },
+                                "date": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "source",
+                                "amount",
+                                "date"
+                            ]
+                        }
+                    },
+                    "expense_report": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "source": {
+                                    "type": "string"
+                                },
+                                "amount": {
+                                    "type": "float"
+                                },
+                                "date": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "source",
+                                "amount",
+                                "date"
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "income_report",
+                    "expense_report"
+                ]
+            }
+        }
+    },
+    "sample_metadata": {
+        "TEMPLATE": "\nBelow is the description of a function:\n    \"function_description\":\n    {FUNCTION_DESCRIPTION}\n\n\nA user is asking an assisstant a request that would eventually call the function, can you write that conversation for me.\nReturn the output as this example:\n    {{\n        \"conversation\": {PROMPT_EXAMPLE},\n        \"function_call\": {CALL_EXAMPLE}\n    }}\n",
+        "FUNCTION_DESCRIPTION": "{'function_description': {'name': 'generate_reports', 'description': 'Generates income and expense reports.', 'parameters': {'type': 'object', 'properties': {'income_data': {'type': 'array', 'description': \"A list of dictionaries containing income details. Each dictionary should have 'source', 'amount' and 'date' keys.\", 'items': {'type': 'object', 'properties': {'source': {'type': 'string'}, 'amount': {'type': 'float'}, 'date': {'type': 'string'}}, 'required': ['source', 'amount', 'date']}}, 'expense_data': {'type': 'array', 'description': \"A list of dictionaries containing expense details. Each dictionary should have 'source', 'amount' and 'date' keys.\", 'items': {'type': 'object', 'properties': {'source': {'type': 'string'}, 'amount': {'type': 'float'}, 'date': {'type': 'string'}}, 'required': ['source', 'amount', 'date']}}}, 'required': ['income_data', 'expense_data']}, 'returns': {'type': 'object', 'description': \"A dictionary with 'income_report' and 'expense_report' as keys. The values are lists of sorted income and expense data, respectively.\", 'properties': {'income_report': {'type': 'array', 'items': {'type': 'object', 'properties': {'source': {'type': 'string'}, 'amount': {'type': 'float'}, 'date': {'type': 'string'}}, 'required': ['source', 'amount', 'date']}}, 'expense_report': {'type': 'array', 'items': {'type': 'object', 'properties': {'source': {'type': 'string'}, 'amount': {'type': 'float'}, 'date': {'type': 'string'}}, 'required': ['source', 'amount', 'date']}}}, 'required': ['income_report', 'expense_report']}}}",
+        "PROMPT_EXAMPLE": "\n[\n    {\n        \"role\": \"user\",\n        \"text\": \"Hey, can you show me my Twitter timeline?\"\n    },\n    {\n        \"role\": \"assistant\",\n        \"text\": \"Sure, I can do that. May I know your Twitter user ID?\"\n    },\n    {\n        \"role\": \"user\",\n        \"text\": \"Yes, my Twitter user ID is '13579'.\"\n    },\n    {\n        \"role\": \"assistant\",\n        \"text\": \"Great, I'm retrieving your Twitter timeline now.\"\n    }\n]\n",
+        "FUNCTION_EXAMPLE": "\n\"function_description\": {\n    \"name\": \"example_function\",\n    \"description\": \"Retrieves a user's timeline, including tweets, retweets, and replies.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"user_id\": {\n                \"type\": \"string\",\n                \"description\": \"The ID of the user.\"\n            }\n        },\n        \"required\": [\"user_id\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"tweet_id\": {\"type\": \"string\"},\n            \"text\": {\"type\": \"string\"},\n            \"author\": {\"type\": \"string\"},\n            \"date\": {\"type\": \"string\"}\n        }\n    }\n}\n",
+        "CALL_EXAMPLE": "\n{\n    \"function_name\": \"example_function\",\n    \"parameters\": {\n        \"user_id\": \"13579\"\n    }\n}\n"
+    },
+    "sample": {
+        "conversation": [
+            {
+                "role": "user",
+                "text": "Hey, can you generate a report for my income and expenses?"
+            },
+            {
+                "role": "assistant",
+                "text": "Sure, I can do that. Could you provide me the income and expense data?"
+            },
+            {
+                "role": "user",
+                "text": "Yes, here they are."
+            },
+            {
+                "role": "assistant",
+                "text": "Great, I'm processing your income and expense data now."
+            }
+        ],
+        "function_call": {
+            "function_name": "generate_reports",
+            "parameters": {
+                "income_data": [
+                    {
+                        "source": "Job",
+                        "amount": 5000.0,
+                        "date": "2022-01-01"
+                    }
+                ],
+                "expense_data": [
+                    {
+                        "source": "Groceries",
+                        "amount": 200.0,
+                        "date": "2022-01-01"
+                    }
+                ]
+            }
+        }
+    }
+}
+{
+    "function_id": "airbnb-11",
+    "task": "Monitor and update property availability across multiple platforms if listed on more than Airbnb.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Monitor and update property availability across multiple platforms if listed on more than Airbnb."
+    },
+    "snippet": "def update_property_availability(\n    property_id: str,\n    platform_list: List[str],\n    new_availability: str\n) -> Dict[str, bool]:\n    \"\"\"\n    Updates property availability across multiple platforms.\n\n    Parameters:\n        property_id (str): The ID of the property.\n        platform_list (List[str]): A list of platforms on which the property is listed.\n                                  Each item in the list should be a string representing the platform (e.g., 'Airbnb').\n        new_availability (str): The new availability status of the property.\n        \n    Returns:\n        Dict[str, bool]: A dictionary where each key is a platform from the 'platform_list' and the corresponding value \n                         is a boolean indicating whether the update was successful on that platform.\n    \"\"\"\n    pass",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def update_property_availability(\n    property_id: str,\n    platform_list: List[str],\n    new_availability: str\n) -> Dict[str, bool]:\n    \"\"\"\n    Updates property availability across multiple platforms.\n\n    Parameters:\n        property_id (str): The ID of the property.\n        platform_list (List[str]): A list of platforms on which the property is listed.\n                                  Each item in the list should be a string representing the platform (e.g., 'Airbnb').\n        new_availability (str): The new availability status of the property.\n        \n    Returns:\n        Dict[str, bool]: A dictionary where each key is a platform from the 'platform_list' and the corresponding value \n                         is a boolean indicating whether the update was successful on that platform.\n    \"\"\"\n    pass",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "update_property_availability",
+            "description": "Updates property availability across multiple platforms.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "property_id": {
+                        "type": "string",
+                        "description": "The ID of the property."
+                    },
+                    "platform_list": {
+                        "type": "array",
+                        "description": "A list of platforms on which the property is listed. Each item in the list should be a string representing the platform (e.g., 'Airbnb').",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "new_availability": {
+                        "type": "string",
+                        "description": "The new availability status of the property."
+                    }
+                },
+                "required": [
+                    "property_id",
+                    "platform_list",
+                    "new_availability"
+                ]
+            },
+            "returns": {
+                "type": "object",
+                "description": "A dictionary where each key is a platform from the 'platform_list' and the corresponding value is a boolean indicating whether the update was successful on that platform.",
+                "properties": {
+                    "platform": {
+                        "type": "string"
+                    },
+                    "update_status": {
+                        "type": "boolean",
+                        "description": "Indicates whether the update was successful on the platform."
+                    }
+                }
+            }
+        }
+    },
+    "sample_metadata": {
+        "TEMPLATE": "\nBelow is the description of a function:\n    \"function_description\":\n    {FUNCTION_DESCRIPTION}\n\n\nA user is asking an assisstant a request that would eventually call the function, can you write that conversation for me.\nReturn the output as this example:\n    {{\n        \"conversation\": {PROMPT_EXAMPLE},\n        \"function_call\": {CALL_EXAMPLE}\n    }}\n",
+        "FUNCTION_DESCRIPTION": "{'function_description': {'name': 'update_property_availability', 'description': 'Updates property availability across multiple platforms.', 'parameters': {'type': 'object', 'properties': {'property_id': {'type': 'string', 'description': 'The ID of the property.'}, 'platform_list': {'type': 'array', 'description': \"A list of platforms on which the property is listed. Each item in the list should be a string representing the platform (e.g., 'Airbnb').\", 'items': {'type': 'string'}}, 'new_availability': {'type': 'string', 'description': 'The new availability status of the property.'}}, 'required': ['property_id', 'platform_list', 'new_availability']}, 'returns': {'type': 'object', 'description': \"A dictionary where each key is a platform from the 'platform_list' and the corresponding value is a boolean indicating whether the update was successful on that platform.\", 'properties': {'platform': {'type': 'string'}, 'update_status': {'type': 'boolean', 'description': 'Indicates whether the update was successful on the platform.'}}}}}",
+        "PROMPT_EXAMPLE": "\n[\n    {\n        \"role\": \"user\",\n        \"text\": \"Hey, can you show me my Twitter timeline?\"\n    },\n    {\n        \"role\": \"assistant\",\n        \"text\": \"Sure, I can do that. May I know your Twitter user ID?\"\n    },\n    {\n        \"role\": \"user\",\n        \"text\": \"Yes, my Twitter user ID is '13579'.\"\n    },\n    {\n        \"role\": \"assistant\",\n        \"text\": \"Great, I'm retrieving your Twitter timeline now.\"\n    }\n]\n",
+        "FUNCTION_EXAMPLE": "\n\"function_description\": {\n    \"name\": \"example_function\",\n    \"description\": \"Retrieves a user's timeline, including tweets, retweets, and replies.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"user_id\": {\n                \"type\": \"string\",\n                \"description\": \"The ID of the user.\"\n            }\n        },\n        \"required\": [\"user_id\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"tweet_id\": {\"type\": \"string\"},\n            \"text\": {\"type\": \"string\"},\n            \"author\": {\"type\": \"string\"},\n            \"date\": {\"type\": \"string\"}\n        }\n    }\n}\n",
+        "CALL_EXAMPLE": "\n{\n    \"function_name\": \"example_function\",\n    \"parameters\": {\n        \"user_id\": \"13579\"\n    }\n}\n"
+    },
+    "sample": {
+        "conversation": [
+            {
+                "role": "user",
+                "text": "Hey, I need to change my property's availability."
+            },
+            {
+                "role": "assistant",
+                "text": "Sure, I can help with that. Can you provide me with the property ID?"
+            },
+            {
+                "role": "user",
+                "text": "Yes, the property ID is 'ABC123'."
+            },
+            {
+                "role": "assistant",
+                "text": "Got it. Do you want to update the availability on all platforms or specific ones?"
+            },
+            {
+                "role": "user",
+                "text": "Let's update it on Airbnb and Booking.com for now."
+            },
+            {
+                "role": "assistant",
+                "text": "Sure thing. What should be the new availability status?"
+            },
+            {
+                "role": "user",
+                "text": "The property is now available."
+            },
+            {
+                "role": "assistant",
+                "text": "Great, I'm updating your property availability on Airbnb and Booking.com now."
+            }
+        ],
+        "function_call": {
+            "function_name": "update_property_availability",
+            "parameters": {
+                "property_id": "ABC123",
+                "platform_list": [
+                    "Airbnb",
+                    "Booking.com"
+                ],
+                "new_availability": "available"
+            }
+        }
+    }
+}
+{
+    "function_id": "airbnb-13",
+    "task": "Automatically schedule maintenance tasks, like HVAC service or pest control.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Automatically schedule maintenance tasks, like HVAC service or pest control."
+    },
+    "snippet": "def schedule_maintenance_tasks(\n    task_type: str,\n    frequency: str,\n    start_date: str,\n) -> None:\n    \"\"\"\n    Schedules maintenance tasks such as HVAC service or pest control.\n    \n    Parameters:\n        task_type (str): The type of task to be scheduled, e.g., 'HVAC service' or 'pest control'.\n        frequency (str): The frequency of the task. This could be 'weekly', 'monthly', 'quarterly', etc.\n        start_date (str): The start date of the schedule in YYYY-MM-DD format.\n                          \n    Returns:\n        None: The function returns nothing but schedules the maintenance task.\n    \"\"\"\n",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def schedule_maintenance_tasks(\n    task_type: str,\n    frequency: str,\n    start_date: str,\n) -> None:\n    \"\"\"\n    Schedules maintenance tasks such as HVAC service or pest control.\n    \n    Parameters:\n        task_type (str): The type of task to be scheduled, e.g., 'HVAC service' or 'pest control'.\n        frequency (str): The frequency of the task. This could be 'weekly', 'monthly', 'quarterly', etc.\n        start_date (str): The start date of the schedule in YYYY-MM-DD format.\n                          \n    Returns:\n        None: The function returns nothing but schedules the maintenance task.\n    \"\"\"\n",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "schedule_maintenance_tasks",
+            "description": "Schedules maintenance tasks such as HVAC service or pest control.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "task_type": {
+                        "type": "string",
+                        "description": "The type of task to be scheduled, e.g., 'HVAC service' or 'pest control'."
+                    },
+                    "frequency": {
+                        "type": "string",
+                        "description": "The frequency of the task. This could be 'weekly', 'monthly', 'quarterly', etc."
+                    },
+                    "start_date": {
+                        "type": "string",
+                        "description": "The start date of the schedule in YYYY-MM-DD format."
+                    }
+                },
+                "required": [
+                    "task_type",
+                    "frequency",
+                    "start_date"
+                ]
+            },
+            "returns": {
+                "type": "object",
+                "properties": {
+                    "None": {
+                        "type": "NoneType",
+                        "description": "The function returns nothing but schedules the maintenance task."
+                    }
+                }
+            }
+        }
+    },
+    "sample_metadata": {
+        "TEMPLATE": "\nBelow is the description of a function:\n    \"function_description\":\n    {FUNCTION_DESCRIPTION}\n\n\nA user is asking an assisstant a request that would eventually call the function, can you write that conversation for me.\nReturn the output as this example:\n    {{\n        \"conversation\": {PROMPT_EXAMPLE},\n        \"function_call\": {CALL_EXAMPLE}\n    }}\n",
+        "FUNCTION_DESCRIPTION": "{'function_description': {'name': 'schedule_maintenance_tasks', 'description': 'Schedules maintenance tasks such as HVAC service or pest control.', 'parameters': {'type': 'object', 'properties': {'task_type': {'type': 'string', 'description': \"The type of task to be scheduled, e.g., 'HVAC service' or 'pest control'.\"}, 'frequency': {'type': 'string', 'description': \"The frequency of the task. This could be 'weekly', 'monthly', 'quarterly', etc.\"}, 'start_date': {'type': 'string', 'description': 'The start date of the schedule in YYYY-MM-DD format.'}}, 'required': ['task_type', 'frequency', 'start_date']}, 'returns': {'type': 'object', 'properties': {'None': {'type': 'NoneType', 'description': 'The function returns nothing but schedules the maintenance task.'}}}}}",
+        "PROMPT_EXAMPLE": "\n[\n    {\n        \"role\": \"user\",\n        \"text\": \"Hey, can you show me my Twitter timeline?\"\n    },\n    {\n        \"role\": \"assistant\",\n        \"text\": \"Sure, I can do that. May I know your Twitter user ID?\"\n    },\n    {\n        \"role\": \"user\",\n        \"text\": \"Yes, my Twitter user ID is '13579'.\"\n    },\n    {\n        \"role\": \"assistant\",\n        \"text\": \"Great, I'm retrieving your Twitter timeline now.\"\n    }\n]\n",
+        "FUNCTION_EXAMPLE": "\n\"function_description\": {\n    \"name\": \"example_function\",\n    \"description\": \"Retrieves a user's timeline, including tweets, retweets, and replies.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"user_id\": {\n                \"type\": \"string\",\n                \"description\": \"The ID of the user.\"\n            }\n        },\n        \"required\": [\"user_id\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"tweet_id\": {\"type\": \"string\"},\n            \"text\": {\"type\": \"string\"},\n            \"author\": {\"type\": \"string\"},\n            \"date\": {\"type\": \"string\"}\n        }\n    }\n}\n",
+        "CALL_EXAMPLE": "\n{\n    \"function_name\": \"example_function\",\n    \"parameters\": {\n        \"user_id\": \"13579\"\n    }\n}\n"
+    },
+    "sample": {
+        "conversation": [
+            {
+                "role": "user",
+                "text": "Hey, can you schedule a pest control service for me?"
+            },
+            {
+                "role": "assistant",
+                "text": "Sure, I can do that. Can you tell me how frequently you want this service to be scheduled and the preferred start date?"
+            },
+            {
+                "role": "user",
+                "text": "I want it to be done monthly, starting from 2022-07-01."
+            },
+            {
+                "role": "assistant",
+                "text": "Great, I'm scheduling your pest control service now."
+            }
+        ],
+        "function_call": {
+            "function_name": "schedule_maintenance_tasks",
+            "parameters": {
+                "task_type": "pest control",
+                "frequency": "monthly",
+                "start_date": "2022-07-01"
+            }
+        }
+    }
+}
+{
+    "function_id": "airbnb-14",
+    "task": "Track and reorder supplies like toiletries, towels, and linens.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Track and reorder supplies like toiletries, towels, and linens."
+    },
+    "snippet": "def track_and_reorder_supplies(\n    inventory: Dict[str, int],\n    reorder_threshold: Dict[str, int]\n) -> Dict[str, int]:\n    \"\"\"\n    Tracks and reorders supplies like toiletries, towels, and linens, and returns the reordering amounts.\n\n    Parameters:\n        inventory (Dict[str, int]): A dictionary with keys being the item name (str) and values being the current \n                                    stock quantity (int). \n\n        reorder_threshold (Dict[str, int]): A dictionary with keys being the item name (str) and values \n                                            being the threshold quantity (int). When the stock of an item falls \n                                            below this, it needs to be reordered.\n\n    Returns:\n        Dict[str, int]: A dictionary with keys being the item name (str) and values being the quantity \n                        that needs to be reordered (int). If no reordering is needed, the dictionary will be empty.\n    \"\"\"\n    pass",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def track_and_reorder_supplies(\n    inventory: Dict[str, int],\n    reorder_threshold: Dict[str, int]\n) -> Dict[str, int]:\n    \"\"\"\n    Tracks and reorders supplies like toiletries, towels, and linens, and returns the reordering amounts.\n\n    Parameters:\n        inventory (Dict[str, int]): A dictionary with keys being the item name (str) and values being the current \n                                    stock quantity (int). \n\n        reorder_threshold (Dict[str, int]): A dictionary with keys being the item name (str) and values \n                                            being the threshold quantity (int). When the stock of an item falls \n                                            below this, it needs to be reordered.\n\n    Returns:\n        Dict[str, int]: A dictionary with keys being the item name (str) and values being the quantity \n                        that needs to be reordered (int). If no reordering is needed, the dictionary will be empty.\n    \"\"\"\n    pass",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "track_and_reorder_supplies",
+            "description": "Tracks and reorders supplies like toiletries, towels, and linens, and returns the reordering amounts.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "inventory": {
+                        "type": "object",
+                        "description": "A dictionary with keys being the item name (str) and values being the current stock quantity (int)."
+                    },
+                    "reorder_threshold": {
+                        "type": "object",
+                        "description": "A dictionary with keys being the item name (str) and values being the threshold quantity (int). When the stock of an item falls below this, it needs to be reordered."
+                    }
+                },
+                "required": [
+                    "inventory",
+                    "reorder_threshold"
+                ]
+            },
+            "returns": {
+                "type": "object",
+                "properties": {
+                    "reorder_amounts": {
+                        "type": "object",
+                        "description": "A dictionary with keys being the item name (str) and values being the quantity that needs to be reordered (int). If no reordering is needed, the dictionary will be empty."
+                    }
+                }
+            }
+        }
+    },
+    "sample_metadata": {
+        "TEMPLATE": "\nBelow is the description of a function:\n    \"function_description\":\n    {FUNCTION_DESCRIPTION}\n\n\nA user is asking an assisstant a request that would eventually call the function, can you write that conversation for me.\nReturn the output as this example:\n    {{\n        \"conversation\": {PROMPT_EXAMPLE},\n        \"function_call\": {CALL_EXAMPLE}\n    }}\n",
+        "FUNCTION_DESCRIPTION": "{'function_description': {'name': 'track_and_reorder_supplies', 'description': 'Tracks and reorders supplies like toiletries, towels, and linens, and returns the reordering amounts.', 'parameters': {'type': 'object', 'properties': {'inventory': {'type': 'object', 'description': 'A dictionary with keys being the item name (str) and values being the current stock quantity (int).'}, 'reorder_threshold': {'type': 'object', 'description': 'A dictionary with keys being the item name (str) and values being the threshold quantity (int). When the stock of an item falls below this, it needs to be reordered.'}}, 'required': ['inventory', 'reorder_threshold']}, 'returns': {'type': 'object', 'properties': {'reorder_amounts': {'type': 'object', 'description': 'A dictionary with keys being the item name (str) and values being the quantity that needs to be reordered (int). If no reordering is needed, the dictionary will be empty.'}}}}}",
+        "PROMPT_EXAMPLE": "\n[\n    {\n        \"role\": \"user\",\n        \"text\": \"Hey, can you show me my Twitter timeline?\"\n    },\n    {\n        \"role\": \"assistant\",\n        \"text\": \"Sure, I can do that. May I know your Twitter user ID?\"\n    },\n    {\n        \"role\": \"user\",\n        \"text\": \"Yes, my Twitter user ID is '13579'.\"\n    },\n    {\n        \"role\": \"assistant\",\n        \"text\": \"Great, I'm retrieving your Twitter timeline now.\"\n    }\n]\n",
+        "FUNCTION_EXAMPLE": "\n\"function_description\": {\n    \"name\": \"example_function\",\n    \"description\": \"Retrieves a user's timeline, including tweets, retweets, and replies.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"user_id\": {\n                \"type\": \"string\",\n                \"description\": \"The ID of the user.\"\n            }\n        },\n        \"required\": [\"user_id\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"tweet_id\": {\"type\": \"string\"},\n            \"text\": {\"type\": \"string\"},\n            \"author\": {\"type\": \"string\"},\n            \"date\": {\"type\": \"string\"}\n        }\n    }\n}\n",
+        "CALL_EXAMPLE": "\n{\n    \"function_name\": \"example_function\",\n    \"parameters\": {\n        \"user_id\": \"13579\"\n    }\n}\n"
+    },
+    "sample": {
+        "conversation": [
+            {
+                "role": "user",
+                "text": "Hey, Can you check if we need to reorder any supplies?"
+            },
+            {
+                "role": "assistant",
+                "text": "Sure, I can do that. Could you provide the current inventory and the reorder thresholds for each item?"
+            },
+            {
+                "role": "user",
+                "text": "Yes, the current inventory has 10 toiletries, 20 towels, and 15 linens. The reorder thresholds are 5 toiletries, 10 towels, and 10 linens."
+            },
+            {
+                "role": "assistant",
+                "text": "Okay, I'm checking if any items need reordering now."
+            }
+        ],
+        "function_call": {
+            "function_name": "track_and_reorder_supplies",
+            "parameters": {
+                "inventory": {
+                    "toiletries": 10,
+                    "towels": 20,
+                    "linens": 15
+                },
+                "reorder_threshold": {
+                    "toiletries": 5,
+                    "towels": 10,
+                    "linens": 10
+                }
+            }
+        }
+    }
+}
+{
+    "function_id": "airbnb-18",
+    "task": "Monitor local events and adjust pricing or promotions accordingly.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Monitor local events and adjust pricing or promotions accordingly."
+    },
+    "snippet": "def monitor_and_adjust(\n    local_events: Dict[str, Union[str, float]],\n    current_pricing: Dict[str, float]\n) -> Dict[str, float]:\n    \"\"\"\n    Monitors local events and adjusts pricing or promotions accordingly.\n    \n    Parameters:\n        local_events (Dict[str, Union[str, float]]): A dictionary with event details. Each key is the event name \n                                                     and each value could be the expected event's influence on pricing,\n                                                     in percentages or other format.\n        current_pricing (Dict[str, float]): A dictionary of current pricing or promotions. \n                                            Each key is the item id/name and each value is the current price value.\n                                            \n    Returns:\n        Dict[str, float]: A dictionary with updated pricing. Each key is the item id/name and \n                          each value is the revised price after considering local events.\n    \"\"\"\n    pass",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def monitor_and_adjust(\n    local_events: Dict[str, Union[str, float]],\n    current_pricing: Dict[str, float]\n) -> Dict[str, float]:\n    \"\"\"\n    Monitors local events and adjusts pricing or promotions accordingly.\n    \n    Parameters:\n        local_events (Dict[str, Union[str, float]]): A dictionary with event details. Each key is the event name \n                                                     and each value could be the expected event's influence on pricing,\n                                                     in percentages or other format.\n        current_pricing (Dict[str, float]): A dictionary of current pricing or promotions. \n                                            Each key is the item id/name and each value is the current price value.\n                                            \n    Returns:\n        Dict[str, float]: A dictionary with updated pricing. Each key is the item id/name and \n                          each value is the revised price after considering local events.\n    \"\"\"\n    pass",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "monitor_and_adjust",
+            "description": "Monitors local events and adjusts pricing or promotions accordingly.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "local_events": {
+                        "type": "object",
+                        "description": "A dictionary with event details. Each key is the event name and each value could be the expected event's influence on pricing, in percentages or other format."
+                    },
+                    "current_pricing": {
+                        "type": "object",
+                        "description": "A dictionary of current pricing or promotions. Each key is the item id/name and each value is the current price value."
+                    }
+                },
+                "required": [
+                    "local_events",
+                    "current_pricing"
+                ]
+            },
+            "returns": {
+                "type": "object",
+                "description": "A dictionary with updated pricing. Each key is the item id/name and each value is the revised price after considering local events.",
+                "properties": {
+                    "updated_pricing": {
+                        "type": "object",
+                        "description": "A dictionary of the updated prices after considering the local events. Each key is the item id/name and each value is the revised price."
+                    }
+                }
+            }
+        }
+    },
+    "sample_metadata": {
+        "TEMPLATE": "\nBelow is the description of a function:\n    \"function_description\":\n    {FUNCTION_DESCRIPTION}\n\n\nA user is asking an assisstant a request that would eventually call the function, can you write that conversation for me.\nReturn the output as this example:\n    {{\n        \"conversation\": {PROMPT_EXAMPLE},\n        \"function_call\": {CALL_EXAMPLE}\n    }}\n",
+        "FUNCTION_DESCRIPTION": "{'function_description': {'name': 'monitor_and_adjust', 'description': 'Monitors local events and adjusts pricing or promotions accordingly.', 'parameters': {'type': 'object', 'properties': {'local_events': {'type': 'object', 'description': \"A dictionary with event details. Each key is the event name and each value could be the expected event's influence on pricing, in percentages or other format.\"}, 'current_pricing': {'type': 'object', 'description': 'A dictionary of current pricing or promotions. Each key is the item id/name and each value is the current price value.'}}, 'required': ['local_events', 'current_pricing']}, 'returns': {'type': 'object', 'description': 'A dictionary with updated pricing. Each key is the item id/name and each value is the revised price after considering local events.', 'properties': {'updated_pricing': {'type': 'object', 'description': 'A dictionary of the updated prices after considering the local events. Each key is the item id/name and each value is the revised price.'}}}}}",
+        "PROMPT_EXAMPLE": "\n[\n    {\n        \"role\": \"user\",\n        \"text\": \"Hey, can you show me my Twitter timeline?\"\n    },\n    {\n        \"role\": \"assistant\",\n        \"text\": \"Sure, I can do that. May I know your Twitter user ID?\"\n    },\n    {\n        \"role\": \"user\",\n        \"text\": \"Yes, my Twitter user ID is '13579'.\"\n    },\n    {\n        \"role\": \"assistant\",\n        \"text\": \"Great, I'm retrieving your Twitter timeline now.\"\n    }\n]\n",
+        "FUNCTION_EXAMPLE": "\n\"function_description\": {\n    \"name\": \"example_function\",\n    \"description\": \"Retrieves a user's timeline, including tweets, retweets, and replies.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"user_id\": {\n                \"type\": \"string\",\n                \"description\": \"The ID of the user.\"\n            }\n        },\n        \"required\": [\"user_id\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"tweet_id\": {\"type\": \"string\"},\n            \"text\": {\"type\": \"string\"},\n            \"author\": {\"type\": \"string\"},\n            \"date\": {\"type\": \"string\"}\n        }\n    }\n}\n",
+        "CALL_EXAMPLE": "\n{\n    \"function_name\": \"example_function\",\n    \"parameters\": {\n        \"user_id\": \"13579\"\n    }\n}\n"
+    },
+    "sample": {
+        "conversation": [
+            {
+                "role": "user",
+                "text": "Hey, can you monitor local events and adjust product prices for me?"
+            },
+            {
+                "role": "assistant",
+                "text": "Sure, I can help with that. Could you provide me with the current pricing and details for local events?"
+            },
+            {
+                "role": "user",
+                "text": "Yes, for local events here's the data: {'Music Festival': '+10%', 'Sports Game': '-5%'} and current pricing is: {'Product1': 100, 'Product2': 200}"
+            },
+            {
+                "role": "assistant",
+                "text": "Great, I'm now monitoring the local events and adjusting pricing for you."
+            }
+        ],
+        "function_call": {
+            "function_name": "monitor_and_adjust",
+            "parameters": {
+                "local_events": {
+                    "Music Festival": "+10%",
+                    "Sports Game": "-5%"
+                },
+                "current_pricing": {
+                    "Product1": 100,
+                    "Product2": 200
+                }
+            }
+        }
+    }
+}
+{
+    "function_id": "airbnb-19",
+    "task": "Automate the collection and payment of local taxes related to short-term rentals.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Automate the collection and payment of local taxes related to short-term rentals."
+    },
+    "snippet": "def automate_tax_collection(\n    rental_properties: List[Dict[str, Union[str, float, date]]],\n    tax_rules: Dict[str, float]\n) -> Dict[str, float]:\n    \"\"\"\n    Automates the collection and payment of local taxes related to short-term rentals.\n    \n    Parameters:\n        rental_properties (List[Dict[str, Union[str, float, date]]]): A list of dictionaries containing property details.\n                                Each dictionary should have 'property_id', 'rental_date', and 'rental_amount' keys.\n        tax_rules (Dict[str, float]): A dictionary that holds the current tax rules.\n                                  Each key should be a rule identifier and each value the tax rate.\n                                  \n    Returns:\n        Dict[str, float]: A dictionary with 'property_id' as a key and the total tax as a value.\n    \"\"\"\n    pass",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def automate_tax_collection(\n    rental_properties: List[Dict[str, Union[str, float, date]]],\n    tax_rules: Dict[str, float]\n) -> Dict[str, float]:\n    \"\"\"\n    Automates the collection and payment of local taxes related to short-term rentals.\n    \n    Parameters:\n        rental_properties (List[Dict[str, Union[str, float, date]]]): A list of dictionaries containing property details.\n                                Each dictionary should have 'property_id', 'rental_date', and 'rental_amount' keys.\n        tax_rules (Dict[str, float]): A dictionary that holds the current tax rules.\n                                  Each key should be a rule identifier and each value the tax rate.\n                                  \n    Returns:\n        Dict[str, float]: A dictionary with 'property_id' as a key and the total tax as a value.\n    \"\"\"\n    pass",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "automate_tax_collection",
+            "description": "Automates the collection and payment of local taxes related to short-term rentals.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "rental_properties": {
+                        "type": "array",
+                        "description": "A list of dictionaries containing property details. Each dictionary should have 'property_id', 'rental_date', and 'rental_amount' keys.",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "property_id": {
+                                    "type": "string"
+                                },
+                                "rental_date": {
+                                    "type": "string",
+                                    "description": "The rental date in YYYY-MM-DD format."
+                                },
+                                "rental_amount": {
+                                    "type": "float"
+                                }
+                            },
+                            "required": [
+                                "property_id",
+                                "rental_date",
+                                "rental_amount"
+                            ]
+                        }
+                    },
+                    "tax_rules": {
+                        "type": "object",
+                        "description": "A dictionary that holds the current tax rules. Each key should be a rule identifier and each value the tax rate.",
+                        "additionalProperties": {
+                            "type": "float"
+                        }
+                    }
+                },
+                "required": [
+                    "rental_properties",
+                    "tax_rules"
+                ]
+            },
+            "returns": {
+                "type": "object",
+                "properties": {
+                    "tax_collection": {
+                        "type": "object",
+                        "description": "A dictionary with 'property_id' as a key and the total tax as a value.",
+                        "additionalProperties": {
+                            "type": "float"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "sample_metadata": {
+        "TEMPLATE": "\nBelow is the description of a function:\n    \"function_description\":\n    {FUNCTION_DESCRIPTION}\n\n\nA user is asking an assisstant a request that would eventually call the function, can you write that conversation for me.\nReturn the output as this example:\n    {{\n        \"conversation\": {PROMPT_EXAMPLE},\n        \"function_call\": {CALL_EXAMPLE}\n    }}\n",
+        "FUNCTION_DESCRIPTION": "{'function_description': {'name': 'automate_tax_collection', 'description': 'Automates the collection and payment of local taxes related to short-term rentals.', 'parameters': {'type': 'object', 'properties': {'rental_properties': {'type': 'array', 'description': \"A list of dictionaries containing property details. Each dictionary should have 'property_id', 'rental_date', and 'rental_amount' keys.\", 'items': {'type': 'object', 'properties': {'property_id': {'type': 'string'}, 'rental_date': {'type': 'string', 'description': 'The rental date in YYYY-MM-DD format.'}, 'rental_amount': {'type': 'float'}}, 'required': ['property_id', 'rental_date', 'rental_amount']}}, 'tax_rules': {'type': 'object', 'description': 'A dictionary that holds the current tax rules. Each key should be a rule identifier and each value the tax rate.', 'additionalProperties': {'type': 'float'}}}, 'required': ['rental_properties', 'tax_rules']}, 'returns': {'type': 'object', 'properties': {'tax_collection': {'type': 'object', 'description': \"A dictionary with 'property_id' as a key and the total tax as a value.\", 'additionalProperties': {'type': 'float'}}}}}}",
+        "PROMPT_EXAMPLE": "\n[\n    {\n        \"role\": \"user\",\n        \"text\": \"Hey, can you show me my Twitter timeline?\"\n    },\n    {\n        \"role\": \"assistant\",\n        \"text\": \"Sure, I can do that. May I know your Twitter user ID?\"\n    },\n    {\n        \"role\": \"user\",\n        \"text\": \"Yes, my Twitter user ID is '13579'.\"\n    },\n    {\n        \"role\": \"assistant\",\n        \"text\": \"Great, I'm retrieving your Twitter timeline now.\"\n    }\n]\n",
+        "FUNCTION_EXAMPLE": "\n\"function_description\": {\n    \"name\": \"example_function\",\n    \"description\": \"Retrieves a user's timeline, including tweets, retweets, and replies.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"user_id\": {\n                \"type\": \"string\",\n                \"description\": \"The ID of the user.\"\n            }\n        },\n        \"required\": [\"user_id\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"tweet_id\": {\"type\": \"string\"},\n            \"text\": {\"type\": \"string\"},\n            \"author\": {\"type\": \"string\"},\n            \"date\": {\"type\": \"string\"}\n        }\n    }\n}\n",
+        "CALL_EXAMPLE": "\n{\n    \"function_name\": \"example_function\",\n    \"parameters\": {\n        \"user_id\": \"13579\"\n    }\n}\n"
+    },
+    "sample": "{\n    \"conversation\": \n[\n    {\n        \"role\": \"user\",\n        \"text\": \"Hello, can you help me automate my tax collection for my rental properties?\"\n    },\n    {\n        \"role\": \"assistant\",\n        \"text\": \"Of course, I can assist with that. Could you please provide me the details of your rental properties? I will need a list of dictionaries each containing 'property_id', 'rental_date', and 'rental_amount'.\"\n    },\n    {\n        \"role\": \"user\",\n        \"text\": \"Sure, here they are [{'property_id': '001', 'rental_date':'2022-01-01', 'rental_amount': 1200.0}, {'property_id': '002', 'rental_date':'2022-01-15', 'rental_amount': 1500.0}]\"\n    },\n    {\n        \"role\": \"assistant\",\n        \"text\": \"Thank you for the details. Now, could you please provide me the tax rules? It should be a dictionary with each key as a rule identifier and each value as the tax rate.\"\n    },\n    {\n        \"role\": \"user\",\n        \"text\": \"Here are the rules {'rule1': 0.15, 'rule2': 0.05}\"\n    },\n    {\n        \"role\": \"assistant\",\n        \"text\": \"Great, I'm now automating your tax collection.\"\n    }\n],\n    \"function_call\": \n{\n    \"function_name\": \"automate_tax_collection\",\n    \"parameters\": {\n        \"rental_properties\": [{'property_id': '001', 'rental_date':'2022-01-01', 'rental_amount': 1200.0}, {'property_id': '002', 'rental_date':'2022-01-15', 'rental_amount': 1500.0}],\n        \"tax_rules\": {'rule1': 0.15, 'rule2': 0.05}\n    }\n}\n}"
+}
+{
+    "function_id": "airbnb-20",
+    "task": "Monitor guest behavior through home security systems, respecting privacy laws and regulations.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Monitor guest behavior through home security systems, respecting privacy laws and regulations."
+    },
+    "snippet": "def monitor_guest_behavior(\n    guest_list: List[str],\n    home_security_system: Dict[str, any],\n) -> List[str]:\n    \"\"\"\n    Monitors guest behavior through home security systems, respecting privacy laws and regulations.\n    \n    Parameters:\n        guest_list (List[str]): A list of guests currently in the home.\n        home_security_system (Dict[str, any]): A dictionary representing different attributes/facets of the home security system.\n                                               \n    Returns:\n        List[str]: A list of strings reporting specific instances of notable guest behavior, formatted for appropriate lawful and respectful reporting.\n    \"\"\"",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def monitor_guest_behavior(\n    guest_list: List[str],\n    home_security_system: Dict[str, any],\n) -> List[str]:\n    \"\"\"\n    Monitors guest behavior through home security systems, respecting privacy laws and regulations.\n    \n    Parameters:\n        guest_list (List[str]): A list of guests currently in the home.\n        home_security_system (Dict[str, any]): A dictionary representing different attributes/facets of the home security system.\n                                               \n    Returns:\n        List[str]: A list of strings reporting specific instances of notable guest behavior, formatted for appropriate lawful and respectful reporting.\n    \"\"\"",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "monitor_guest_behavior",
+            "description": "Monitors guest behavior through home security systems, respecting privacy laws and regulations.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "guest_list": {
+                        "type": "array",
+                        "description": "A list of guests currently in the home.",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "home_security_system": {
+                        "type": "object",
+                        "description": "A dictionary representing different attributes/facets of the home security system."
+                    }
+                },
+                "required": [
+                    "guest_list",
+                    "home_security_system"
+                ]
+            },
+            "returns": {
+                "type": "array",
+                "description": "A list of strings reporting specific instances of notable guest behavior, formatted for appropriate lawful and respectful reporting.",
+                "items": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "sample_metadata": {
+        "TEMPLATE": "\nBelow is the description of a function:\n    \"function_description\":\n    {FUNCTION_DESCRIPTION}\n\n\nA user is asking an assisstant a request that would eventually call the function, can you write that conversation for me.\nReturn the output as this example:\n    {{\n        \"conversation\": {PROMPT_EXAMPLE},\n        \"function_call\": {CALL_EXAMPLE}\n    }}\n",
+        "FUNCTION_DESCRIPTION": "{'function_description': {'name': 'monitor_guest_behavior', 'description': 'Monitors guest behavior through home security systems, respecting privacy laws and regulations.', 'parameters': {'type': 'object', 'properties': {'guest_list': {'type': 'array', 'description': 'A list of guests currently in the home.', 'items': {'type': 'string'}}, 'home_security_system': {'type': 'object', 'description': 'A dictionary representing different attributes/facets of the home security system.'}}, 'required': ['guest_list', 'home_security_system']}, 'returns': {'type': 'array', 'description': 'A list of strings reporting specific instances of notable guest behavior, formatted for appropriate lawful and respectful reporting.', 'items': {'type': 'string'}}}}",
+        "PROMPT_EXAMPLE": "\n[\n    {\n        \"role\": \"user\",\n        \"text\": \"Hey, can you show me my Twitter timeline?\"\n    },\n    {\n        \"role\": \"assistant\",\n        \"text\": \"Sure, I can do that. May I know your Twitter user ID?\"\n    },\n    {\n        \"role\": \"user\",\n        \"text\": \"Yes, my Twitter user ID is '13579'.\"\n    },\n    {\n        \"role\": \"assistant\",\n        \"text\": \"Great, I'm retrieving your Twitter timeline now.\"\n    }\n]\n",
+        "FUNCTION_EXAMPLE": "\n\"function_description\": {\n    \"name\": \"example_function\",\n    \"description\": \"Retrieves a user's timeline, including tweets, retweets, and replies.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"user_id\": {\n                \"type\": \"string\",\n                \"description\": \"The ID of the user.\"\n            }\n        },\n        \"required\": [\"user_id\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"tweet_id\": {\"type\": \"string\"},\n            \"text\": {\"type\": \"string\"},\n            \"author\": {\"type\": \"string\"},\n            \"date\": {\"type\": \"string\"}\n        }\n    }\n}\n",
+        "CALL_EXAMPLE": "\n{\n    \"function_name\": \"example_function\",\n    \"parameters\": {\n        \"user_id\": \"13579\"\n    }\n}\n"
+    },
+    "sample": {
+        "conversation": [
+            {
+                "role": "user",
+                "text": "Hey, can you monitor the behavior of the guests using my home security system?"
+            },
+            {
+                "role": "assistant",
+                "text": "Sure, I can do that. Can you provide me with the list of guests currently in your home and the details of your home security system?"
+            },
+            {
+                "role": "user",
+                "text": "Yes, the guests are 'John', 'Sam', 'Luke' and 'Anna'. And here are the details of my home security system."
+            },
+            {
+                "role": "assistant",
+                "text": "Great, I'm now monitoring the guest behavior through your home security system."
+            }
+        ],
+        "function_call": {
+            "function_name": "monitor_guest_behavior",
+            "parameters": {
+                "guest_list": [
+                    "John",
+                    "Sam",
+                    "Luke",
+                    "Anna"
+                ],
+                "home_security_system": {}
+            }
+        }
+    }
+}

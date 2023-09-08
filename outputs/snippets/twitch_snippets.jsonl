@@ -1,261 +1,261 @@
 {
-    "function_id": "twitter-1",
-    "task": "Post a tweet to a user's timeline.",
+    "function_id": "twitch-1",
+    "task": "Start or stop the Twitch stream.",
     "snippet_metadata": {
         "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
-        "FUNCTION_TASK": "Post a tweet to a user's timeline."
+        "FUNCTION_TASK": "Start or stop the Twitch stream."
     },
-    "snippet": "def post_tweet(\n    user_timeline: str,\n    message: str,\n) -> Dict[str, Any]:\n    \"\"\"\n    Posts a tweet to a user's timeline.\n    \n    Parameters:\n        user_timeline (str): The user's timeline where the tweet will be posted.\n        message (str): The content of the tweet.\n                                          \n    Returns:\n        Dict[str, Any]: A dictionary containing the server response.\n    \"\"\""
+    "snippet": "def control_twitch_stream(\n    status: str\n) -> str:\n    \"\"\"\n    Starts or stops the Twitch stream.\n\n    Parameters:\n        status (str): The desired status of the stream. Valid values are 'start' and 'stop'.\n                      \n    Returns:\n        str: A message indicating the new status of the stream.\n    \"\"\"\n"
 }
 {
-    "function_id": "twitter-2",
-    "task": "Delete a specific tweet from a user's timeline.",
+    "function_id": "twitch-2",
+    "task": "Schedule a future Twitch stream.",
     "snippet_metadata": {
         "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
-        "FUNCTION_TASK": "Delete a specific tweet from a user's timeline."
+        "FUNCTION_TASK": "Schedule a future Twitch stream."
     },
-    "snippet": "def delete_tweet(\n    api: tweepy.API,\n    tweet_id: str\n) -> None:\n    \"\"\"\n    Deletes a specified tweet from a user's timeline.\n    \n    Parameters:\n        api (tweepy.API): The authenticated tweepy API object.\n        tweet_id (str): The ID of the tweet to delete.\n                                  \n    Returns:\n        None\n    \"\"\""
+    "snippet": "def schedule_twitch_stream(\n    channel_id: str,\n    stream_date: str,\n    stream_time: str,\n    duration: str,\n    title: str,\n    description: str,\n) -> str:\n    \"\"\"\n    Schedules a future Twitch stream and returns a confirmation message.\n\n    Parameters:\n        channel_id (str): The ID of the Twitch channel where the stream will be held.\n        stream_date (str): The date of the stream in YYYY-MM-DD format.\n        stream_time (str): The start time of the stream in HH:MM format.\n        duration (str): The expected duration of the stream in HH:MM format.\n        title (str): The title of the stream.\n        description (str): A brief description of the stream.\n\n    Returns:\n        str: A confirmation message indicating that the stream has been scheduled.\n    \"\"\"\n"
 }
 {
-    "function_id": "twitter-3",
-    "task": "Retrieve a user's timeline, including tweets, retweets, and replies.",
+    "function_id": "twitch-3",
+    "task": "Change the title and category of the current stream.",
     "snippet_metadata": {
         "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
-        "FUNCTION_TASK": "Retrieve a user's timeline, including tweets, retweets, and replies."
+        "FUNCTION_TASK": "Change the title and category of the current stream."
     },
-    "snippet": "def retrieve_user_timeline(\n    user_id: str,\n    include_retweets: bool = True,\n    include_replies: bool = True\n) -> List[dict]:\n    \"\"\"\n    Retrieves a user's Twitter timeline, including tweets, retweets, and replies.\n    \n    Parameters:\n        user_id (str): The Twitter user's unique identifier.\n        include_retweets (bool, optional): Whether to include retweets in the timeline. Defaults to True.\n        include_replies (bool, optional): Whether to include replies in the timeline. Defaults to True.\n                                          \n    Returns:\n        List[dict]: A list of dictionaries representing tweets. Each dictionary includes 'text', 'date', 'retweets',\n                    'likes', 'replies' details of each tweet, retweet, and reply.\n    \"\"\"\n"
+    "snippet": "def update_stream_details(\n    stream_id: str,\n    new_title: str,\n    new_category: str,\n) -> None:\n    \"\"\"\n    Update the title and category of the current stream.\n\n    Parameters:\n        stream_id (str): The ID of the stream.\n        new_title (str): The new title to assign to the stream.\n        new_category (str): The new category to assign to the stream.\n\n    Returns:\n        None\n    \"\"\"\n"
 }
 {
-    "function_id": "twitter-4",
-    "task": "Retrieve information about a specific user based on their username.",
+    "function_id": "twitch-4",
+    "task": "Retrieve current viewer count and other analytics.",
     "snippet_metadata": {
         "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
-        "FUNCTION_TASK": "Retrieve information about a specific user based on their username."
+        "FUNCTION_TASK": "Retrieve current viewer count and other analytics."
     },
-    "snippet": "def get_user_info(username: str) -> Dict[str, Union[str, int]]:\n    \"\"\"\n    Retrieves information about a specific user based on their username.\n    \n    Parameters:\n        username (str): The username of the user.\n        \n    Returns:\n        Dict[str, Union[str, int]]: A dictionary containing the user's information.\n                                    The keys will depend on the information stored for each user.\n    \"\"\"\n    pass"
+    "snippet": "def get_viewer_analytics() -> Dict[str, Union[int, List[Dict[str, Any]]]]:\n    \"\"\"\n    Retrieves current viewer count and other related analytics.\n\n    Returns:\n        Dict[str, Union[int, List[Dict[str, Any]]]]: A dictionary with 'current_viewer_count' as a key \n        and the current viewer count as a value, and 'other_analytics' as a key and a list of dictionaries \n        containing other analytics data.\n    \"\"\"\n"
 }
 {
-    "function_id": "twitter-5",
-    "task": "Follow a specific user.",
+    "function_id": "twitch-5",
+    "task": "Manage and post automated messages in the chat.",
     "snippet_metadata": {
         "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
-        "FUNCTION_TASK": "Follow a specific user."
+        "FUNCTION_TASK": "Manage and post automated messages in the chat."
     },
-    "snippet": "def follow_user(\n    username: str,\n    user_to_follow: str,\n) -> str:\n    \"\"\"\n    Follows a specific user.\n\n    Parameters:\n        username (str): The username of the current user.\n        user_to_follow (str): The username of the user to be followed.\n\n    Returns:\n        str: A message indicating the outcome of the follow attempt.\n    \"\"\"\n"
+    "snippet": "def post_automated_messages(\n    chat_id: str, \n    messages: List[Dict[str, Union[str, datetime.datetime]]]\n) -> None:\n    \"\"\"\n    Manages and posts automated messages in the chat.\n\n    Parameters:\n        chat_id (str): The ID of the chat where messages need to be posted.\n        messages (List[Dict[str, Union[str, datetime.datetime]]]): \n                    A list of dictionaries containing message details.\n                    Each dictionary should have 'text' and 'post_at' keys.\n                    'text' is the body of the message and 'post_at' is \n                    the time when the message should be posted, in datetime object format.\n    \n    Returns:\n        None\n    \"\"\"\n"
 }
 {
-    "function_id": "twitter-6",
-    "task": "Unfollow a specific user.",
+    "function_id": "twitch-6",
+    "task": "Activate or deactivate certain emotes in the chat.",
     "snippet_metadata": {
         "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
-        "FUNCTION_TASK": "Unfollow a specific user."
+        "FUNCTION_TASK": "Activate or deactivate certain emotes in the chat."
     },
-    "snippet": "def unfollow_user(\n    username: str,\n) -> None:\n    \"\"\"\n    Unfollows a specific user on a platform.\n\n    Parameters:\n        username (str): The username of the user to unfollow.\n\n    Returns:\n        None\n    \"\"\"\n"
+    "snippet": "def modify_emotes(\n    emote: str,\n    status: bool,\n) -> None:\n    \"\"\"\n    Activates or deactivates certain emotes in the chat.\n    \n    Parameters:\n        emote (str): The identifier of the emote.\n        status (bool): The new status of the emote; 'True' for activate and 'False' for deactivate.\n    \"\"\"\n"
 }
 {
-    "function_id": "twitter-7",
-    "task": "Like a specific tweet.",
+    "function_id": "twitch-7",
+    "task": "Initiate subscriber-only mode in the chat.",
     "snippet_metadata": {
         "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
-        "FUNCTION_TASK": "Like a specific tweet."
+        "FUNCTION_TASK": "Initiate subscriber-only mode in the chat."
     },
-    "snippet": "```python\ndef like_tweet(tweet_id: str, api: Any) -> bool:\n    \"\"\"\n    Likes a specific tweet given its ID.\n\n    Parameters:\n        tweet_id (str): The ID of the tweet to like.\n        api (Any): An authenticated instance of a Twitter API client.\n\n    Returns:\n        bool: True if the tweet was successfully liked, False otherwise.\n    \"\"\"\n```"
+    "snippet": "def enable_subscriber_only_chat(\n    channel_id: str,\n    operator_id: str,\n) -> bool:\n    \"\"\"\n    Initiates subscriber-only mode in a chat attached to a specific channel.\n    \n    Parameters:\n        channel_id (str): The unique identifier for the channel whose chat will be modified.\n        operator_id (str): The unique identifier for the chat moderator or channel owner initiating the action.\n                  \n    Returns:\n        bool: True if the operation was successful, False otherwise.\n    \"\"\""
 }
 {
-    "function_id": "twitter-8",
-    "task": "Unlike a specific tweet.",
+    "function_id": "twitch-8",
+    "task": "Run advertisements at specified intervals.",
     "snippet_metadata": {
         "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
-        "FUNCTION_TASK": "Unlike a specific tweet."
+        "FUNCTION_TASK": "Run advertisements at specified intervals."
     },
-    "snippet": "def unlike_tweet(\n    tweet_id: str,\n    api_credentials: Dict[str, str]\n) -> bool:\n    \"\"\"\n    Unlikes a specific tweet based on tweet ID.\n\n    Parameters:\n        tweet_id (str): The unique identifier of the tweet to be unliked.\n        api_credentials (Dict[str, str]): A dictionary containing API credentials.\n                                          This should include 'api_key' and 'api_secret_key' \n\n    Returns:\n        bool: True if the operation was successful, False otherwise.\n    \"\"\""
+    "snippet": "def run_advertisements(\n    ad_content: str, \n    start_time: datetime, \n    interval: timedelta\n) -> None:\n    \"\"\"\n    Runs advertisements at specified intervals.\n    \n    Parameters:\n        ad_content (str): The content of the advertisement to be displayed.\n        start_time (datetime): The time when the advertisement should start running.\n        interval (timedelta): The time interval at which the advertisement should be displayed again.\n\n    Returns:\n        None\n    \"\"\"\n"
 }
 {
-    "function_id": "twitter-9",
-    "task": "Retweet a specific tweet.",
+    "function_id": "twitch-9",
+    "task": "Create and manage custom chat commands.",
     "snippet_metadata": {
         "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
-        "FUNCTION_TASK": "Retweet a specific tweet."
+        "FUNCTION_TASK": "Create and manage custom chat commands."
     },
-    "snippet": "def retweet_specific_tweet(\n    api: Any,\n    tweet_id: str,\n) -> Dict[str, Any]:\n    \"\"\"\n    Retweets a specific tweet.\n\n    Parameters:\n        api (Any): Twitter API client object.\n        tweet_id (str): The ID of the tweet to retweet.\n\n    Returns:\n        Dict[str, Any]: A dictionary containing the details of the retweeted tweet.\n    \"\"\""
+    "snippet": "def manage_chat_commands(\n    command: str,\n    parameters: Dict[str, Any],\n    actions: Callable,\n) -> Dict[str, Any]:\n    \"\"\"\n    Creates and manages custom chat commands and perform respective actions.\n\n    Parameters:\n        command (str): The custom command to execute.\n        parameters (Dict[str, Any]): A dictionary containing parameters related to the command.\n                                     Each dictionary could have varying keys depending on the action required.\n        actions (Callable): A function/method which contains the steps to execute when a command is called.\n\n    Returns:\n        Dict[str, Any]: A dictionary with 'status' and 'message' as keys.\n                        'status' is a boolean which indicates if the command was successfully executed,\n                        'message' provides additional information or result of the command execution.\n    \"\"\"\n"
 }
 {
-    "function_id": "twitter-10",
-    "task": "Undo a retweet.",
+    "function_id": "twitch-10",
+    "task": "Automatically shout-out to new subscribers, followers, or donors.",
     "snippet_metadata": {
         "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
-        "FUNCTION_TASK": "Undo a retweet."
+        "FUNCTION_TASK": "Automatically shout-out to new subscribers, followers, or donors."
     },
-    "snippet": "def undo_retweet(\n    tweet_id: str,\n    user_id: str,\n    twitter_api: Any\n) -> bool:\n    \"\"\"\n    Undoes a retweet made by the user on a particular tweet.\n    \n    Parameters:\n        tweet_id (str): The ID of the tweet that was retweeted.\n        user_id (str): The ID of the user who retweeted.\n        twitter_api (Any): The instance of Twitter API used for interaction.\n                          \n    Returns:\n        bool: True if the operation was successful, False otherwise.\n    \"\"\""
+    "snippet": "def shout_out_new_subscribers_followers_donors(\n    new_subscribers: List[str],\n    new_followers: List[str],\n    new_donors: Dict[str, float]\n) -> None:\n    \"\"\"\n    Sends a shout-out to new subscribers, followers, or donors.\n\n    Parameters:\n        new_subscribers (List[str]): The list of new subscribers.\n        new_followers (List[str]): The list of new followers.\n        new_donors (Dict[str, float]): A dictionary containing donor names as keys and donation amounts as values.\n    \"\"\"\n"
 }
 {
-    "function_id": "twitter-11",
-    "task": "Send a direct message to a specific user.",
+    "function_id": "twitch-11",
+    "task": "Create and manage stream markers for highlights.",
     "snippet_metadata": {
         "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
-        "FUNCTION_TASK": "Send a direct message to a specific user."
+        "FUNCTION_TASK": "Create and manage stream markers for highlights."
     },
-    "snippet": "def send_direct_message(\n    user_id: str,\n    message: str\n) -> Dict[str, str]:\n    \"\"\"\n    Sends a direct message to a specific user.\n\n    Parameters:\n        user_id (str): The ID of the user to send the message to.\n        message (str): The message to send.\n\n    Returns:\n        Dict[str, str]: A dictionary with 'status' as a key and the status of the message ('sent' or 'not sent') as a value.\n    \"\"\""
+    "snippet": "```python\ndef manage_stream_markers(\n    marker_name: str,\n    marker_description: str,\n    marker_time: str,\n) -> Dict[str, str]:\n    \"\"\"\n    Creates and manages stream markers for highlights.\n    \n    Parameters:\n        marker_name (str): The name of the stream marker.\n        marker_description (str): Description of the stream marker.\n        marker_time (str): The time of the marker in the stream, in HH:MM:SS format.\n        \n    Returns:\n        Dict[str, str]: A dictionary with 'marker_ID' as a key and the ID of the created stream marker as a value.\n    \"\"\"\n```\n"
 }
 {
-    "function_id": "twitter-12",
-    "task": "Delete a sent direct message.",
+    "function_id": "twitch-12",
+    "task": "Retrieve a list of current subscribers.",
     "snippet_metadata": {
         "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
-        "FUNCTION_TASK": "Delete a sent direct message."
+        "FUNCTION_TASK": "Retrieve a list of current subscribers."
     },
-    "snippet": "def delete_direct_message(\n    user_id: str, \n    message_id: str\n) -> bool:\n    \"\"\"\n    Deletes a sent direct message.\n\n    Parameters:\n        user_id (str): The ID of the user who sent the message.\n        message_id (str): The ID of the message to be deleted.\n\n    Returns:\n        bool: True if the deletion was successful, False otherwise.\n    \"\"\""
+    "snippet": "def get_current_subscribers() -> List[str]:\n    \"\"\"\n    Retrieves the list of current subscribers.\n    \n    Returns:\n        List[str]: A list of strings containing the names of current subscribers.\n    \"\"\"\n"
 }
 {
-    "function_id": "twitter-13",
-    "task": "Retrieve a list of direct messages sent and received.",
+    "function_id": "twitch-13",
+    "task": "Automatically ban or time-out users based on chat behavior.",
     "snippet_metadata": {
         "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
-        "FUNCTION_TASK": "Retrieve a list of direct messages sent and received."
+        "FUNCTION_TASK": "Automatically ban or time-out users based on chat behavior."
     },
-    "snippet": "def retrieve_direct_messages(user_id: str) -> List[Dict[str, Any]]:\n    \"\"\"\n    Retrieves a list of direct messages sent and received by a specific user.\n\n    Parameters:\n        user_id (str): The unique identifier of the user.\n\n    Returns:\n        List[Dict[str, Any]]: A list of dictionaries where each dictionary represents a direct message.\n                               Each dictionary includes 'message', 'sender_id', 'recipient_id', and 'timestamp' keys.\n    \"\"\"\n"
+    "snippet": "```python\ndef regulate_user(\n    user_id: str, \n    user_messages: List[str], \n    violation_threshold: int, \n    time_out_period: int,\n) -> Union[bool, Tuple[bool, int]]:\n    \"\"\"\n    Regulates users based on their chat behavior and applies restrictions when necessary.\n\n    Parameters:\n        user_id (str): The ID of the user.\n        user_messages (List[str]): List of recent messages from the user.\n        violation_threshold (int): The threshold for the number of violations which would result in a ban/time-out.\n        time_out_period (int): The length of time for which the user should be timed out (in minutes).\n\n    Returns:\n        bool: Returns True if the user is banned permanently.\n        Tuple[bool, int]: Returns a tuple (False, minutes) if the user is timed out for 'minutes' amount of time.\n    \"\"\"\n```\n"
 }
 {
-    "function_id": "twitter-14",
-    "task": "Retrieve trending topics for a specific location.",
+    "function_id": "twitch-14",
+    "task": "Create and manage polls or voting activities during the stream.",
     "snippet_metadata": {
         "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
-        "FUNCTION_TASK": "Retrieve trending topics for a specific location."
+        "FUNCTION_TASK": "Create and manage polls or voting activities during the stream."
     },
-    "snippet": "def retrieve_trending_topics(\n    location: str\n) -> List[str]:\n    \"\"\"\n    Retrieves trending topics for a specific location.\n    \n    Parameters:\n        location (str): The location to retrieve trending topics for.\n                                        \n    Returns:\n        List[str]: A list of trending topics for the specified location.\n    \"\"\""
+    "snippet": "def manage_polls_during_stream(\n    poll_id: str,\n    options: Dict[str, str],\n    status: str,\n) -> Dict[str, int]:\n    \"\"\"\n    Manages polls or voting activities during the stream.\n\n    Parameters:\n        poll_id (str): The id of the poll.\n        options (Dict[str, str]): A dictionary containing the options for the poll. Keys represent option identifiers and values represent option descriptions.\n        status (str): The status of the poll. Possible values are 'open', 'closed', 'result'.\n\n    Returns:\n        Dict[str, int]: A dictionary with options identifiers as keys and corresponding vote counts as values.\n    \"\"\""
 }
 {
-    "function_id": "twitter-15",
-    "task": "Retrieve a list of followers for a specific user.",
+    "function_id": "twitch-15",
+    "task": "Display alerts or notifications for in-stream events, like receiving a donation.",
     "snippet_metadata": {
         "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
-        "FUNCTION_TASK": "Retrieve a list of followers for a specific user."
+        "FUNCTION_TASK": "Display alerts or notifications for in-stream events, like receiving a donation."
     },
-    "snippet": "def get_followers_list(\n    username: str\n) -> List[str]:\n    \"\"\"\n    Retrieves a list of followers for a specific user.\n    \n    Parameters:\n        username (str): The username of the user whose followers need to be retrieved.\n                                          \n    Returns:\n        List[str]: A list of usernames who are followers of the specified user.\n    \"\"\""
+    "snippet": "def display_notification_for_donations(\n    event_stream: Iterable[Dict[str, Any]]\n) -> None:\n    \"\"\"\n    Displays alerts or notifications for in-stream events, \n    like receiving a donation.\n    \n    Parameters:\n        event_stream (Iterable[Dict[str, Any]]): An iterable of dictionaries containing event details. \n                                                  Each dictionary should at least have 'type' and 'payload' keys.\n                                                  \n    Returns:\n        None\n    \"\"\"\n"
 }
 {
-    "function_id": "twitter-16",
-    "task": "Retrieve a list of accounts a specific user is following.",
+    "function_id": "twitch-16",
+    "task": "Retrieve historical data such as past streams, viewer metrics, and chat logs.",
     "snippet_metadata": {
         "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
-        "FUNCTION_TASK": "Retrieve a list of accounts a specific user is following."
+        "FUNCTION_TASK": "Retrieve historical data such as past streams, viewer metrics, and chat logs."
     },
-    "snippet": "def retrieve_following_list(\n    username: str,\n    social_media_platform: str,\n) -> List[str]:\n    \"\"\"\n    Retrieves a list of accounts that a specific user is following on a specified social media platform.\n    \n    Parameters:\n        username (str): The username of the specific user.\n        social_media_platform (str): The name of the social media platform.\n                                          \n    Returns:\n        List[str]: A list of usernames that the specific user is following.\n    \"\"\""
+    "snippet": "def retrieve_historical_data(\n    channel_id: str,\n    start_date: str,\n    end_date: str\n) -> Dict[str, List[Union[str, int]]]:\n    \"\"\"\n    Retrieve historical data such as past streams, viewer metrics, and chat logs from a specific channel.\n    \n    Parameters:\n        channel_id (str): The ID of the channel to retrieve data from.\n        start_date (str): The start date to retrieve data from in YYYY-MM-DD format.\n        end_date (str): The end date to retrieve data up to in YYYY-MM-DD format.\n                                          \n    Returns:\n        Dict[str, List[Union[str, int]]]: A dictionary containing historical data.\n                                          The keys could be 'past_streams', 'viewer_metrics', and 'chat_logs'.\n                                          Each key corresponds to a list containing the historical records.\n                                          The 'past_streams' list contains streams in a string format.\n                                          The 'viewer_metrics' list contains metrics in an integer format.\n                                          The 'chat_logs' list contains chat logs as string.\n    \"\"\"\n"
 }
 {
-    "function_id": "twitter-17",
-    "task": "Search for tweets containing specific keywords, hashtags, or mentioning specific users.",
+    "function_id": "twitch-17",
+    "task": "Manage and redeem channel points or rewards.",
     "snippet_metadata": {
         "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
-        "FUNCTION_TASK": "Search for tweets containing specific keywords, hashtags, or mentioning specific users."
+        "FUNCTION_TASK": "Manage and redeem channel points or rewards."
     },
-    "snippet": "def search_tweets(\n    keywords: List[str],\n    hashtags: List[str],\n    user_mentions: List[str],\n) -> List[Dict[str, str]]:\n    \"\"\"\n    Searches for tweets containing specific keywords, hashtags, or mentioned users.\n    \n    Parameters:\n        keywords (List[str]): The list of keywords to search for in tweets.\n        hashtags (List[str]): The list of hashtags to search for in tweets.\n        user_mentions (List[str]): The list of users to search for in tweets.\n                                          \n    Returns:\n        List[Dict[str, str]]: A list of dictionaries with each dictionary representing a tweet. \n                              Each dictionary has 'tweet_id', 'text', and 'user' as keys.\n    \"\"\"\n"
+    "snippet": "def manage_and_redeem_rewards(\n    user_id: str,\n    channel_id: str,\n    points_to_redeem: int\n) -> Dict[str, Union[str, bool]]:\n    \"\"\"\n    Manages and redeems channel points or rewards and returns the transaction status.\n\n    Parameters:\n        user_id (str): The ID of the user who wants to redeem points.\n        channel_id (str): The ID of the channel where the points are to be redeemed.\n        points_to_redeem (int): The number of points that the user wants to redeem.\n\n    Returns:\n        Dict[str, Union[str, bool]]: A dictionary containing the transaction status: 'transaction_completed' and 'transaction_message'. If the transaction was successful, 'transaction_completed' will be True, and 'transaction_message' will contain a relevant success message. If the transaction was not successful, 'transaction_completed' will be False, and 'transaction_message' will contain a relevant error message.\n    \"\"\"\n    pass"
 }
 {
-    "function_id": "twitter-18",
-    "task": "Update the profile details such as description, location, and profile image.",
+    "function_id": "twitch-18",
+    "task": "Clip segments of the current stream.",
     "snippet_metadata": {
         "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
-        "FUNCTION_TASK": "Update the profile details such as description, location, and profile image."
+        "FUNCTION_TASK": "Clip segments of the current stream."
     },
-    "snippet": "def update_profile_details(\n    user_id: str,\n    new_description: str,\n    new_location: str,\n    new_profile_image: str\n) -> Dict[str, str]:\n    \"\"\"\n    Updates the profile details of a user.\n\n    Parameters:\n        user_id (str): The ID of the user whose profile details are to be updated.\n        new_description (str): The new description to be added to the user's profile.\n        new_location (str): The new location to be added to the user's profile.\n        new_profile_image (str): The path to the new profile image to be added.\n\n    Returns:\n        Dict[str, str]: A dictionary with 'message' as a key and update status as a value.\n    \"\"\"\n    pass"
+    "snippet": "```python\ndef clip_stream_segments(\n    stream: Iterable,\n    clip_start: int,\n    clip_end: int,\n) -> Iterable:\n    \"\"\"\n    Clips specified segments from the current input stream and returns the clipped stream.\n    \n    Parameters:\n        stream (Iterable): The input stream to clip segments from.\n        clip_start (int): The starting index of the stream segment to clip.\n        clip_end (int): The ending index of the stream segment to clip.\n        \n    Returns:\n        Iterable: The clipped stream.\n    \"\"\"\n```"
 }
 {
-    "function_id": "twitter-19",
-    "task": "Retrieve user engagement metrics like likes, retweets, and impressions for specific tweets.",
+    "function_id": "twitch-19",
+    "task": "Configure audio and video settings, including bitrate and resolution.",
     "snippet_metadata": {
         "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
-        "FUNCTION_TASK": "Retrieve user engagement metrics like likes, retweets, and impressions for specific tweets."
+        "FUNCTION_TASK": "Configure audio and video settings, including bitrate and resolution."
     },
-    "snippet": "def get_twitter_metrics(\n    tweet_ids: List[str]\n) -> List[Dict[str, int]]:\n    \"\"\"\n    Retrieves user engagement metrics (likes, retweets, impressions) for specific tweets.\n    \n    Parameters:\n        tweet_ids (List[str]): A list of Tweet IDs for which to retrieve metrics.\n                                          \n    Returns:\n        List[Dict[str, int]]: A list of dictionaries, each containing metrics\n                              for a specific tweet. Each dictionary should have \n                              'likes', 'retweets', and 'impressions' as keys.\n    \"\"\"\n"
+    "snippet": "def configure_av_settings(\n    audio_bitrate: int,\n    video_bitrate: int,\n    resolution: Tuple[int, int]\n) -> None:\n    \"\"\"\n    Configures audio and video settings including bitrate and resolution.\n    \n    Parameters:\n        audio_bitrate (int): The desired audio bitrate in kbps.\n        video_bitrate (int): The desired video bitrate in kbps.\n        resolution (Tuple[int, int]): A tuple containing the desired video resolution (width, height).\n    \"\"\"\n"
 }
 {
-    "function_id": "twitter-20",
-    "task": "Pin a tweet to the top of a user's timeline.",
+    "function_id": "twitch-20",
+    "task": "Host or raid another Twitch channel.",
     "snippet_metadata": {
         "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
-        "FUNCTION_TASK": "Pin a tweet to the top of a user's timeline."
+        "FUNCTION_TASK": "Host or raid another Twitch channel."
     },
-    "snippet": "def pin_tweet(\n    tweet_id: str,\n    username: str,\n) -> bool:\n    \"\"\"\n    Pins a tweet to the top of a user's timeline.\n\n    Parameters:\n        tweet_id (str): The ID of the tweet to be pinned.\n        username (str): The username of the account where the tweet will be pinned.\n\n    Returns:\n        bool: True if the tweet was successfully pinned, False otherwise.\n    \"\"\""
+    "snippet": "def host_or_raid_channel(\n    twitch_channel: str,\n    is_raid: bool,\n) -> None:\n    \"\"\"\n    Hosts or raids another Twitch channel.\n    \n    Parameters:\n        twitch_channel (str): The name of the twitch channel to host or raid.\n        is_raid (bool): Whether to raid the other channel. If False, it will host the channel.\n                          \n    Returns:\n        None\n    \"\"\""
 }
 {
-    "function_id": "twitter-21",
-    "task": "Unpin a tweet from the top of a user's timeline.",
+    "function_id": "twitch-21",
+    "task": "Initiate and manage a co-stream with another streamer.",
     "snippet_metadata": {
         "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
-        "FUNCTION_TASK": "Unpin a tweet from the top of a user's timeline."
+        "FUNCTION_TASK": "Initiate and manage a co-stream with another streamer."
     },
-    "snippet": "def unpin_tweet(\n    user_id: str,\n    tweet_id: str,\n) -> bool:\n    \"\"\"\n    Unpins a tweet from the top of a user's timeline.\n\n    Parameters:\n        user_id (str): The ID of the user.\n        tweet_id (str): The ID of the tweet \n\n    Returns:\n        bool: True if successful, False otherwise.\n    \"\"\""
+    "snippet": "def initiate_manage_costream(\n    current_streamer: str,\n    co_streamer: str,\n    platform: str,\n    start_time: str,\n    end_time: str,\n) -> str:\n    \"\"\"\n    Initiates and manages a co-stream with another streamer and returns the status of the co-stream.\n    \n    Parameters:\n        current_streamer (str): The current streamer's username.\n        co_streamer (str): The co-streamer's username.\n        platform (str): The platform on which the co-stream is taking place.\n        start_time (str): The start time of the co-stream in HH:MM:SS format.\n        end_time (str): The end time of the co-stream in HH:MM:SS format.\n                                          \n    Returns:\n        str: The status of the co-stream, it can be 'successful', 'failed' or 'in progress'.\n    \"\"\"\n"
 }
 {
-    "function_id": "twitter-22",
-    "task": "Retrieve lists that a user is a member of.",
+    "function_id": "twitch-22",
+    "task": "Manage and update panels and other customizable areas below the video player.",
     "snippet_metadata": {
         "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
-        "FUNCTION_TASK": "Retrieve lists that a user is a member of."
+        "FUNCTION_TASK": "Manage and update panels and other customizable areas below the video player."
     },
-    "snippet": "```python\ndef retrieve_user_lists(\n    user_id: str,\n    member_lists: Dict[str, List[str]]\n) -> List[str]:\n    \"\"\"\n    Retrieve lists that a user is a member of.\n\n    Parameters:\n        user_id (str): The identifier of the user.\n        member_lists (Dict[str, List[str]]): The dictionary of lists.\n                                              Each key is a list name and the value is a list of user ids who are members.\n\n    Returns:\n        List[str]: A list containing the names of the lists the user is a member of.\n    \"\"\"\n```"
+    "snippet": "def update_video_player_panels(\n    player_id: str,\n    panels: dict\n) -> bool:\n    \"\"\"\n    Updates the customizable areas below a video player. \n\n    Parameters:\n        player_id (str): The unique identifier for the video player.\n        panels (dict): A dictionary containing details of the panels and custom areas to update. \n                       Each key in the dictionary represents a panel or custom area, \n                       and the value represents the new settings for the area.\n                       \n    Returns:\n        bool: True if the update was successful, False otherwise.\n    \"\"\"\n"
 }
 {
-    "function_id": "twitter-23",
-    "task": "Create a new list.",
+    "function_id": "twitch-23",
+    "task": "Activate specific scenes or overlays.",
     "snippet_metadata": {
         "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
-        "FUNCTION_TASK": "Create a new list."
+        "FUNCTION_TASK": "Activate specific scenes or overlays."
     },
-    "snippet": "def create_new_list() -> List:\n    \"\"\"\n    Creates and returns a new list.\n\n    Returns:\n        List: A new, empty list.\n    \"\"\"\n"
+    "snippet": "def activate_scene_or_overlay(\n    scene_name: str,\n    overlay: Dict[str, Any],\n) -> None:\n    \"\"\"\n    Activates a specific scene or overlay.\n    \n    Parameters:\n        scene_name (str): The name of the scene to activate.\n        overlay (Dict[str, Any]): A dictionary containing overlay details to activate.\n                                  \n    \"\"\"\n"
 }
 {
-    "function_id": "twitter-24",
-    "task": "Add users to an existing list.",
+    "function_id": "twitch-24",
+    "task": "Automatically archive past broadcasts.",
     "snippet_metadata": {
         "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
-        "FUNCTION_TASK": "Add users to an existing list."
+        "FUNCTION_TASK": "Automatically archive past broadcasts."
     },
-    "snippet": "def add_users(\n    existing_users: List[str],\n    new_users: List[str],\n) -> List[str]:\n    \"\"\"\n    Adds new users to an existing list of users.\n    \n    Parameters:\n        existing_users (List[str]): A list containing existing usernames.\n        new_users (List[str]): A list of new usernames to be added.\n    \n    Returns:\n        List[str]: The updated list of users after adding the new ones.\n    \"\"\""
+    "snippet": "def archive_past_broadcasts(\n    broadcasts: List[Dict[str, Union[str, datetime]]]\n) -> List[str]:\n    \"\"\"\n    Archives past broadcasts and returns a list of archived broadcasts' titles.\n    \n    Parameters:\n        broadcasts (List[Dict[str, Union[str, datetime]]]): A list of dictionaries containing broadcast details.\n                                                             Each dictionary should have 'title' and 'date' keys.\n    \n    Returns:\n        List[str]: A list of titles of the archived past broadcasts.\n    \"\"\"\n"
 }
 {
-    "function_id": "twitter-25",
-    "task": "Remove users from an existing list.",
+    "function_id": "twitch-25",
+    "task": "Enable or disable slow mode in the chat.",
     "snippet_metadata": {
         "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
-        "FUNCTION_TASK": "Remove users from an existing list."
+        "FUNCTION_TASK": "Enable or disable slow mode in the chat."
     },
-    "snippet": "def remove_users(\n    user_list: List[str],\n    users_to_remove: List[str]\n) -> List[str]:\n    \"\"\"\n    Removes specified users from an existing list of users.\n\n    Parameters:\n        user_list (List[str]): The existing list of users.\n        users_to_remove (List[str]): The list of users to be removed.\n\n    Returns:\n        List[str]: A list of users after specified users are removed.\n    \"\"\""
+    "snippet": "def toggle_slow_mode(\n    chat_id: int,\n    slow_mode: bool\n) -> str:\n    \"\"\"\n    Enables or disables slow mode in the chat.\n    \n    Parameters:\n        chat_id (int): The identifier for the chat to apply slow mode to.\n        slow_mode (bool): Whether to enable (True) or disable (False) slow mode.\n                          \n    Returns:\n        str: A message indicating the success or failure of the operation.\n    \"\"\""
 }
 {
-    "function_id": "twitter-26",
-    "task": "Delete an existing list.",
+    "function_id": "twitch-26",
+    "task": "Monitor and manage subscriptions to other channels.",
     "snippet_metadata": {
         "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
-        "FUNCTION_TASK": "Delete an existing list."
+        "FUNCTION_TASK": "Monitor and manage subscriptions to other channels."
     },
-    "snippet": "def delete_list(existing_list: List[Any]) -> None:\n    \"\"\"\n    Deletes an existing list.\n    \n    Parameters:\n        existing_list (List[Any]): The list to be deleted.\n    \"\"\"\n"
+    "snippet": "def manage_subscriptions(\n    channel_id: str,\n    subscription_action: str,\n    user_id: Optional[str] = None,\n) -> bool:\n    \"\"\"\n    Monitors and manages subscriptions to different channels.\n\n    Parameters:\n        channel_id (str): The identifier of the channel.\n        subscription_action (str): The action to perform. It can be 'subscribe', 'unsubscribe', 'check'.\n        user_id (str, optional): The identifier of the user. Default is None, which corresponds to the current user id.\n\n    Returns:\n        bool: True if the action was successful, False otherwise.\n    \"\"\"\n"
 }
 {
-    "function_id": "twitter-27",
-    "task": "Check if a user is following another user.",
+    "function_id": "twitch-27",
+    "task": "Set up donation goals and progress bars.",
     "snippet_metadata": {
         "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
-        "FUNCTION_TASK": "Check if a user is following another user."
+        "FUNCTION_TASK": "Set up donation goals and progress bars."
     },
-    "snippet": "def is_user_following(\n    user_id: str,\n    following_user_id: str,\n    followers_list: List[Dict[str, str]],\n) -> bool:\n    \"\"\"\n    Checks if a user is following another user.\n\n    Parameters:\n        user_id (str): The ID of the user.\n        following_user_id (str): The ID of the user that the first user may be following.\n        followers_list (List[Dict[str, str]]): A list of dictionaries containing user and their followers details.\n                                               Each dictionary should have 'user_id' and 'followers' as keys.\n                                               'followers' should be a list of user ids that this user is following.\n\n    Returns:\n        bool: Returns True if user is following the other user, otherwise returns False.\n    \"\"\""
+    "snippet": "def setup_donation_goals(\n    goal_amount: float,\n    current_amount: float,\n) -> Dict[str, Union[float, str]]:\n    \"\"\"\n    Sets up donation goals and creates a progress bar to visualize the current progress\n    \n    Parameters:\n        goal_amount (float): The desired donation goal.\n        current_amount (float): The current amount of money raised.\n                                          \n    Returns:\n        Dict[str, Union[float, str]]: A dictionary with 'percentage_completed' as a key representing \n                                       the percentage of the goal reached and 'progress_bar' as a key, \n                                       with the visual representation of the progress in string format.\n    \"\"\""
 }
 {
-    "function_id": "twitter-28",
-    "task": "Block a specific user.",
+    "function_id": "twitch-28",
+    "task": "Manage and send direct messages.",
     "snippet_metadata": {
         "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
-        "FUNCTION_TASK": "Block a specific user."
+        "FUNCTION_TASK": "Manage and send direct messages."
     },
-    "snippet": "def block_user(\n    user_id: str, \n    user_list: List[Dict[str, str]],\n) -> List[Dict[str, str]]:\n    \"\"\"\n    Blocks a specific user and updates the user list.\n\n    Parameters:\n        user_id (str): The ID of the user to block.\n        user_list (List[Dict[str, str]]): A list of dictionaries containing user details. \n                                          Each dictionary should have 'user_id' and 'status' keys.\n\n    Returns:\n        List[Dict[str, str]]: An updated list of dictionaries containing user details. The status \n                              of the user with user_id will be updated to 'Blocked'.\n    \"\"\"\n    pass"
+    "snippet": "def send_direct_message(\n    recipient_id: str,\n    message: str,\n    attachment: Optional[str] = None\n) -> bool:\n    \"\"\"\n    Sends a direct message to a recipient and returns whether it was successful.\n    \n    Parameters:\n        recipient_id (str): The ID of the recipient.\n        message (str): The content of the message to send.\n        attachment (Optional[str]): The file path of an attachment to send, if any.\n                                    \n    Returns:\n        bool: True if the message was sent successfully, False otherwise.\n    \"\"\""
 }
 {
-    "function_id": "twitter-29",
-    "task": "Unblock a specific user.",
+    "function_id": "twitch-29",
+    "task": "Configure and manage bots for chat moderation or entertainment.",
     "snippet_metadata": {
         "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
-        "FUNCTION_TASK": "Unblock a specific user."
+        "FUNCTION_TASK": "Configure and manage bots for chat moderation or entertainment."
     },
-    "snippet": "def unblock_user(\n    blocked_users: List[str], \n    user: str\n) -> bool:\n    \"\"\"\n    Unblocks a specific user from the blocked users list.\n    \n    Parameters:\n        blocked_users (List[str]): A list of blocked users.\n        user (str): The username of the user to unblock.\n\n    Returns:\n        bool: Returns True if the user was successfully unblocked. Otherwise, returns False.\n    \"\"\"\n"
+    "snippet": "def manage_chat_bot(\n    bot_name: str,\n    chat_id: str,\n    moderation_rules: Dict[str, Any],\n    entertainment_settings: Dict[str, Any],\n) -> str:\n    \"\"\"\n    Configures and manages a chat bot for either moderation or entertainment purposes.\n\n    Parameters:\n        bot_name (str): The name of the bot.\n        chat_id (str): The unique identifier of the chat where the bot will operate.\n        moderation_rules (Dict[str, Any]): A dictionary providing the rules for the bot's moderation capabilities.\n        entertainment_settings (Dict[str, Any]): A dictionary providing the settings for the bot's entertainment capabilities.\n\n    Returns:\n        str: A status message indicating if the bot configuration and management operation was successful.\n    \"\"\"\n"
 }

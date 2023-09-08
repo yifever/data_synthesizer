@@ -1,0 +1,864 @@
+{
+    "function_id": "uber-driver-1",
+    "task": "Accept a new ride request.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Accept a new ride request."
+    },
+    "snippet": "Here is the Python function snippet for 'Accept a new ride request':\n\n```python\ndef accept_ride_request(\n    rider_id: str,\n    pickup_location: Dict[str, float],\n    dropoff_location: Dict[str, float],\n) -> Dict[str, Union[str, bool]]:\n    \"\"\"\n    Accepts a new ride request and returns the status of the request.\n    \n    Parameters:\n        rider_id (str): The unique identifier for the rider.\n        pickup_location (Dict[str, float]): A dictionary with 'lat' and 'lng' keys representing the pickup GPS coordinates.\n        dropoff_location (Dict[str, float]): A dictionary with 'lat' and 'lng' keys representing the dropoff GPS coordinates.\n                                              \n    Returns:\n        Dict[str, Union[str, bool]]: A dictionary with 'ride_id' as a key and the unique ride identifier as a value if the request was successful.\n                                      If the request was not successful, the dictionary will contain 'error' as a key and the reason for failure as a value.\n    \"\"\"\n```\nPlease note, you need to replace the `Union[str, bool]` to suit the actual data type of return in your application.",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "Here is the Python function snippet for 'Accept a new ride request':\n\n```python\ndef accept_ride_request(\n    rider_id: str,\n    pickup_location: Dict[str, float],\n    dropoff_location: Dict[str, float],\n) -> Dict[str, Union[str, bool]]:\n    \"\"\"\n    Accepts a new ride request and returns the status of the request.\n    \n    Parameters:\n        rider_id (str): The unique identifier for the rider.\n        pickup_location (Dict[str, float]): A dictionary with 'lat' and 'lng' keys representing the pickup GPS coordinates.\n        dropoff_location (Dict[str, float]): A dictionary with 'lat' and 'lng' keys representing the dropoff GPS coordinates.\n                                              \n    Returns:\n        Dict[str, Union[str, bool]]: A dictionary with 'ride_id' as a key and the unique ride identifier as a value if the request was successful.\n                                      If the request was not successful, the dictionary will contain 'error' as a key and the reason for failure as a value.\n    \"\"\"\n```\nPlease note, you need to replace the `Union[str, bool]` to suit the actual data type of return in your application.",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "accept_ride_request",
+            "description": "Accepts a new ride request and returns the status of the request.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "rider_id": {
+                        "type": "string",
+                        "description": "The unique identifier for the rider."
+                    },
+                    "pickup_location": {
+                        "type": "object",
+                        "description": "A dictionary with 'lat' and 'lng' keys representing the pickup GPS coordinates.",
+                        "properties": {
+                            "lat": {
+                                "type": "float"
+                            },
+                            "lng": {
+                                "type": "float"
+                            }
+                        },
+                        "required": [
+                            "lat",
+                            "lng"
+                        ]
+                    },
+                    "dropoff_location": {
+                        "type": "object",
+                        "description": "A dictionary with 'lat' and 'lng' keys representing the dropoff GPS coordinates.",
+                        "properties": {
+                            "lat": {
+                                "type": "float"
+                            },
+                            "lng": {
+                                "type": "float"
+                            }
+                        },
+                        "required": [
+                            "lat",
+                            "lng"
+                        ]
+                    }
+                },
+                "required": [
+                    "rider_id",
+                    "pickup_location",
+                    "dropoff_location"
+                ]
+            },
+            "returns": {
+                "type": "object",
+                "properties": {
+                    "ride_id": {
+                        "type": "string",
+                        "description": "The unique ride identifier if the request was successful."
+                    },
+                    "error": {
+                        "type": "string",
+                        "description": "The reason for failure if the request was not successful."
+                    }
+                }
+            }
+        }
+    }
+}
+{
+    "function_id": "uber-driver-2",
+    "task": "Decline a new ride request.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Decline a new ride request."
+    },
+    "snippet": "def decline_ride_request(\n    ride_request_id: int,\n) -> str:\n    \"\"\"\n    Declines a new ride request.\n    \n    Parameters:\n        ride_request_id (int): The ID of the ride request to decline.\n                                          \n    Returns:\n        str: A message stating that the ride request has been declined.\n    \"\"\"",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def decline_ride_request(\n    ride_request_id: int,\n) -> str:\n    \"\"\"\n    Declines a new ride request.\n    \n    Parameters:\n        ride_request_id (int): The ID of the ride request to decline.\n                                          \n    Returns:\n        str: A message stating that the ride request has been declined.\n    \"\"\"",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "decline_ride_request",
+            "description": "Declines a new ride request.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "ride_request_id": {
+                        "type": "integer",
+                        "description": "The ID of the ride request to decline."
+                    }
+                },
+                "required": [
+                    "ride_request_id"
+                ]
+            },
+            "returns": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string",
+                        "description": "A message stating that the ride request has been declined."
+                    }
+                }
+            }
+        }
+    }
+}
+{
+    "function_id": "uber-driver-3",
+    "task": "Start navigation to the pickup location.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Start navigation to the pickup location."
+    },
+    "snippet": "def start_navigation_to_pickup_location(\n    pickup_location_coordinates: Tuple[float, float],\n) -> None:\n    \"\"\"\n    Starts navigation to the provided pickup location.\n    \n    Parameters:\n        pickup_location_coordinates (Tuple[float, float]): A tuple representing the latitude and longitude of the pickup location.\n    \"\"\"\n",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def start_navigation_to_pickup_location(\n    pickup_location_coordinates: Tuple[float, float],\n) -> None:\n    \"\"\"\n    Starts navigation to the provided pickup location.\n    \n    Parameters:\n        pickup_location_coordinates (Tuple[float, float]): A tuple representing the latitude and longitude of the pickup location.\n    \"\"\"\n",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "start_navigation_to_pickup_location",
+            "description": "Starts navigation to the provided pickup location.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "pickup_location_coordinates": {
+                        "type": "Tuple[float, float]",
+                        "description": "A tuple representing the latitude and longitude of the pickup location."
+                    }
+                },
+                "required": [
+                    "pickup_location_coordinates"
+                ]
+            },
+            "returns": {
+                "type": "None"
+            }
+        }
+    }
+}
+{
+    "function_id": "uber-driver-4",
+    "task": "Notify passenger upon arrival at the pickup location.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Notify passenger upon arrival at the pickup location."
+    },
+    "snippet": "def notify_passenger_arrival(\n    passenger_id: str,\n    pickup_location: str\n) -> Dict[str, str]:\n    \"\"\"\n    Notifies a passenger upon arrival at the pickup location.\n\n    Parameters:\n        passenger_id (str): The ID or name of the passenger to be notified.\n        pickup_location (str): The location where the vehicle has arrived for pickup.\n\n    Returns:\n        Dict[str, str]: A dictionary with 'passenger_id' as key and the notification message as value.\n    \"\"\"",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def notify_passenger_arrival(\n    passenger_id: str,\n    pickup_location: str\n) -> Dict[str, str]:\n    \"\"\"\n    Notifies a passenger upon arrival at the pickup location.\n\n    Parameters:\n        passenger_id (str): The ID or name of the passenger to be notified.\n        pickup_location (str): The location where the vehicle has arrived for pickup.\n\n    Returns:\n        Dict[str, str]: A dictionary with 'passenger_id' as key and the notification message as value.\n    \"\"\"",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "notify_passenger_arrival",
+            "description": "Notifies a passenger upon arrival at the pickup location.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "passenger_id": {
+                        "type": "string",
+                        "description": "The ID or name of the passenger to be notified."
+                    },
+                    "pickup_location": {
+                        "type": "string",
+                        "description": "The location where the vehicle has arrived for pickup."
+                    }
+                },
+                "required": [
+                    "passenger_id",
+                    "pickup_location"
+                ]
+            },
+            "returns": {
+                "type": "object",
+                "properties": {
+                    "passenger_id": {
+                        "type": "string",
+                        "description": "The ID or name of the passenger being notified."
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "The notification message for the passenger."
+                    }
+                }
+            }
+        }
+    }
+}
+{
+    "function_id": "uber-driver-5",
+    "task": "Start the ride after picking up the passenger.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Start the ride after picking up the passenger."
+    },
+    "snippet": "def start_ride(\n    passenger: Dict[str, str]\n) -> None:\n    \"\"\"\n    Starts the ride after picking up the passenger.\n\n    Parameters:\n        passenger (Dict[str, str]): A dictionary containing passenger details. The dictionary should have 'name' and 'pickup_location' keys.\n        \n    Returns:\n        None\n    \"\"\"\n",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def start_ride(\n    passenger: Dict[str, str]\n) -> None:\n    \"\"\"\n    Starts the ride after picking up the passenger.\n\n    Parameters:\n        passenger (Dict[str, str]): A dictionary containing passenger details. The dictionary should have 'name' and 'pickup_location' keys.\n        \n    Returns:\n        None\n    \"\"\"\n",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "start_ride",
+            "description": "Starts the ride after picking up the passenger.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "passenger": {
+                        "type": "object",
+                        "description": "A dictionary containing passenger details. The dictionary should have 'name' and 'pickup_location' keys.",
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "description": "The name of the passenger."
+                            },
+                            "pickup_location": {
+                                "type": "string",
+                                "description": "The location where the passenger is to be picked up."
+                            }
+                        },
+                        "required": [
+                            "name",
+                            "pickup_location"
+                        ]
+                    }
+                },
+                "required": [
+                    "passenger"
+                ]
+            },
+            "returns": {
+                "type": "null",
+                "description": "No return value."
+            }
+        }
+    }
+}
+{
+    "function_id": "uber-driver-6",
+    "task": "End the ride upon arrival at the destination.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "End the ride upon arrival at the destination."
+    },
+    "snippet": "def end_ride(\n    arrival_destination: str,\n    current_location: str\n) -> str:\n    \"\"\"\n    Ends the ride upon arrival at the destination.\n\n    Parameters:\n        arrival_destination (str): The final ride destination.\n        current_location (str): The current location.\n\n    Returns:\n        str: A message indicating that the ride has ended or is still ongoing, based on the comparison between the current location and the arrival destination.\n    \"\"\"",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def end_ride(\n    arrival_destination: str,\n    current_location: str\n) -> str:\n    \"\"\"\n    Ends the ride upon arrival at the destination.\n\n    Parameters:\n        arrival_destination (str): The final ride destination.\n        current_location (str): The current location.\n\n    Returns:\n        str: A message indicating that the ride has ended or is still ongoing, based on the comparison between the current location and the arrival destination.\n    \"\"\"",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "end_ride",
+            "description": "Ends the ride upon arrival at the destination.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "arrival_destination": {
+                        "type": "string",
+                        "description": "The final ride destination."
+                    },
+                    "current_location": {
+                        "type": "string",
+                        "description": "The current location."
+                    }
+                },
+                "required": [
+                    "arrival_destination",
+                    "current_location"
+                ]
+            },
+            "returns": {
+                "type": "object",
+                "properties": {
+                    "success_message": {
+                        "type": "string",
+                        "description": "A message indicating that the ride has ended or is still ongoing, based on the comparison between the current location and arrival destination."
+                    }
+                }
+            }
+        }
+    }
+}
+{
+    "function_id": "uber-driver-7",
+    "task": "Rate the passenger.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Rate the passenger."
+    },
+    "snippet": "def rate_passenger(\n    passenger_id: str, \n    rating: int\n) -> Dict[str, Union[str, bool, int]]:\n    \"\"\"\n    Rates the passenger and returns the result.\n\n    Parameters:\n        passenger_id (str): The unique identifier of the passenger to be rated.\n        rating (int): The rating to be given to the passenger in a scale from 1 to 5.\n\n    Returns:\n        Dict[str, Union[str, bool, int]]: A dictionary containing 'passenger_id', 'rated' and 'rating'. \n        'passenger_id' is the unique identifier of the passenger, 'rated' is a boolean indicating whether \n        the rating process was successful or not, and 'rating' is the rating given to the passenger.\n    \"\"\"",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def rate_passenger(\n    passenger_id: str, \n    rating: int\n) -> Dict[str, Union[str, bool, int]]:\n    \"\"\"\n    Rates the passenger and returns the result.\n\n    Parameters:\n        passenger_id (str): The unique identifier of the passenger to be rated.\n        rating (int): The rating to be given to the passenger in a scale from 1 to 5.\n\n    Returns:\n        Dict[str, Union[str, bool, int]]: A dictionary containing 'passenger_id', 'rated' and 'rating'. \n        'passenger_id' is the unique identifier of the passenger, 'rated' is a boolean indicating whether \n        the rating process was successful or not, and 'rating' is the rating given to the passenger.\n    \"\"\"",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "rate_passenger",
+            "description": "Rates the passenger and returns the result.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "passenger_id": {
+                        "type": "string",
+                        "description": "The unique identifier of the passenger to be rated."
+                    },
+                    "rating": {
+                        "type": "integer",
+                        "description": "The rating to be given to the passenger in a scale from 1 to 5."
+                    }
+                },
+                "required": [
+                    "passenger_id",
+                    "rating"
+                ]
+            },
+            "returns": {
+                "type": "object",
+                "properties": {
+                    "passenger_id": {
+                        "type": "string",
+                        "description": "The unique identifier of the passenger."
+                    },
+                    "rated": {
+                        "type": "boolean",
+                        "description": "A boolean indicating whether the rating process was successful or not."
+                    },
+                    "rating": {
+                        "type": "integer",
+                        "description": "The rating given to the passenger."
+                    }
+                }
+            }
+        }
+    }
+}
+{
+    "function_id": "uber-driver-8",
+    "task": "Retrieve estimated earnings for the day or week.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Retrieve estimated earnings for the day or week."
+    },
+    "snippet": "def retrieve_estimated_earnings(\n    time_period: str\n) -> Dict[str, float]:\n    \"\"\"\n    Retrieves estimated earnings for a specified time period (day or week).\n\n    Parameters:\n        time_period (str): The time period for which to retrieve estimated earnings.\n\n    Returns:\n        Dict[str, float]: A dictionary with 'estimated_earnings' as a key and the estimated earnings as a value.\n    \"\"\"\n\n    # Implementation goes here.",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def retrieve_estimated_earnings(\n    time_period: str\n) -> Dict[str, float]:\n    \"\"\"\n    Retrieves estimated earnings for a specified time period (day or week).\n\n    Parameters:\n        time_period (str): The time period for which to retrieve estimated earnings.\n\n    Returns:\n        Dict[str, float]: A dictionary with 'estimated_earnings' as a key and the estimated earnings as a value.\n    \"\"\"\n\n    # Implementation goes here.",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": null
+}
+{
+    "function_id": "uber-driver-9",
+    "task": "View the ride history for the day.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "View the ride history for the day."
+    },
+    "snippet": "Here is a python function snippet for 'View the ride history for the day':\n\n```python\ndef view_ride_history(\n    date: str,\n) -> List[Dict[str, Any]]:\n    \"\"\"\n    Views the ride history for a given day.\n\n    Parameters:\n        date (str): The date for which to view the ride history in YYYY-MM-DD format.\n\n    Returns:\n        List[Dict[str, Any]]: A list of dictionaries each containing details of a ride. \n                              Each dictionary should have keys like 'ride_id', 'start_time', \n                              'end_time', 'location', etc.\n    \"\"\"\n    pass\n```",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "Here is a python function snippet for 'View the ride history for the day':\n\n```python\ndef view_ride_history(\n    date: str,\n) -> List[Dict[str, Any]]:\n    \"\"\"\n    Views the ride history for a given day.\n\n    Parameters:\n        date (str): The date for which to view the ride history in YYYY-MM-DD format.\n\n    Returns:\n        List[Dict[str, Any]]: A list of dictionaries each containing details of a ride. \n                              Each dictionary should have keys like 'ride_id', 'start_time', \n                              'end_time', 'location', etc.\n    \"\"\"\n    pass\n```",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": null
+}
+{
+    "function_id": "uber-driver-10",
+    "task": "Send a message or call the passenger through the app.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Send a message or call the passenger through the app."
+    },
+    "snippet": "def contact_passenger(\n    passenger_id: str,\n    message: str,\n    call: bool\n) -> None:\n    \"\"\"\n    Sends a message or initiates a call to the passenger through the app.\n    \n    Parameters:\n        passenger_id (str): The unique identifier for the passenger.\n        message (str): The message to be sent to the passenger.\n        call (bool): A boolean indicating whether to initiate a call or not. \n                     If True, a call is initiated. If False, a message is sent.\n                     \n    Returns:\n        None\n    \"\"\"\n",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def contact_passenger(\n    passenger_id: str,\n    message: str,\n    call: bool\n) -> None:\n    \"\"\"\n    Sends a message or initiates a call to the passenger through the app.\n    \n    Parameters:\n        passenger_id (str): The unique identifier for the passenger.\n        message (str): The message to be sent to the passenger.\n        call (bool): A boolean indicating whether to initiate a call or not. \n                     If True, a call is initiated. If False, a message is sent.\n                     \n    Returns:\n        None\n    \"\"\"\n",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "contact_passenger",
+            "description": "Sends a message or initiates a call to the passenger through the app.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "passenger_id": {
+                        "type": "string",
+                        "description": "The unique identifier for the passenger."
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "The message to be sent to the passenger."
+                    },
+                    "call": {
+                        "type": "boolean",
+                        "description": "A boolean indicating whether to initiate a call or not. If True, a call is initiated. If False, a message is sent."
+                    }
+                },
+                "required": [
+                    "passenger_id",
+                    "message",
+                    "call"
+                ]
+            },
+            "returns": {
+                "type": "null"
+            }
+        }
+    }
+}
+{
+    "function_id": "uber-driver-11",
+    "task": "Update driver profile details, such as photo or vehicle information.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Update driver profile details, such as photo or vehicle information."
+    },
+    "snippet": "def update_driver_profile(\n    driver_id: str,\n    new_photo: str,\n    vehicle_info: Dict[str, str]\n) -> bool:\n    \"\"\"\n    Updates driver profile details, such as photo or vehicle information.\n\n    Parameters:\n        driver_id (str): The driver's unique ID.\n        new_photo (str): The new photo to use for the driver's profile.\n        vehicle_info (Dict[str, str]): A dictionary with new vehicle details. Each key is a field name,\n                                       and each value is the new data for that field.\n                                       \n    Returns:\n        bool: True if the update was successful, False otherwise.\n    \"\"\"",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def update_driver_profile(\n    driver_id: str,\n    new_photo: str,\n    vehicle_info: Dict[str, str]\n) -> bool:\n    \"\"\"\n    Updates driver profile details, such as photo or vehicle information.\n\n    Parameters:\n        driver_id (str): The driver's unique ID.\n        new_photo (str): The new photo to use for the driver's profile.\n        vehicle_info (Dict[str, str]): A dictionary with new vehicle details. Each key is a field name,\n                                       and each value is the new data for that field.\n                                       \n    Returns:\n        bool: True if the update was successful, False otherwise.\n    \"\"\"",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "update_driver_profile",
+            "description": "Updates driver profile details, such as photo or vehicle information.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "driver_id": {
+                        "type": "string",
+                        "description": "The driver's unique ID."
+                    },
+                    "new_photo": {
+                        "type": "string",
+                        "description": "The new photo to use for the driver's profile."
+                    },
+                    "vehicle_info": {
+                        "type": "object",
+                        "description": "A dictionary with new vehicle details. Each key is a field name, and each value is the new data for that field.",
+                        "properties": {}
+                    }
+                },
+                "required": [
+                    "driver_id",
+                    "new_photo",
+                    "vehicle_info"
+                ]
+            },
+            "returns": {
+                "type": "object",
+                "properties": {
+                    "Update_Successful": {
+                        "type": "bool",
+                        "description": "True if the update was successful, False otherwise."
+                    }
+                }
+            }
+        }
+    }
+}
+{
+    "function_id": "uber-driver-12",
+    "task": "Switch to or from 'Delivery Mode' for Uber Eats.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Switch to or from 'Delivery Mode' for Uber Eats."
+    },
+    "snippet": "def switch_delivery_mode(\n    delivery_mode_status: bool\n) -> str:\n    \"\"\"\n    Switches to or from 'Delivery Mode' for Uber Eats. \n\n    Parameters:\n        delivery_mode_status (bool): The current status of 'Delivery Mode'. \n                                    It should be True if 'Delivery Mode' is on \n                                    and False if it is off.\n\n    Returns:\n        str: A string indicating the new status of 'Delivery Mode'.\n    \"\"\"\n",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def switch_delivery_mode(\n    delivery_mode_status: bool\n) -> str:\n    \"\"\"\n    Switches to or from 'Delivery Mode' for Uber Eats. \n\n    Parameters:\n        delivery_mode_status (bool): The current status of 'Delivery Mode'. \n                                    It should be True if 'Delivery Mode' is on \n                                    and False if it is off.\n\n    Returns:\n        str: A string indicating the new status of 'Delivery Mode'.\n    \"\"\"\n",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": null
+}
+{
+    "function_id": "uber-driver-13",
+    "task": "Withdraw earnings to a linked bank account.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Withdraw earnings to a linked bank account."
+    },
+    "snippet": "def withdraw_earnings(\n    bank_account_details: Dict[str, str],\n    amount: float\n) -> Dict[str, str]:\n    \"\"\"\n    Withdraws earnings to a linked bank account.\n    \n    Parameters:\n        bank_account_details (Dict[str, str]): Dictionary containing bank account details.\n                                               This includes 'bank_name', 'account_number' and \n                                               'routing_number'.\n        amount (float): The amount to be withdrawn.\n\n    Returns:\n        Dict[str, str]: A dictionary with 'transaction_status' as a key and the status of the withdrawal\n                        as a value, which can be 'success' or 'failure'.\n    \"\"\"\n    pass",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def withdraw_earnings(\n    bank_account_details: Dict[str, str],\n    amount: float\n) -> Dict[str, str]:\n    \"\"\"\n    Withdraws earnings to a linked bank account.\n    \n    Parameters:\n        bank_account_details (Dict[str, str]): Dictionary containing bank account details.\n                                               This includes 'bank_name', 'account_number' and \n                                               'routing_number'.\n        amount (float): The amount to be withdrawn.\n\n    Returns:\n        Dict[str, str]: A dictionary with 'transaction_status' as a key and the status of the withdrawal\n                        as a value, which can be 'success' or 'failure'.\n    \"\"\"\n    pass",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "withdraw_earnings",
+            "description": "Withdraws earnings to a linked bank account.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "bank_account_details": {
+                        "type": "object",
+                        "description": "Dictionary containing bank account details. This includes 'bank_name', 'account_number' and 'routing_number'.",
+                        "properties": {
+                            "bank_name": {
+                                "type": "string"
+                            },
+                            "account_number": {
+                                "type": "string"
+                            },
+                            "routing_number": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "bank_name",
+                            "account_number",
+                            "routing_number"
+                        ]
+                    },
+                    "amount": {
+                        "type": "float",
+                        "description": "The amount to be withdrawn."
+                    }
+                },
+                "required": [
+                    "bank_account_details",
+                    "amount"
+                ]
+            },
+            "returns": {
+                "type": "object",
+                "properties": {
+                    "transaction_status": {
+                        "type": "string",
+                        "description": "The status of the withdrawal which can be 'success' or 'failure'."
+                    }
+                }
+            }
+        }
+    }
+}
+{
+    "function_id": "uber-driver-14",
+    "task": "Review and dispute fare adjustments.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Review and dispute fare adjustments."
+    },
+    "snippet": "def review_and_dispute_fare_adjustments(\n    adjustment_id: str,\n    fare_adjustments: Dict[str, float],\n    reason: str\n) -> Dict[str, Union[str, float]]:\n    \"\"\"\n    Reviews and disputes fare adjustments and returns a new fare adjustment dictionary.\n\n    Parameters:\n        adjustment_id (str): The ID of the fare adjustment to dispute.\n        fare_adjustments (Dict[str, float]): A dictionary containing fare adjustments. \n                                            Each key is an adjustment ID and each value is the adjustment amount.\n        reason (str): The reason for disputing the fare adjustment.\n\n    Returns:\n        Dict[str, Union[str, float]]: A dictionary containing the disputed fare adjustment ID, \n                                       the new adjustment amount, and the reason for the dispute.\n    \"\"\"\n",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def review_and_dispute_fare_adjustments(\n    adjustment_id: str,\n    fare_adjustments: Dict[str, float],\n    reason: str\n) -> Dict[str, Union[str, float]]:\n    \"\"\"\n    Reviews and disputes fare adjustments and returns a new fare adjustment dictionary.\n\n    Parameters:\n        adjustment_id (str): The ID of the fare adjustment to dispute.\n        fare_adjustments (Dict[str, float]): A dictionary containing fare adjustments. \n                                            Each key is an adjustment ID and each value is the adjustment amount.\n        reason (str): The reason for disputing the fare adjustment.\n\n    Returns:\n        Dict[str, Union[str, float]]: A dictionary containing the disputed fare adjustment ID, \n                                       the new adjustment amount, and the reason for the dispute.\n    \"\"\"\n",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "review_and_dispute_fare_adjustments",
+            "description": "Reviews and disputes fare adjustments and returns a new fare adjustment dictionary.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "adjustment_id": {
+                        "type": "string",
+                        "description": "The ID of the fare adjustment to dispute."
+                    },
+                    "fare_adjustments": {
+                        "type": "object",
+                        "description": "A dictionary containing fare adjustments. Each key is an adjustment ID and each value is the adjustment amount.",
+                        "properties": {
+                            "type": "string"
+                        }
+                    },
+                    "reason": {
+                        "type": "string",
+                        "description": "The reason for disputing the fare adjustment."
+                    }
+                },
+                "required": [
+                    "adjustment_id",
+                    "fare_adjustments",
+                    "reason"
+                ]
+            },
+            "returns": {
+                "type": "object",
+                "description": "A dictionary containing the disputed fare adjustment ID, the new adjustment amount, and the reason for the dispute.",
+                "properties": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
+{
+    "function_id": "uber-driver-15",
+    "task": "Enable or disable notifications for new ride requests.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Enable or disable notifications for new ride requests."
+    },
+    "snippet": "def toggle_ride_request_notifications(\n    enable_notifications: bool,\n) -> None:\n    \"\"\"\n    Enable or disable notifications for new ride requests.\n\n    Parameters:\n        enable_notifications (bool): If True, enable notifications.\n                                    If False, disable notifications.\n    \"\"\"\n    pass",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def toggle_ride_request_notifications(\n    enable_notifications: bool,\n) -> None:\n    \"\"\"\n    Enable or disable notifications for new ride requests.\n\n    Parameters:\n        enable_notifications (bool): If True, enable notifications.\n                                    If False, disable notifications.\n    \"\"\"\n    pass",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": null
+}
+{
+    "function_id": "uber-driver-16",
+    "task": "Report an issue or incident related to a ride.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Report an issue or incident related to a ride."
+    },
+    "snippet": "def report_ride_issue(\n    ride_id: str,\n    user_id: str,\n    issue_details: str,\n    issue_timestamp: str\n) -> Dict[str, str]:\n    \"\"\"\n    Reports an issue or incident related to a ride.\n    \n    Parameters:\n        ride_id (str): The identifier for the ride.\n        user_id (str): The identifier for the user.\n        issue_details (str): The detailed description of the issue or incident.\n        issue_timestamp (str): The time at which the issue occurred in YYYY-MM-DD HH:MM:SS format.\n        \n    Returns:\n        Dict[str, str]: A dictionary with 'message' as a key and a confirmation message as a value.\n    \"\"\"",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def report_ride_issue(\n    ride_id: str,\n    user_id: str,\n    issue_details: str,\n    issue_timestamp: str\n) -> Dict[str, str]:\n    \"\"\"\n    Reports an issue or incident related to a ride.\n    \n    Parameters:\n        ride_id (str): The identifier for the ride.\n        user_id (str): The identifier for the user.\n        issue_details (str): The detailed description of the issue or incident.\n        issue_timestamp (str): The time at which the issue occurred in YYYY-MM-DD HH:MM:SS format.\n        \n    Returns:\n        Dict[str, str]: A dictionary with 'message' as a key and a confirmation message as a value.\n    \"\"\"",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": null
+}
+{
+    "function_id": "uber-driver-17",
+    "task": "Review driver ratings and feedback received.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Review driver ratings and feedback received."
+    },
+    "snippet": "def review_driver_ratings_feedback(\n    driver_id: str,\n    customer_reviews: List[Dict[str, Union[str, float]]]\n) -> Dict[str, Union[float, List[str]]]:\n    \"\"\"\n    Reviews driver ratings and feedback received.\n    \n    Parameters:\n        driver_id (str): The unique identifier of the driver.\n        customer_reviews (List[Dict[str, Union[str, float]]]): A list of dictionaries containing \n                                                               each customer's rating and feedback.\n                                                               Each dictionary should have 'rating' \n                                                               and 'feedback' keys.\n                                                               \n    Returns:\n        Dict[str, Union[float, List[str]]]: A dictionary with 'average_rating' as a key and the \n                                            average rating as a value, and 'feedbacks' as a key \n                                            and a list of feedbacks as a value.\n    \"\"\"\n    pass",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def review_driver_ratings_feedback(\n    driver_id: str,\n    customer_reviews: List[Dict[str, Union[str, float]]]\n) -> Dict[str, Union[float, List[str]]]:\n    \"\"\"\n    Reviews driver ratings and feedback received.\n    \n    Parameters:\n        driver_id (str): The unique identifier of the driver.\n        customer_reviews (List[Dict[str, Union[str, float]]]): A list of dictionaries containing \n                                                               each customer's rating and feedback.\n                                                               Each dictionary should have 'rating' \n                                                               and 'feedback' keys.\n                                                               \n    Returns:\n        Dict[str, Union[float, List[str]]]: A dictionary with 'average_rating' as a key and the \n                                            average rating as a value, and 'feedbacks' as a key \n                                            and a list of feedbacks as a value.\n    \"\"\"\n    pass",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "review_driver_ratings_feedback",
+            "description": "Reviews driver ratings and feedback received.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "driver_id": {
+                        "type": "string",
+                        "description": "The unique identifier of the driver."
+                    },
+                    "customer_reviews": {
+                        "type": "array",
+                        "description": "A list of dictionaries containing each customer's rating and feedback. Each dictionary should have 'rating' and 'feedback' keys.",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "rating": {
+                                    "type": "float"
+                                },
+                                "feedback": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "rating",
+                                "feedback"
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "driver_id",
+                    "customer_reviews"
+                ]
+            },
+            "returns": {
+                "type": "object",
+                "properties": {
+                    "average_rating": {
+                        "type": "float",
+                        "description": "The average rating."
+                    },
+                    "feedbacks": {
+                        "type": "array",
+                        "description": "A list of feedbacks.",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+{
+    "function_id": "uber-driver-18",
+    "task": "Check the status of a background check or document verification.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Check the status of a background check or document verification."
+    },
+    "snippet": "def check_status(\n    doc_id: str,\n    user_id: str,\n) -> Dict[str, str]:\n    \"\"\"\n    Checks the status of a background check or document verification.\n\n    Parameters:\n        doc_id (str): The document or background check ID.\n        user_id (str): The user's ID.\n        \n    Returns:\n        Dict[str, str]: A dictionary with 'status' as a key and the status of the document or background check as a value.\n    \"\"\"",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def check_status(\n    doc_id: str,\n    user_id: str,\n) -> Dict[str, str]:\n    \"\"\"\n    Checks the status of a background check or document verification.\n\n    Parameters:\n        doc_id (str): The document or background check ID.\n        user_id (str): The user's ID.\n        \n    Returns:\n        Dict[str, str]: A dictionary with 'status' as a key and the status of the document or background check as a value.\n    \"\"\"",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "check_status",
+            "description": "Checks the status of a background check or document verification.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "doc_id": {
+                        "type": "string",
+                        "description": "The document or background check ID."
+                    },
+                    "user_id": {
+                        "type": "string",
+                        "description": "The user's ID."
+                    }
+                },
+                "required": [
+                    "doc_id",
+                    "user_id"
+                ]
+            },
+            "returns": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string",
+                        "description": "The status of the document or background check."
+                    }
+                },
+                "required": [
+                    "status"
+                ]
+            }
+        }
+    }
+}
+{
+    "function_id": "uber-driver-19",
+    "task": "Schedule or modify a vehicle inspection appointment.",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Schedule or modify a vehicle inspection appointment."
+    },
+    "snippet": "def schedule_vehicle_inspection(\n    vehicle_id: str,\n    customer_id: str,\n    appointment_date: str,\n    change_appointment: bool = False,\n    new_appointment_date: str = None\n) -> Dict[str, str]:\n    \"\"\"\n    Schedules or modifies a vehicle inspection appointment.\n\n    Parameters:\n        vehicle_id (str): The id of the vehicle to be inspected.\n        customer_id (str): The id of the customer.\n        appointment_date (str): The date of the appointment in YYYY-MM-DD format.\n        change_appointment (bool): Whether the appointment needs to be changed. Default is False.\n        new_appointment_date (str): The new date of the appointment in YYYY-MM-DD format. This is needed if change_appointment is True.\n\n    Returns:\n        Dict[str, str]: A dictionary with 'message' as a key and a confirmation or error message as a value.\n    \"\"\"\n",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def schedule_vehicle_inspection(\n    vehicle_id: str,\n    customer_id: str,\n    appointment_date: str,\n    change_appointment: bool = False,\n    new_appointment_date: str = None\n) -> Dict[str, str]:\n    \"\"\"\n    Schedules or modifies a vehicle inspection appointment.\n\n    Parameters:\n        vehicle_id (str): The id of the vehicle to be inspected.\n        customer_id (str): The id of the customer.\n        appointment_date (str): The date of the appointment in YYYY-MM-DD format.\n        change_appointment (bool): Whether the appointment needs to be changed. Default is False.\n        new_appointment_date (str): The new date of the appointment in YYYY-MM-DD format. This is needed if change_appointment is True.\n\n    Returns:\n        Dict[str, str]: A dictionary with 'message' as a key and a confirmation or error message as a value.\n    \"\"\"\n",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "schedule_vehicle_inspection",
+            "description": "Schedules or modifies a vehicle inspection appointment.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "vehicle_id": {
+                        "type": "string",
+                        "description": "The id of the vehicle to be inspected."
+                    },
+                    "customer_id": {
+                        "type": "string",
+                        "description": "The id of the customer."
+                    },
+                    "appointment_date": {
+                        "type": "string",
+                        "description": "The date of the appointment in YYYY-MM-DD format."
+                    },
+                    "change_appointment": {
+                        "type": "boolean",
+                        "default": "false",
+                        "description": "Whether the appointment needs to be changed."
+                    },
+                    "new_appointment_date": {
+                        "type": "string",
+                        "description": "The new date of the appointment in YYYY-MM-DD format. This is needed if change_appointment is True."
+                    }
+                },
+                "required": [
+                    "vehicle_id",
+                    "customer_id",
+                    "appointment_date"
+                ]
+            },
+            "returns": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string",
+                        "description": "A confirmation or error message."
+                    }
+                }
+            }
+        }
+    }
+}
+{
+    "function_id": "uber-driver-20",
+    "task": "Enable or disable receiving ride requests in specific categories (e.g., UberXL, UberPool).",
+    "snippet_metadata": {
+        "TEMPLATE": "\nGenerate a snippet of a python function that accomplishes the task '{FUNCTION_TASK}'.\nDo not include an inputs or actual code implementation. Only return the snippet.\n\nAn example of a snippet is:\n    \ndef example_function(\n    num_tickets: int,\n    destination: str,\n    departure_date: str,\n    passengers: List[Dict[str, str]],\n) -> Dict[str, float]:\n    \"\"\"\n    Orders airplane tickets and returns the total price.\n    \n    Parameters:\n        num_tickets (int): The number of tickets to buy.\n        destination (str): The destination city.\n        departure_date (str): The departure date in YYYY-MM-DD format.\n        passengers (List[Dict[str, str]]): A list of dictionaries containing passenger details.\n                                          Each dictionary should have 'name' and 'age' keys.\n                                          \n    Returns:\n        Dict[str, float]: A dictionary with 'total_price' as a key and the total price as a value.\n    \"\"\"\n",
+        "FUNCTION_TASK": "Enable or disable receiving ride requests in specific categories (e.g., UberXL, UberPool)."
+    },
+    "snippet": "def modify_ride_request(\n    ride_category: str,\n    status: bool,\n) -> str:\n    \"\"\"\n    Enable or disable receiving ride requests in specific categories.\n    \n    Parameters:\n        ride_category (str): The ride category to modify (e.g., 'UberXL', 'UberPool').\n        status (bool): The status to set for receiving ride requests in the specific category. \n                      True for enabling and False for disabling.\n                                          \n    Returns:\n        str: A confirmation message indicating the updated status of ride requests for the given category.\n    \"\"\"",
+    "description_metadata": {
+        "TEMPLATE": "\nBelow is a snippet of a python function:\n    {FUNCTION_SNIPPET}    \n\nWrite a json description of this function.\nReturn the output as this example:\n    {{\n        \"function_description\": {DESCRIPTION_EXAMPLE}\n    }}\nDo not return the example!\n",
+        "FUNCTION_SNIPPET": "def modify_ride_request(\n    ride_category: str,\n    status: bool,\n) -> str:\n    \"\"\"\n    Enable or disable receiving ride requests in specific categories.\n    \n    Parameters:\n        ride_category (str): The ride category to modify (e.g., 'UberXL', 'UberPool').\n        status (bool): The status to set for receiving ride requests in the specific category. \n                      True for enabling and False for disabling.\n                                          \n    Returns:\n        str: A confirmation message indicating the updated status of ride requests for the given category.\n    \"\"\"",
+        "DESCRIPTION_EXAMPLE": "\n{\n    \"name\": \"example_function\",\n    \"description\": \"Orders event tickets and returns the total price.\",\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"num_tickets\": {\n                \"type\": \"integer\",\n                \"description\": \"The number of tickets to buy.\"\n            },\n            \"ticket_type\": {\n                \"type\": \"object\",\n                \"description\": \"The type of ticket.\",\n                \"properties\": {\n                    \"type\": \"string\"\n                }\n            },\n            \"event_details\": {\n                \"type\": \"object\",\n                \"description\": \"Details about the event, should contain a date in YYYY-MM-DD format.\",\n                \"properties\": {\n                    \"date\": {\n                        \"type\": \"string\",\n                        \"description\": \"Event data in YYYY-MM-DD format.\"\n                    }\n                },\n                \"required\": [\"date\"]\n            },\n            \"attendees\": {\n                \"type\": \"array\",\n                \"description\": \"A list of dictionaries containing attendee details. Each dictionary should have 'name' and 'age' keys.\",\n                \"items\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"age\": {\n                            \"type\": \"string\"\n                        }\n                    },\n                    \"required\": [\"name\", \"age\"]\n                }\n            }\n        },\n        \"required\": [\"num_tickets\", \"ticket_type\", \"event_details\", \"attendees\"]\n    },\n    \"returns\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"total_price\": {\n                \"type\": \"float\",\n                \"description\": \"The total price for the tickets ordered.\"\n            }\n        }\n    }\n}\n"
+    },
+    "description": {
+        "function_description": {
+            "name": "modify_ride_request",
+            "description": "Enable or disable receiving ride requests in specific categories.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "ride_category": {
+                        "type": "string",
+                        "description": "The ride category to modify (e.g., 'UberXL', 'UberPool')."
+                    },
+                    "status": {
+                        "type": "boolean",
+                        "description": "The status to set for receiving ride requests in the specific category. True for enabling and False for disabling."
+                    }
+                },
+                "required": [
+                    "ride_category",
+                    "status"
+                ]
+            },
+            "returns": {
+                "type": "object",
+                "properties": {
+                    "confirmation_message": {
+                        "type": "string",
+                        "description": "A confirmation message indicating the updated status of ride requests for the given category."
+                    }
+                }
+            }
+        }
+    }
+}

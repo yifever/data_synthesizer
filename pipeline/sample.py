@@ -17,7 +17,7 @@ class DataSampleBuilder(SynthStage):
         output_path_template: str = "data_samples/{ID}_sample",
     ):
         super().__init__(input_path_template, output_path_template)
-        self.required_inputs = ["snippet"]
+        self.required_inputs = ["description"]
 
     def clean_inputs(self, data: List[Dict], run_id: str) -> List[Dict]:
         """Clean the input data."""
@@ -26,6 +26,9 @@ class DataSampleBuilder(SynthStage):
             for entry in data
             for required_input in self.required_inputs
             if required_input in entry
+        ]
+        cleaned_data = [
+            entry for entry in cleaned_data if entry.get("description") is not None
         ]
         return cleaned_data
 
@@ -39,15 +42,17 @@ class DataSampleBuilder(SynthStage):
             entry["sample_metadata"] = meta
 
             try:
-                entry["description"] = json.loads(completion)
+                entry["sample"] = json.loads(completion)
             except Exception:
-                entry["description"] = None
+                entry["sample"] = completion
 
         return data
 
     def clean_outputs(self, data: List[Dict], run_id: str) -> List[Dict]:
         """Clean the output data."""
-        return [entry for entry in data if "example_function" not in entry["snippet"]]
+        return [
+            entry for entry in data if "example_function" not in entry["description"]
+        ]
 
     def get_prompt(self, input: Any) -> Tuple[str, Dict[str, str]]:
         """Get prompt and metadata."""
